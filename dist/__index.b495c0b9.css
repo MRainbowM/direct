@@ -60,6 +60,10 @@ BUTTON {
   font-family: "Closer-SemiBold";
   src: url(/Closer-SemiBold.14d6fe74.ttf);
   src: url(/Closer-SemiBold.15591cd5.otf);
+  @font-face;
+  font-family: "Closer-Medium";
+  src: url(/Closer-Medium.e1677115.ttf);
+  src: url(/Closer-Medium.c64c1daf.otf);
 }
 .main {
   height: calc(100vh - 100px);
@@ -113,7 +117,7 @@ BUTTON {
 .container {
   display: flex;
   flex-direction: column;
-  max-width: 1442px;
+  max-width: 1427px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -212,7 +216,6 @@ BUTTON {
 }
 .card .img {
   padding-right: 15px;
-  padding-left: 15px;
 }
 .card .img img {
   width: 100%;
@@ -256,6 +259,21 @@ BUTTON {
   height: 54px;
   border: 2px solid;
   font-size: 18px;
+}
+.text_container .card_btn span {
+  font-family: "Closer-SemiBold", sans-serif;
+  font-size: 18px;
+}
+
+.btn_all_projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 77px;
+  background-color: #ededed;
+  font-family: "Closer-Medium", sans-serif;
+  font-size: 22px;
 }
 
 @media screen and (max-width: 1920px) {
