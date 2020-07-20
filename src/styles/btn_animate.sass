@@ -1,0 +1,53 @@
+.btn_animate
+    position: relative
+    overflow: hidden
+    span
+        position: relative
+        z-index: 2
+    &::before, &::after
+        content: ''
+        position: absolute
+        left: 0
+        width: 100%
+        height: 100%
+        transition: 0.3s
+
+    &::before
+        top: -100%
+    &::after
+        top: 100%
+    &:hover
+        &::before, &::after
+            top: 0
+
+    
+    
+.logitech
+    .text_color
+        color: $logitech-clr
+    .btn_animate
+        &:hover
+            border: none
+            color: white
+            &::before, &::after
+                background-color: $logitech-clr
+            
+.fizruk
+    .text_color
+        color: $fizruk-clr
+    .btn_animate
+        &:hover
+            border: none
+            color: white
+            &::before, &::after
+                background-color: $fizruk-clr
+                
+.direct
+    .text_color
+        color: $direct-clr
+    .btn_animate
+        &:hover
+            border: none
+            color: white
+            &::before, &::after
+                background-color: $direct-clr
