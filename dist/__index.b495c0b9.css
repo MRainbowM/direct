@@ -60,10 +60,44 @@ BUTTON {
   font-family: "Closer-SemiBold";
   src: url(/Closer-SemiBold.14d6fe74.ttf);
   src: url(/Closer-SemiBold.15591cd5.otf);
-  @font-face;
+}
+@font-face {
   font-family: "Closer-Medium";
   src: url(/Closer-Medium.e1677115.ttf);
   src: url(/Closer-Medium.c64c1daf.otf);
+}
+.logitech .text_color {
+  color: #824efb;
+}
+.logitech .a {
+  background-image: linear-gradient(#824efb, #824efb);
+}
+
+.fizruk .text_color {
+  color: #da1244;
+}
+
+.direct .text_color {
+  color: #f33333;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1560px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 75px;
+  padding-right: 75px;
+}
+
+@media screen and (max-width: 560px) {
+  .container {
+    max-width: 1560px;
+    padding-left: 46px;
+    padding-right: 46px;
+  }
 }
 .main {
   height: calc(100vh - 100px);
@@ -114,14 +148,6 @@ BUTTON {
     transform: translateY(5px);
   }
 }
-.container {
-  display: flex;
-  flex-direction: column;
-  max-width: 1427px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .header {
   padding-top: 51px;
 }
@@ -205,7 +231,6 @@ BUTTON {
 }
 .projects .title {
   margin-bottom: 35px;
-  padding-left: 20px;
   font-size: 32px;
   font-family: "Closer-Bold", sans-serif;
 }
@@ -214,21 +239,17 @@ BUTTON {
   display: flex;
   margin-bottom: 78px;
 }
-.card .img {
-  padding-right: 15px;
-}
 .card .img img {
   width: 100%;
 }
 .card .text {
   display: flex;
   flex-direction: column;
-  padding: 15px;
 }
 
 .text_container {
   max-width: 450px;
-  margin: auto;
+  margin: auto auto auto 21%;
 }
 .text_container .card_title {
   margin-bottom: 20px;
@@ -271,31 +292,39 @@ BUTTON {
   align-items: center;
   width: 100%;
   height: 77px;
-  background-color: #ededed;
+  background-color: #fbfbfb;
   font-family: "Closer-Medium", sans-serif;
   font-size: 22px;
+  margin-top: -50px;
+}
+.btn_all_projects:hover {
+  background-color: #ededed;
 }
 
 @media screen and (max-width: 1920px) {
   .card .img {
-    width: 50%;
+    width: 49%;
   }
 
   .card .text {
-    width: 50%;
+    width: 51%;
   }
 }
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1300px) {
   .card .img {
-    width: 59%;
+    width: 57%;
   }
 
   .card .text {
-    width: 41%;
+    width: 43%;
   }
 }
 @media screen and (max-width: 1265px) {
+  .text_container .card_title {
+    font-size: 18px;
+  }
   .text_container .category {
+    font-size: 12px;
     margin-top: 24px;
   }
   .text_container .category:last-child {
@@ -304,13 +333,55 @@ BUTTON {
   .text_container .description {
     display: none;
   }
-  .text_container .btn {
+  .text_container .card_btn {
     margin-top: 28px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .text_container {
+    margin-left: 30px;
+  }
+  .text_container .card_title {
+    margin-bottom: 15px;
+  }
+  .text_container .category {
+    margin-top: 0;
+  }
+  .text_container .card_btn {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 675px) {
+  .projects .title {
+    margin-bottom: 31px;
+  }
+
+  .card {
+    flex-wrap: wrap;
+  }
+  .card .img {
+    width: 100%;
+    margin-bottom: 17px;
+  }
+  .card .text {
+    width: 100%;
+  }
+
+  .text_container {
+    margin-left: 0;
+  }
+  .text_container .card_title {
+    font-size: 20px;
+    margin-bottom: 17px;
+  }
+  .text_container .category {
+    font-size: 14px;
   }
 }
 .btn_animate {
   position: relative;
   overflow: hidden;
+  transition: 0.3s;
 }
 .btn_animate span {
   position: relative;
@@ -334,9 +405,6 @@ BUTTON {
   top: 0;
 }
 
-.logitech .text_color {
-  color: #824efb;
-}
 .logitech .btn_animate:hover {
   border: none;
   color: white;
@@ -345,9 +413,6 @@ BUTTON {
   background-color: #824efb;
 }
 
-.fizruk .text_color {
-  color: #da1244;
-}
 .fizruk .btn_animate:hover {
   border: none;
   color: white;
@@ -356,9 +421,6 @@ BUTTON {
   background-color: #da1244;
 }
 
-.direct .text_color {
-  color: #f33333;
-}
 .direct .btn_animate:hover {
   border: none;
   color: white;
