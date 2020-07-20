@@ -1,0 +1,51 @@
+.main
+    height: calc(100vh - 100px)  //ПОМЕНЯТЬ КОГДА ШРИФТ ИЗМЕНИТСЯ!
+    text-align: center
+    .title
+        font-size: 50px
+    .hint
+        font-size: 18px
+    .container
+        height: 100%
+        justify-content: center
+        align-items: center
+        
+    .btn_projects
+        display: flex
+        justify-content: center
+        align-items: center
+        font-size: 24px
+        height: 72px
+        width: 276px
+        margin-top: 69px
+        margin-left: auto
+        margin-right: auto
+        border: 2px solid
+
+    .vert_line
+        height: 36px
+        width: 4px
+        margin-top: 44px
+        background-color: $red-clr
+        animation: jump 2s infinite
+
+@keyframes jump
+    0%, 20%, 50%, 80%, 100%
+        transform: translateY(0)
+    40%
+        transform: translateY(10px)
+    60%
+        transform: translateY(5px)
+
+
+
+
+.container
+    display: flex
+    flex-direction: column
+    // max-width: 1750px
+    max-width: 1442px
+    margin-left: auto
+    margin-right: auto
+    padding-left: 15px
+    padding-right: 15px

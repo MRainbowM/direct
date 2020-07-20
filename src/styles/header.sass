@@ -1,0 +1,58 @@
+.header
+    padding-top: 51px
+    // height: calc(32px + 51px)
+    &_container 
+        display: flex
+        flex-direction: row
+        max-width: 1750px
+        margin-left: auto
+        margin-right: auto
+        
+        
+    .logo
+        display: flex
+        font-size: 32px
+        .line
+            width: 19px
+            height: 4px
+            margin-top: auto
+            margin-bottom: auto
+            margin-right: 11px
+            background-color: $red-clr
+
+.burger
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    margin-top: auto
+    height: 28px
+    margin-left: auto
+    .line
+        width: 48px
+        height: 4px
+        background-color: black
+        transition: .5s
+    &:hover
+        .line
+            background-color: $red-clr
+        .line:nth-child(1) 
+            transform: translateY(12px)
+        .line:nth-child(3) 
+            transform: translateY(-12px)
+
+    &.show
+        .line:nth-child(1) 
+            transform: rotate(30deg) translateY(11px) translateX(6px)
+        .line:nth-child(2)
+            opacity: 0 
+        .line:nth-child(3) 
+            transform: rotate(-30deg) translateY(-9px) translateX(6px)
+
+@media screen and (max-width: 1920px)
+    .header
+        &_container
+            margin-left: 85px
+            margin-right: 85px
+        
+
+            

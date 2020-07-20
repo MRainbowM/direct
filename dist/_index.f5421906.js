@@ -4641,7 +4641,7 @@ idx.start = function(params, callback) {
 		}
 	})
 }
-},{"clivas":"../node_modules/clivas/index.js","keypress":"../node_modules/keypress/index.js","process":"../node_modules/process/browser.js"}],"scripts/index.js":[function(require,module,exports) {
+},{"clivas":"../node_modules/clivas/index.js","keypress":"../node_modules/keypress/index.js","process":"../node_modules/process/browser.js"}],"scripts/_index.js":[function(require,module,exports) {
 require('menu');
 },{"menu":"../node_modules/menu/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -4847,5 +4847,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","scripts/index.js"], null)
-//# sourceMappingURL=/scripts.bcf3243b.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","scripts/_index.js"], null)
+//# sourceMappingURL=/_index.f5421906.js.map
