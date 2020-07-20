@@ -1,39 +1,50 @@
 .projects
     height: 100vh
+    margin-left: auto
+    margin-right: auto
     .title
+        margin-bottom: 20px
+        padding-left: 20px
         font-size: 32px
+        font-family: 'Closer-Bold', sans-serif
 
 .card
     display: flex
-    img
-        padding-right: 15px
-        width: 50%
+    .img
+        // padding-right: 15px
+        padding: 15px
+        // width: 50%
+        img
+            width: 100%
 
     .text
         display: flex
         flex-direction: column
         padding: 15px
-        // justify-content: center
-        // align-items: center
-        width: 50%
+        // width: 50%
 
 .text_container    
     max-width: 450px    
     margin: auto
-    .title
+    .card_title
+        margin-bottom: 20px
         font-size: 28px
+        font-family: 'Closer-Bold', sans-serif
         
     .category
         font-size: 14px
-        margin-top: 36px
+        font-family: 'Closer-SemiBold', sans-serif
+        margin-bottom: 8px
         &:last-child
-            margin-top: 18px
+            font-family: 'Closer-Regular', sans-serif
             
         
     .description
         font-size: 14px
-        margin-bottom: 38px
-
+        margin-top: 15px
+        p
+            margin-bottom: 30px
+            line-height: 1.6
 
     .btn
         display: flex
@@ -44,13 +55,37 @@
         border: 2px solid
         font-size: 18px
 
-
     .logitech
         color: $logitech-clr
 
-@media screen and (min-width: 868px)
+@media screen and (max-width: 1920px)
     .card
+        .img
+            width: 50%
+    .card
+        .text
+            width: 50%
+@media screen and (max-width: 1180px)
+    .card
+        .img
+            width: 59%
+    .card
+        .text
+            width: 41%
 
-@media screen and (max-width: 867px)
-    .card
+@media screen and (max-width: 1265px)
+    .text_container 
+        .category
+            margin-top: 24px
+            &:last-child
+                margin-top: 18px
+
+        .description
+            display: none
+        .btn
+            margin-top: 28px
+        
+
+
+
 

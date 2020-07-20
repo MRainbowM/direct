@@ -6,7 +6,7 @@ BODY {
   margin: 0;
   padding: 0;
   font-size: 20px;
-  font-family: "cofo", sans-serif;
+  font-family: "Closer-Regular", sans-serif;
   line-height: 1.5;
   background: #F6F6F6;
   overflow-x: hidden;
@@ -46,15 +46,32 @@ BUTTON {
   cursor: pointer;
 }
 
+@font-face {
+  font-family: "Closer-Bold";
+  src: url(/Closer-Bold.bd5118f3.ttf);
+  src: url(/Closer-Bold.b853711a.otf);
+}
+@font-face {
+  font-family: "Closer-Regular";
+  src: url(/Closer-Regular.51c742c0.ttf);
+  src: url(/Closer-Regular.2abc3035.otf);
+}
+@font-face {
+  font-family: "Closer-SemiBold";
+  src: url(/Closer-SemiBold.14d6fe74.ttf);
+  src: url(/Closer-SemiBold.15591cd5.otf);
+}
 .main {
   height: calc(100vh - 100px);
   text-align: center;
 }
 .main .title {
   font-size: 50px;
+  font-family: "Closer-Bold", sans-serif;
 }
 .main .hint {
   font-size: 18px;
+  font-family: "Closer-Regular", sans-serif;
 }
 .main .container {
   height: 100%;
@@ -68,10 +85,11 @@ BUTTON {
   font-size: 24px;
   height: 72px;
   width: 276px;
-  margin-top: 69px;
+  margin-top: 63px;
   margin-left: auto;
   margin-right: auto;
   border: 2px solid;
+  font-family: "Closer-SemiBold", sans-serif;
 }
 .main .vert_line {
   height: 36px;
@@ -98,8 +116,6 @@ BUTTON {
   max-width: 1442px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 .header {
@@ -115,6 +131,7 @@ BUTTON {
 .header .logo {
   display: flex;
   font-size: 32px;
+  font-family: "Closer-Bold", sans-serif;
 }
 .header .logo .line {
   width: 19px;
@@ -130,8 +147,9 @@ BUTTON {
   flex-direction: column;
   justify-content: space-between;
   margin-top: auto;
-  height: 28px;
+  height: 34px;
   margin-left: auto;
+  padding-bottom: 6px;
 }
 .burger .line {
   width: 48px;
@@ -164,44 +182,69 @@ BUTTON {
     margin-right: 85px;
   }
 }
+@media screen and (max-width: 865px) {
+  .header_container {
+    margin-left: 76px;
+    margin-right: 76px;
+  }
+}
+@media screen and (max-width: 740px) {
+  .header_container {
+    margin-left: 43px;
+    margin-right: 43px;
+  }
+}
 .projects {
   height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
 }
 .projects .title {
+  margin-bottom: 20px;
+  padding-left: 20px;
   font-size: 32px;
+  font-family: "Closer-Bold", sans-serif;
 }
 
 .card {
   display: flex;
 }
-.card img {
-  padding-right: 15px;
-  width: 50%;
+.card .img {
+  padding: 15px;
+}
+.card .img img {
+  width: 100%;
 }
 .card .text {
   display: flex;
   flex-direction: column;
   padding: 15px;
-  width: 50%;
 }
 
 .text_container {
   max-width: 450px;
   margin: auto;
 }
-.text_container .title {
+.text_container .card_title {
+  margin-bottom: 20px;
   font-size: 28px;
+  font-family: "Closer-Bold", sans-serif;
 }
 .text_container .category {
   font-size: 14px;
-  margin-top: 36px;
+  font-family: "Closer-SemiBold", sans-serif;
+  margin-bottom: 8px;
 }
 .text_container .category:last-child {
-  margin-top: 18px;
+  font-family: "Closer-Regular", sans-serif;
 }
 .text_container .description {
   font-size: 14px;
-  margin-bottom: 38px;
+  margin-top: 15px;
+}
+.text_container .description p {
+  margin-bottom: 30px;
+  line-height: 1.6;
 }
 .text_container .btn {
   display: flex;
@@ -214,6 +257,39 @@ BUTTON {
 }
 .text_container .logitech {
   color: #824efb;
+}
+
+@media screen and (max-width: 1920px) {
+  .card .img {
+    width: 50%;
+  }
+
+  .card .text {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 1180px) {
+  .card .img {
+    width: 59%;
+  }
+
+  .card .text {
+    width: 41%;
+  }
+}
+@media screen and (max-width: 1265px) {
+  .text_container .category {
+    margin-top: 24px;
+  }
+  .text_container .category:last-child {
+    margin-top: 18px;
+  }
+  .text_container .description {
+    display: none;
+  }
+  .text_container .btn {
+    margin-top: 28px;
+  }
 }
 
 /*# sourceMappingURL=/__index.b495c0b9.css.map */
