@@ -1,9 +1,17 @@
-a
-    text-decoration: none
-    background-position: 0% 100%
-    background-repeat: no-repeat
-    background-size: 0% 2px
-    transition: background-size .3s
 
-    &:hover 
-        background-size: 100% 2px
+a 
+    line-height: 1
+    display: inline-block
+    text-decoration:none
+    cursor: pointer
+    &:hover,&:focus 
+        &::after
+            width: 100%
+
+    &::after 
+        display: block
+        content: ""
+        height: 1px
+        width: 0%
+        transition: width .3s ease-in-out
+

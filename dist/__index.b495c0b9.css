@@ -69,12 +69,15 @@ BUTTON {
 .logitech .text_color {
   color: #824efb;
 }
-.logitech .a {
-  background-image: linear-gradient(#824efb, #824efb);
+.logitech a::after {
+  background-color: #824efb;
 }
 
 .fizruk .text_color {
   color: #da1244;
+}
+.fizruk a::after {
+  background-color: #da1244;
 }
 
 .direct .text_color {
@@ -162,6 +165,7 @@ BUTTON {
   display: flex;
   font-size: 32px;
   font-family: "Closer-Bold", sans-serif;
+  transition: 0.3s;
 }
 .header .logo .line {
   width: 19px;
@@ -198,12 +202,27 @@ BUTTON {
 }
 .burger.show .line:nth-child(1) {
   transform: rotate(30deg) translateY(11px) translateX(6px);
+  background-color: white;
 }
 .burger.show .line:nth-child(2) {
   opacity: 0;
+  background-color: white;
 }
 .burger.show .line:nth-child(3) {
   transform: rotate(-30deg) translateY(-9px) translateX(6px);
+  background-color: white;
+}
+.burger.show:hover .line {
+  background-color: #f33333;
+}
+
+.show {
+  position: relative;
+  z-index: 4;
+}
+.show .logo {
+  color: white;
+  z-index: 4;
 }
 
 @media screen and (max-width: 1920px) {
@@ -427,6 +446,52 @@ BUTTON {
 }
 .direct .btn_animate:hover::before, .direct .btn_animate:hover::after {
   background-color: #f33333;
+}
+
+a {
+  line-height: 1;
+  display: inline-block;
+  cursor: pointer;
+}
+a:hover::after, a:focus::after {
+  width: 100%;
+}
+a::after {
+  display: block;
+  content: "";
+  height: 1px;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+}
+
+.menu {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  transition: 0.3s;
+}
+.menu_show {
+  right: 0;
+}
+.menu_col_1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+}
+.menu_soc {
+  height: 20px;
+}
+.menu_soc svg {
+  height: 100%;
+  color: white;
+}
+.menu_col_2 {
+  width: 50%;
 }
 
 /*# sourceMappingURL=/__index.b495c0b9.css.map */
