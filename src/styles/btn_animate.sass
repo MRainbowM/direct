@@ -1,9 +1,13 @@
 .btn_animate
+    display: flex
+    justify-content: center
+    align-items: center
     position: relative
     overflow: hidden
+    border: 2px solid
     transition: 0.3s
+    font-family: 'Closer-SemiBold', sans-serif
     span
-        // transition: 0.3s
         position: relative
         z-index: 2
     &::before, &::after
@@ -48,3 +52,11 @@
             color: white
             &::before, &::after
                 background-color: $direct-clr
+
+.black
+    .btn_animate
+        &:hover
+            border: none
+            color: white
+            &::before, &::after
+                background-color: black

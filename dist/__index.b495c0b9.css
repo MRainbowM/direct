@@ -125,17 +125,12 @@ BUTTON {
   align-items: center;
 }
 .main .btn_projects {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 24px;
   height: 72px;
   width: 276px;
   margin-top: 63px;
   margin-left: auto;
   margin-right: auto;
-  border: 2px solid;
-  font-family: "Closer-SemiBold", sans-serif;
 }
 .main .vert_line {
   height: 36px;
@@ -345,12 +340,8 @@ BUTTON {
   line-height: 1.6;
 }
 .text_container .card_btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 192px;
   height: 54px;
-  border: 2px solid;
   font-size: 18px;
 }
 .text_container .card_btn span {
@@ -450,10 +441,20 @@ BUTTON {
     font-size: 14px;
   }
 }
+@media screen and (max-width: 520px) {
+  .btn_all_projects {
+    font-size: 16px;
+  }
+}
 .btn_animate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   overflow: hidden;
+  border: 2px solid;
   transition: 0.3s;
+  font-family: "Closer-SemiBold", sans-serif;
 }
 .btn_animate span {
   position: relative;
@@ -499,6 +500,14 @@ BUTTON {
 }
 .direct .btn_animate:hover::before, .direct .btn_animate:hover::after {
   background-color: #f33333;
+}
+
+.black .btn_animate:hover {
+  border: none;
+  color: white;
+}
+.black .btn_animate:hover::before, .black .btn_animate:hover::after {
+  background-color: black;
 }
 
 a {
@@ -573,15 +582,11 @@ a::after {
   margin-top: 27px;
 }
 .menu_btn_contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 190px;
   height: 54px;
   border: 2px solid white;
   color: white;
   font-size: 18px;
-  font-family: "Closer-SemiBold", sans-serif;
   margin-top: auto;
 }
 .menu_col_2 {
@@ -680,10 +685,12 @@ a::after {
 }
 .services #sites {
   background-image: url("/sites.42bc9140.jpg");
+  background-position: cover;
   color: white;
 }
 .services #design {
   background-image: url("/design.4c5f22dd.jpg");
+  background-position: cover;
   color: white;
 }
 
@@ -760,6 +767,9 @@ a::after {
   }
 }
 @media screen and (max-width: 620px) {
+  .services .container {
+    padding-top: 60px;
+  }
   .services_col-1 .row {
     flex-wrap: wrap;
     margin-bottom: 38px;
@@ -778,6 +788,54 @@ a::after {
   .services_col-2 svg {
     display: none;
   }
+}
+.peoples {
+  width: 100%;
+}
+.peoples .container {
+  flex-wrap: wrap;
+  padding-top: 175px;
+}
+.peoples_row-1 {
+  display: flex;
+  width: 100%;
+  margin-bottom: 73px;
+}
+.peoples_row-1 .title {
+  width: 24%;
+}
+.peoples_row-1 span {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 10px;
+  width: 49%;
+}
+.peoples_row-2 {
+  display: flex;
+  justify-content: space-between;
+}
+.peoples_row-2 .btn_peoples {
+  width: 190px;
+  height: 54px;
+  margin-top: auto;
+}
+.peoples_row-2 .name {
+  font-size: 24px;
+  font-family: "Closer-Bold", sans-serif;
+}
+.peoples_row-2 .position {
+  font-size: 14px;
+}
+.peoples_row-2 img {
+  height: 260px;
+  width: 260px;
+  object-fit: cover;
+  margin-bottom: 42px;
+}
+.peoples_row-2 .black {
+  display: flex;
+  align-items: end;
+  margin-bottom: 108px;
 }
 
 /*# sourceMappingURL=/__index.b495c0b9.css.map */
