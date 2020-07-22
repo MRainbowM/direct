@@ -8,7 +8,7 @@ BODY {
   font-size: 20px;
   font-family: "Closer-Regular", sans-serif;
   line-height: 1.5;
-  background: #F6F6F6;
+  background: white;
   overflow-x: hidden;
   min-width: 320px;
 }
@@ -97,11 +97,16 @@ BUTTON {
 
 @media screen and (max-width: 560px) {
   .container {
-    max-width: 1560px;
+    max-width: 560px;
     padding-left: 46px;
     padding-right: 46px;
   }
 }
+.title {
+  font-size: 32px;
+  font-family: "Closer-Bold", sans-serif;
+}
+
 .main {
   height: calc(100vh - 100px);
   text-align: center;
@@ -295,14 +300,11 @@ BUTTON {
   }
 }
 .projects {
-  height: 100vh;
   margin-left: auto;
   margin-right: auto;
 }
 .projects .title {
   margin-bottom: 35px;
-  font-size: 32px;
-  font-family: "Closer-Bold", sans-serif;
 }
 
 .card {
@@ -613,6 +615,168 @@ a::after {
 @media screen and (max-width: 900px) {
   .menu_col_2 {
     padding-left: 5%;
+  }
+}
+.services {
+  width: 100%;
+  background-color: #f4f4f4;
+}
+.services .container {
+  flex-direction: row;
+  padding-top: 127px;
+  padding-bottom: 100px;
+}
+.services_col-1 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
+.services_col-1 #year {
+  width: 100%;
+  margin-top: auto;
+  padding-bottom: 28px;
+  font-family: "Closer-Bold", sans-serif;
+}
+.services .row {
+  display: flex;
+}
+.services .title {
+  width: 58%;
+  line-height: 0.9;
+}
+.services .description {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  font-size: 16px;
+  padding-right: 18px;
+}
+.services_col-2 {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  padding-left: 37px;
+}
+.services .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 197px;
+  width: 197px;
+  font-family: "Closer-Bold", sans-serif;
+  font-size: 28px;
+  margin-bottom: 33px;
+}
+.services .col {
+  font-family: "Closer-Bold", sans-serif;
+  font-size: 24px;
+}
+.services .col svg {
+  height: 40px;
+  width: 40px;
+}
+.services #ideas {
+  background-color: white;
+}
+.services #sites {
+  background-image: url("/sites.42bc9140.jpg");
+  color: white;
+}
+.services #design {
+  background-image: url("/design.4c5f22dd.jpg");
+  color: white;
+}
+
+@media screen and (max-width: 1510px) {
+  .services_col-1 {
+    width: 45%;
+  }
+  .services_col-1 .description {
+    padding-right: 0;
+  }
+  .services_col-2 {
+    width: 55%;
+  }
+}
+@media screen and (max-width: 1370px) {
+  .services_col-1 {
+    width: 40%;
+  }
+  .services_col-1 .row {
+    flex-wrap: wrap;
+  }
+  .services_col-1 .title {
+    width: 100%;
+  }
+  .services_col-2 {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 1260px) {
+  .services_col-1 {
+    width: 35%;
+  }
+  .services_col-1 #year {
+    display: none;
+  }
+  .services_col-2 {
+    width: 65%;
+  }
+}
+@media screen and (max-width: 1180px) {
+  .services .container {
+    flex-wrap: wrap;
+  }
+  .services_col-1 {
+    width: 100%;
+  }
+  .services_col-1 .row {
+    flex-wrap: nowrap;
+    margin-bottom: 74px;
+  }
+  .services_col-1 .title {
+    width: 39%;
+  }
+  .services_col-2 {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 780px) {
+  .services_col-1 .title {
+    width: 80%;
+  }
+  .services .img {
+    width: 143px;
+    height: 143px;
+    margin-bottom: 12px;
+  }
+  .services .col {
+    font-size: 14px;
+  }
+  .services .col svg {
+    height: 25px;
+    width: 25px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .services_col-1 .row {
+    flex-wrap: wrap;
+    margin-bottom: 38px;
+  }
+  .services_col-1 .title {
+    width: 100%;
+    margin-bottom: 26px;
+  }
+  .services_col-2 {
+    flex-wrap: wrap;
+  }
+  .services_col-2 .ideas {
+    width: 100%;
+    margin-bottom: 26px;
+  }
+  .services_col-2 svg {
+    display: none;
   }
 }
 

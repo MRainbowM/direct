@@ -1,0 +1,139 @@
+.services
+    width: 100%
+    background-color: $gray-clr
+
+    .container
+        flex-direction: row
+        padding-top: 127px
+        padding-bottom: 100px
+    &_col-1
+        display: flex
+        flex-wrap: wrap
+        width: 50%
+        #year
+            width: 100%
+            margin-top: auto
+            padding-bottom: 28px
+            font-family: 'Closer-Bold', sans-serif
+    .row
+        display: flex
+    .title
+        width: 58%
+        line-height: 0.9
+
+    .description
+        display: flex
+        flex-direction: column
+        line-height: 1.5
+        font-size: 16px
+        padding-right: 18px
+
+
+    &_col-2
+        display: flex
+        justify-content: space-between
+        width: 50%
+        padding-left: 37px
+
+    .img
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 197px
+        width: 197px
+        font-family: 'Closer-Bold', sans-serif
+        font-size: 28px
+        margin-bottom: 33px
+    .col 
+        font-family: 'Closer-Bold', sans-serif
+        font-size: 24px
+        svg
+            height: 40px
+            width: 40px
+
+    #ideas
+        background-color: white
+    #sites
+        background-image: url("../images/sites.jpg")
+        color: white
+    #design
+        background-image: url("../images/design.jpg")
+        color: white
+
+@media screen and (max-width: 1510px)
+    .services
+        &_col-1
+            width: 45%
+            .description
+                padding-right: 0
+        &_col-2
+            width: 55%
+
+@media screen and (max-width: 1370px)
+    .services
+        &_col-1
+            width: 40%
+            .row
+                flex-wrap: wrap
+            .title
+                width: 100%
+        &_col-2
+            width: 60%
+@media screen and (max-width: 1260px)
+    .services
+        &_col-1
+            width: 35%
+            #year
+                display: none
+        &_col-2
+            width: 65%
+
+@media screen and (max-width: 1180px)
+    .services
+        .container
+            flex-wrap: wrap
+        &_col-1
+            width: 100%
+            .row
+                flex-wrap: nowrap
+                margin-bottom: 74px
+            .title
+                width: 39%
+        &_col-2
+            width: 100%
+            padding-left: 0
+
+@media screen and (max-width: 780px)
+    .services
+        &_col-1
+            .title
+                width: 80%
+        .img
+            width: 143px
+            height: 143px
+            margin-bottom: 12px
+        .col
+            font-size: 14px
+            svg
+                height: 25px
+                width: 25px
+
+@media screen and (max-width: 620px)
+    .services
+        &_col-1
+            .row
+                flex-wrap: wrap
+                margin-bottom: 38px
+            .title
+                width: 100%
+                margin-bottom: 26px
+        &_col-2
+            flex-wrap: wrap
+            .ideas
+                width: 100%
+                margin-bottom: 26px
+            svg
+                display: none
+       
+
+                
