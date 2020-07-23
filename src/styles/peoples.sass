@@ -2,13 +2,14 @@
     width: 100%
     .container
         flex-wrap: wrap
+        flex-direction: row
         padding-top: 175px
     &_row-1
         display: flex
         width: 100%
         margin-bottom: 73px
         .title
-            width: 24%
+            width: 25%
         span
             font-size: 16px
             line-height: 1.5
@@ -16,12 +17,10 @@
             width: 49%
     &_row-2
         display: flex
+        flex-wrap: wrap
         justify-content: space-between
-
-        .btn_peoples
-            width: 190px
-            height: 54px
-            margin-top: auto
+        width: 75%
+        margin-left: auto
         .name
             font-size: 24px
             font-family: 'Closer-Bold', sans-serif
@@ -32,8 +31,98 @@
             width: 260px
             object-fit: cover
             margin-bottom: 42px
-        .black
-            display: flex
-            align-items: end
-            margin-bottom: 108px
+    .btn_peoples
+        display: flex
+        align-items: end
+        width: 100%
+        .btn_animate
+            width: 190px
+            height: 54px
+            margin-top: -160px
+            &:hover
+                border: none
+                color: white
+                &::before, &::after
+                    background-color: black
 
+@media screen and (max-width: 1310px)
+    .peoples
+        .container
+            padding-top: 124px
+        &_row-2
+            .name
+                font-size: 20px
+            img
+                height: 218px
+                width: 218px
+
+@media screen and (max-width: 1080px)
+    .peoples
+        &_row-1
+            margin-bottom: 83px
+            .title
+                width: 26%
+            span
+                width: 65%
+        &_row-2
+            width: 100%
+            justify-content: start
+            .col
+                margin-right: 95px
+            img
+                margin-bottom: 38px
+            .position
+                font-size: 12px
+            .last
+                width: 100%
+                margin-top: 63px
+        .btn_peoples
+            .btn_animate
+                margin-top: -146px
+                margin-left: 343px
+                font-size: 18px
+
+@media screen and (max-width: 777px)
+    .peoples
+        &_row-1
+            flex-wrap: wrap
+            .title
+                width: 100%
+            span
+                width: 100%
+        &_row-2
+            justify-content: space-between
+            .col
+                margin-right: 0
+        .btn_peoples
+            .btn_animate
+                margin-top: -146px
+                margin-left: auto
+
+@media screen and (max-width: 620px)
+    .peoples
+        .container
+            padding-top: 50px
+        &_row-1
+            margin-bottom: 49px
+            span
+                margin-top: 15px
+        &_row-2
+            .col
+                width: 100%
+                margin-bottom: 72px
+            img
+                height: 260px
+                width: 260px
+                margin-bottom: 26px
+            .last
+                margin-top: 0
+
+            .position
+                font-size: 14px
+            .name
+                font-size: 24px
+        .btn_peoples
+            .btn_animate
+                margin-top: 0
+                margin-left: 0
