@@ -139,7 +139,7 @@ BUTTON {
 
   .contacts .container {
     padding-top: 56px;
-    padding-bottom: 160px;
+    padding-bottom: 80px;
   }
 }
 @media screen and (max-width: 560px) {
@@ -988,6 +988,7 @@ a::after {
 }
 .contacts .container {
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .contacts_col-1 {
   display: flex;
@@ -1029,6 +1030,7 @@ a::after {
   margin-top: auto;
   font-size: 14px;
 }
+
 @media screen and (max-width: 1020px) {
   .contacts .container {
     flex-wrap: wrap;
@@ -1084,6 +1086,139 @@ a::after {
   }
   .contacts_col-2 .text {
     padding-top: 0;
+  }
+}
+.contacts_form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.contacts_form input, .contacts_form textarea {
+  background-color: #dc2a2a;
+  padding: 10px 22px;
+  font-size: 14px;
+  color: white;
+}
+.contacts_form input::placeholder, .contacts_form textarea::placeholder {
+  color: #eeabab;
+  font-size: 14px;
+}
+.contacts_form .cb {
+  padding: 0;
+  height: 15px;
+  width: 15px;
+  min-width: 15px;
+  margin-right: 14px;
+}
+.contacts_form .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  margin-top: 41px;
+  margin-left: 34%;
+  width: calc(50% - 32px);
+}
+.contacts_form .row #mail {
+  margin-right: 0;
+}
+.contacts_form input {
+  height: 49px;
+  margin-right: 32px;
+  width: 100%;
+}
+.contacts_form textarea {
+  width: calc(50% - 32px);
+  max-height: 88px;
+  margin-left: 34%;
+  margin-bottom: 23px;
+  padding-top: 15px;
+  resize: none;
+}
+.contacts_form .text {
+  display: flex;
+  margin-left: 34%;
+  font-size: 12px;
+}
+.contacts_form .text label {
+  line-height: 1.3;
+}
+.contacts_form button {
+  height: 48px;
+  width: 48px;
+  background-color: white;
+  margin-left: auto;
+  margin-top: -229px;
+  margin-right: 161px;
+}
+.contacts_form button svg {
+  width: 35%;
+  height: 100%;
+  color: black;
+}
+
+@media screen and (max-width: 1360px) {
+  .contacts_form .row {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 87px;
+    margin-top: 34px;
+  }
+  .contacts_form textarea {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 30px;
+    margin-right: 87px;
+  }
+  .contacts_form .text {
+    margin-left: 0;
+  }
+  .contacts_form button {
+    margin-left: auto;
+    margin-right: 8px;
+    margin-top: -71px;
+  }
+}
+@media screen and (max-width: 710px) {
+  .contacts_form .row {
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+  .contacts_form .row input {
+    height: 44px;
+  }
+  .contacts_form .row input::placeholder {
+    font-size: 12px;
+  }
+  .contacts_form .row #name, .contacts_form .row #phone {
+    width: calc(50% - 8px);
+    margin-right: 0;
+  }
+  .contacts_form .row #mail {
+    width: 100%;
+    margin-top: 22px;
+    margin-bottom: 22px;
+  }
+  .contacts_form textarea {
+    margin-top: 0;
+    margin-right: 0;
+    max-height: 120px;
+    height: 120px;
+  }
+  .contacts_form textarea::placeholder {
+    font-size: 12px;
+  }
+  .contacts_form .text {
+    width: calc( 100% - 50px );
+    font-size: 12px;
+  }
+  .contacts_form .text label {
+    line-height: 1.9;
+    margin-top: -3px;
+  }
+  .contacts_form button {
+    margin-top: 0;
+    margin-right: 0;
   }
 }
 

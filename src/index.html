@@ -220,16 +220,22 @@
                     </div>
                 </div>
             </div>
-            <form action="" class="contacts_col-3">
+            <form action="" class="contacts_form">
                 <div class="row">
-                    <input type="text">
-                    <input type="phone">
-                    <input type="mail">
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                    <div class="text">
-                        
-                    </div>
+                    <input type="text" placeholder="Имя" id="name">
+                    <input type="phone" placeholder="Телефон" id="phone">
+                    <input type="mail" placeholder="E-mail" id="mail">
                 </div>
+                <textarea name="" id="" cols="30" rows="4" placeholder="Вдруг есть что сказать, а некому"></textarea>
+                <div class="text">
+                    <input type="checkbox" class="cb" name="" id="">
+                    <label for="">Согласен с условиями<a href="">пользовательского соглашения</a></label>
+                </div>
+                <button>
+                    <svg id="i-r-arrow">
+                        <use href="./images/icons.svg#i-r-arrow"></use>
+                    </svg>
+                </button>
             </form>
         </div>
     </div>
