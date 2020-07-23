@@ -117,69 +117,19 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"scripts/menu.js":[function(require,module,exports) {
-var burger = document.querySelector('.burger');
-var header = document.querySelector('.header');
-var menu = document.querySelector('.menu');
-burger.addEventListener('click', function (e) {
-  var isShowMenu = burger.classList.contains('show');
-
-  if (isShowMenu) {
-    burger.classList.remove('show');
-    header.classList.remove('show');
-    menu.classList.remove('menu_show');
-    document.body.style.overflow = "visible";
-  } else {
-    burger.classList.add('show');
-    header.classList.add('show');
-    menu.classList.add('menu_show');
-    document.body.style.overflow = "hidden";
-  }
-});
-},{}],"scripts/slider.js":[function(require,module,exports) {
-var btnsLeft = document.querySelectorAll('.slider-arr_left');
-var btnsRight = document.querySelectorAll('.slider-arr_right');
-var isAnimate = false;
-
-var handleClick = function handleClick() {
-  var diffIndex = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+})({"scripts/slider.js":[function(require,module,exports) {
+var handleClickSlider = function handleClickSlider() {
+  var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
   return function (e) {
-    if (isAnimate) return;
-    var btn = e.currentTarget;
-    var id = btn.getAttribute('data-id');
-    var sliderElement = document.getElementById(id);
-    var sliderContainer = sliderElement.querySelector('.slider_container');
-    var items = sliderContainer.querySelectorAll('.slider_item');
-    var itemWidth = items[0].clientWidth;
-    var offsetLeft = sliderContainer.offsetLeft;
-    var maxIndex = items.length;
-    var currentIndex = Math.abs(offsetLeft) / itemWidth;
-    var nextIndex = currentIndex + diffIndex; // debugger
-
-    if (nextIndex >= 0 && nextIndex < maxIndex) {
-      isAnimate = true;
-      var offset = nextIndex * itemWidth;
-      sliderContainer.style.marginLeft = '-' + offset + 'px';
-      setTimeout(function () {
-        isAnimate = false;
-      }, 310);
-    }
+    console.log(i);
+    console.log(e);
   };
 };
 
-var onClickLeft = handleClick(-1);
-var onClickRight = handleClick(1);
-btnsLeft.forEach(function (element) {
-  element.addEventListener('click', onClickLeft);
-});
-btnsRight.forEach(function (element) {
-  element.addEventListener('click', onClickRight);
-});
-},{}],"index.js":[function(require,module,exports) {
-require('./scripts/menu');
-
-require('./scripts/slider');
-},{"./scripts/menu":"scripts/menu.js","./scripts/slider":"scripts/slider.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var onClickLeftSlider = handleClickSlider(-1);
+var onClickRightSlider = handleClickSlider(1);
+console.log('fdfdf', onClickRightSlider);
+},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -383,5 +333,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/src.e31bb0bc.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","scripts/slider.js"], null)
+//# sourceMappingURL=/slider.6dfacfd0.js.map
