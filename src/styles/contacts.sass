@@ -1,0 +1,87 @@
+.contacts
+    width: 100%
+    background-color: $direct-clr
+    color: white
+    .container
+        flex-direction: row
+    
+    
+    &_col-1
+        display: flex
+        flex-direction: column
+        width: 34%
+        padding-right: 15px
+        .title
+            margin-bottom: 23px
+        .text
+            display: flex
+            flex-direction: column
+        span
+            font-size: 16px
+    &_col-2
+        display: flex
+        flex-direction: column
+        .row 
+            display: flex
+            margin-bottom: 32px
+        .subtitle
+            width: 240px
+            min-width: 240px
+            margin-top: auto
+            font-size: 24px
+            font-family: 'Closer-Bold', sans-serif
+        .text
+            display: flex
+            flex-direction: column
+            line-height: 1.7
+        span
+            margin-top: auto
+            font-size: 14px
+
+        
+    &_col-3
+
+@media screen and (max-width: 1020px)
+    .contacts
+        .container
+            flex-wrap: wrap
+        &_col-1
+            flex-direction: row
+            width: 100%
+            .title
+                width: 36%
+                margin-bottom: 0
+            .text
+                margin-top: 12px
+        &_col-2
+            margin-left: auto
+            width: 65%
+            margin-top: 54px
+            .row
+                margin-bottom: 22px
+            .subtitle
+                min-width: 51%
+                width: 51%
+                margin-top: 0
+            .text
+                padding-top: 8px
+
+@media screen and (max-width: 710px)
+    .contacts
+        .container
+        &_col-1
+            flex-wrap: wrap
+            .title
+                width: 100%
+            .text
+                margin-top: 5px
+        &_col-2
+            width: 100%
+            margin-top: 26px
+            .row
+                flex-wrap: wrap
+                margin-bottom: 28px
+            .subtitle
+                width: 100%
+            .text
+                padding-top: 0
