@@ -18,6 +18,7 @@ const handleClick = (diffIndex = 0) => (e) => {
     const maxIndex = items.length;
     const currentIndex = Math.abs(offsetLeft) / itemWidth;
     const nextIndex = currentIndex + diffIndex;
+
     // debugger
     if (nextIndex >= 0 && nextIndex < maxIndex) {
         isAnimate = true;
@@ -26,6 +27,32 @@ const handleClick = (diffIndex = 0) => (e) => {
         setTimeout(() => {
             isAnimate = false;
         }, 310)
+    }
+    // debugger
+    let btn_left;
+    let btn_right;
+    if (btn.classList.contains('slider-arr_left')) {
+        btn_right = document.querySelector('.slider-arr_right, ' + 'div[' + id + ']');
+        btn_left = btn
+    } else if (btn.classList.contains('slider-arr_right')) {
+        btn_left = document.querySelector('.slider-arr_left, ' + 'div[' + id + ']');
+        btn_right = btn
+    }
+    if (nextIndex == 0) {
+        btn_left.classList.add('no-active')
+        btn_left.classList.remove('active')
+    } else if (nextIndex == maxIndex - 1) {
+        btn_right.classList.add('no-active')
+        btn_right.classList.remove('active')
+    } else {
+        if (btn_left.classList.contains('no-active')) {
+            btn_left.classList.remove('no-active')
+            btn_left.classList.add('active')
+        }
+        if (btn_right.classList.contains('no-active')) {
+            btn_right.classList.remove('no-active')
+            btn_right.classList.add('active')
+        }
     }
 }
 
@@ -39,3 +66,5 @@ btnsLeft.forEach((element) => {
 btnsRight.forEach((element) => {
     element.addEventListener('click', onClickRight)
 })
+
+// TODO: addEventListner: resize reset mardin 

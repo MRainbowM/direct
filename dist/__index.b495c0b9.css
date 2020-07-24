@@ -95,6 +95,10 @@ BUTTON {
   padding-right: 75px;
 }
 
+.projects .container {
+  padding-bottom: 160px;
+}
+
 .services .container {
   padding-top: 127px;
   padding-bottom: 106px;
@@ -400,12 +404,35 @@ BUTTON {
 .reviews {
   padding-bottom: 100px;
 }
+.reviews .container {
+  flex-direction: row;
+  padding-bottom: 40px;
+}
+.reviews .container .title {
+  width: 75%;
+}
 .reviews_item {
-  width: 1169px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1170px;
   max-width: 90vw;
   height: 210px;
   margin-right: 30px;
   background-color: #f4f4f4;
+}
+.reviews_item_container {
+  display: flex;
+  flex-direction: column;
+}
+.reviews_item_quote {
+  width: 100%;
+  font-size: 32px;
+  font-family: "Closer-Bold", sans-serif;
+}
+.reviews_item_author {
+  font-size: 14px;
+  margin-left: auto;
 }
 
 a {
@@ -1237,21 +1264,34 @@ a::after {
   overflow: hidden;
 }
 .slider_container {
-  padding-left: calc((100vw - (1560px - 100px)) / 2 );
+  padding-left: calc((100vw - (1560px - 150px)) / 2 );
   display: inline-flex;
   transition: 0.3s;
 }
 
 .slider-arr {
   display: flex;
+  justify-content: space-between;
+  width: 110px;
 }
 .slider-arr_left, .slider-arr_right {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
 }
 .slider-arr_left svg, .slider-arr_right svg {
   height: 100%;
   width: 100%;
+  color: #f33333;
+}
+.slider-arr .active svg {
+  color: #f33333;
+}
+.slider-arr .no-active svg {
+  color: #f4f4f4;
+}
+
+#i-l-arrow {
+  transform: rotate(180deg);
 }
 
 /*# sourceMappingURL=/__index.b495c0b9.css.map */

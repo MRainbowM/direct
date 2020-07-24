@@ -163,6 +163,36 @@ var handleClick = function handleClick() {
       setTimeout(function () {
         isAnimate = false;
       }, 310);
+    } // debugger
+
+
+    var btn_left;
+    var btn_right;
+
+    if (btn.classList.contains('slider-arr_left')) {
+      btn_right = document.querySelector('.slider-arr_right, ' + 'div[' + id + ']');
+      btn_left = btn;
+    } else if (btn.classList.contains('slider-arr_right')) {
+      btn_left = document.querySelector('.slider-arr_left, ' + 'div[' + id + ']');
+      btn_right = btn;
+    }
+
+    if (nextIndex == 0) {
+      btn_left.classList.add('no-active');
+      btn_left.classList.remove('active');
+    } else if (nextIndex == maxIndex - 1) {
+      btn_right.classList.add('no-active');
+      btn_right.classList.remove('active');
+    } else {
+      if (btn_left.classList.contains('no-active')) {
+        btn_left.classList.remove('no-active');
+        btn_left.classList.add('active');
+      }
+
+      if (btn_right.classList.contains('no-active')) {
+        btn_right.classList.remove('no-active');
+        btn_right.classList.add('active');
+      }
     }
   };
 };
@@ -174,7 +204,7 @@ btnsLeft.forEach(function (element) {
 });
 btnsRight.forEach(function (element) {
   element.addEventListener('click', onClickRight);
-});
+}); // TODO: addEventListner: resize reset mardin
 },{}],"index.js":[function(require,module,exports) {
 require('./scripts/menu');
 
@@ -207,7 +237,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59884" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58515" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
