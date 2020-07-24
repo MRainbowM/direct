@@ -1,0 +1,134 @@
+.footer
+    width: 100%
+    background-color: black
+    color: white
+    .container
+        flex-direction: row
+        flex-wrap: wrap
+    &_mail
+        width: 26%
+        .title
+            font-size: 24px
+            
+    &_links
+        display: flex
+        justify-content: space-between
+        width: 74%
+        font-size: 14px
+        &_col-1
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
+            width: 317px
+            padding-top: 10px
+            a
+                font-size: 14px
+                width: 50%
+                line-height: 1.9
+        &_col-2
+            display: flex
+            justify-content: space-between
+            width: 270px
+            padding-top: 5px
+            .a-icon
+                display: flex
+                justify-content: center
+                align-items: center
+                height: 50px
+                width: 50px
+                background-color: white
+                &:hover
+                    background-color: $direct-clr
+                    
+                &:last-child
+                    background-color: $direct-clr
+                    transition: 0.3s
+                    &:hover
+                        svg
+                            transform: translateY(-5px)
+
+
+            svg
+                height: 30px
+                width: 30px
+                color: black
+            #f_i-instagram
+                margin-top: 3px
+            #f_i-behance
+                margin-bottom: 5px
+            #f_i-r-arrow
+                width: 35%
+                margin-left: 15px
+                transform: rotate(-90deg)
+    &_logo
+        display: flex
+        width: 26%
+        margin-top: 35px
+        font-size: 32px
+        font-family: 'Closer-Bold', sans-serif
+        .line
+            width: 19px
+            height: 4px
+            margin-top: auto
+            margin-bottom: auto
+            margin-right: 15px
+            background-color: $direct-clr
+    &_info
+        width: 74%
+        display: flex
+        justify-content: space-between
+        font-size: 14px
+        margin-top: auto
+        padding-bottom: 8px
+        font-family: 'Circe-Regular', sans-serif
+
+
+@media screen and (max-width: 1360px)
+    .footer
+        &_mail
+            width: 44%
+            .title
+                line-height: 1.25
+            span 
+                font-size: 14px
+        &_links
+            width: 55%
+            flex-direction: column
+            &_col-1
+                width: 249px
+                padding-top: 0
+                margin-bottom: 16px
+                a
+                    margin-bottom: 3px
+        &_logo
+            width: 100%
+            margin-top: -33px
+            margin-bottom: 26px
+
+        &_info
+            width: 100%
+            font-size: 12px
+            padding-bottom: 0
+
+@media screen and (max-width: 750px)
+    .footer
+        &_mail
+            width: 100%
+            margin-bottom: 23px
+        &_links
+            width: 100%
+            &_col-1
+                width: 100%
+                margin-bottom: 19px
+                a
+                    width: 50%
+        &_logo
+            margin-top: 37px
+            margin-bottom: 29px
+        &_info
+            flex-wrap: wrap
+            font-size: 10px
+            margin-top: 0
+            .last
+                width: 100%
+                margin-top: 14px
