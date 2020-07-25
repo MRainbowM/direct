@@ -162,49 +162,80 @@ var handleClick = function handleClick() {
       sliderContainer.style.marginLeft = '-' + offset + 'px';
       setTimeout(function () {
         isAnimate = false;
+        hideItems(sliderContainer);
       }, 310);
     } // debugger
 
 
-    var btn_left;
-    var btn_right;
-
-    if (btn.classList.contains('slider-arr_left')) {
-      btn_right = document.querySelector('.slider-arr_right, ' + 'div[' + id + ']');
-      btn_left = btn;
-    } else if (btn.classList.contains('slider-arr_right')) {
-      btn_left = document.querySelector('.slider-arr_left, ' + 'div[' + id + ']');
-      btn_right = btn;
-    }
+    var btns_right = document.querySelectorAll('.slider-arr_right, ' + 'div[' + id + ']');
+    var btns_left = document.querySelectorAll('.slider-arr_left, ' + 'div[' + id + ']');
 
     if (nextIndex === 0 || nextIndex === -1) {
-      btn_left.classList.add('no-active');
-      btn_left.classList.remove('active');
+      btns_left.forEach(function (element) {
+        element.classList.add('no-active');
+        element.classList.remove('active');
+      });
     } else if (nextIndex === maxIndex - 1 || nextIndex === maxIndex) {
-      btn_right.classList.add('no-active');
-      btn_right.classList.remove('active');
+      btns_right.forEach(function (element) {
+        element.classList.add('no-active');
+        element.classList.remove('active');
+      });
     } else {
-      if (btn_left.classList.contains('no-active')) {
-        btn_left.classList.remove('no-active');
-        btn_left.classList.add('active');
-      }
-
-      if (btn_right.classList.contains('no-active')) {
-        btn_right.classList.remove('no-active');
-        btn_right.classList.add('active');
-      }
+      btns_left.forEach(function (element) {
+        if (element.classList.contains('no-active')) {
+          element.classList.remove('no-active');
+          element.classList.add('active');
+        }
+      });
+      btns_right.forEach(function (element) {
+        if (element.classList.contains('no-active')) {
+          element.classList.remove('no-active');
+          element.classList.add('active');
+        }
+      });
     }
   };
 };
 
+var hideItems = function hideItems(parent) {
+  var items = parent.querySelectorAll('.slider_item');
+  items.forEach(function (element) {
+    var windowWidth = window.innerWidth;
+    var offsetLeft = element.offsetLeft,
+        offsetWidth = element.offsetWidth;
+    var offsetRight = windowWidth - (offsetLeft + offsetWidth);
+    console.log(offsetLeft, offsetRight);
+
+    if (offsetLeft < 0 || offsetRight < 0) {
+      element.classList.add('slider_item_hide');
+    } else if (offsetLeft > 0 && offsetRight > 0) {
+      element.classList.remove('slider_item_hide');
+    }
+  });
+};
+
+var resetSlider = function resetSlider() {
+  var sliders = document.querySelectorAll('.slider_container');
+  sliders.forEach(function (element) {
+    element.style.marginLeft = 0;
+  });
+  var btns = document.querySelectorAll('.slider-arr_left');
+  btns.forEach(function (element) {
+    element.classList.add('no-active');
+    element.classList.remove('active');
+  });
+};
+
 var onClickLeft = handleClick(-1);
 var onClickRight = handleClick(1);
+window.addEventListener('resize', resetSlider);
+hideItems(document);
 btnsLeft.forEach(function (element) {
   element.addEventListener('click', onClickLeft);
 });
 btnsRight.forEach(function (element) {
   element.addEventListener('click', onClickRight);
-}); // TODO: addEventListner: resize reset mardin
+});
 },{}],"index.js":[function(require,module,exports) {
 require('./scripts/menu');
 
