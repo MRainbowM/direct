@@ -177,7 +177,7 @@ BUTTON {
 }
 
 .main {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 92px);
   text-align: center;
 }
 .main .title {
@@ -529,7 +529,7 @@ BUTTON {
     align-items: start;
     min-height: 167px;
     margin-right: 46px;
-    max-width: calc(100vw - 92px);
+    max-width: calc(100vw - 100px);
   }
   .reviews_arr-bottom {
     margin-top: 17px;
@@ -809,6 +809,14 @@ a::after {
   .text_container .card_btn {
     margin-bottom: 20px;
   }
+
+  .card {
+    margin-bottom: 33px;
+  }
+
+  .btn_all_projects {
+    margin-top: 10px;
+  }
 }
 @media screen and (max-width: 675px) {
   .projects .title {
@@ -835,6 +843,10 @@ a::after {
   }
   .text_container .category {
     font-size: 14px;
+  }
+
+  .btn_all_projects {
+    margin-top: 0;
   }
 }
 @media screen and (max-width: 520px) {

@@ -204,7 +204,7 @@ var hideItems = function hideItems(parent) {
     var offsetLeft = element.offsetLeft,
         offsetWidth = element.offsetWidth;
     var offsetRight = windowWidth - (offsetLeft + offsetWidth);
-    console.log(element, offsetLeft, offsetRight);
+    console.log(offsetLeft, offsetRight);
 
     if (offsetLeft < 0 || offsetRight < 0) {
       element.classList.add('slider_item_hide');
@@ -239,11 +239,29 @@ btnsLeft.forEach(function (element) {
 btnsRight.forEach(function (element) {
   element.addEventListener('click', onClickRight);
 });
+},{}],"scripts/scroll.js":[function(require,module,exports) {
+var elements = document.querySelectorAll('.scroll');
+
+var scrollToProjects = function scrollToProjects() {
+  var main = document.querySelector('.main');
+  var height = main.clientHeight;
+  console.log(height);
+  window.scrollTo({
+    top: height,
+    behavior: 'smooth'
+  });
+};
+
+elements.forEach(function (element) {
+  element.addEventListener('click', scrollToProjects);
+});
 },{}],"index.js":[function(require,module,exports) {
 require('./scripts/menu');
 
 require('./scripts/slider');
-},{"./scripts/menu":"scripts/menu.js","./scripts/slider":"scripts/slider.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require('./scripts/scroll');
+},{"./scripts/menu":"scripts/menu.js","./scripts/slider":"scripts/slider.js","./scripts/scroll":"scripts/scroll.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

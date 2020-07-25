@@ -67,7 +67,7 @@ const hideItems = (parent) => {
         const windowWidth = window.innerWidth;
         const { offsetLeft, offsetWidth } = element;
         const offsetRight = windowWidth - (offsetLeft + offsetWidth);
-        console.log(element, offsetLeft, offsetRight);
+        console.log(offsetLeft, offsetRight);
         if (offsetLeft < 0 || offsetRight < 0) {
             element.classList.add('slider_item_hide');
         } else if (offsetLeft >= 0 && offsetRight >= 0) {
