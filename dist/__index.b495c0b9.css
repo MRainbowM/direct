@@ -892,7 +892,8 @@ a::after {
   width: 50%;
   padding-left: 37px;
 }
-.services .img {
+.services .card {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -901,6 +902,27 @@ a::after {
   font-family: "Closer-Bold", sans-serif;
   font-size: 28px;
   margin-bottom: 33px;
+  background-color: white;
+  overflow: hidden;
+}
+.services .card .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: 1;
+  transition: 0.3s;
+}
+.services .card .img + span {
+  color: white;
+}
+.services .card span {
+  z-index: 2;
+}
+.services .card:hover .img {
+  transform: scale(1.2);
 }
 .services .col {
   font-family: "Closer-Bold", sans-serif;
@@ -910,18 +932,11 @@ a::after {
   height: 40px;
   width: 40px;
 }
-.services #ideas {
-  background-color: white;
-}
 .services #sites {
   background-image: url("/sites.42bc9140.jpg");
-  background-position: cover;
-  color: white;
 }
 .services #design {
   background-image: url("/design.4c5f22dd.jpg");
-  background-position: cover;
-  color: white;
 }
 
 @media screen and (max-width: 1510px) {
@@ -983,7 +998,7 @@ a::after {
   .services_col-1 .title {
     width: 80%;
   }
-  .services .img {
+  .services .card {
     width: 143px;
     height: 143px;
     margin-bottom: 12px;

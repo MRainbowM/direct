@@ -26,14 +26,14 @@
         font-size: 16px
         padding-right: 18px
 
-
     &_col-2
         display: flex
         justify-content: space-between
         width: 50%
         padding-left: 37px
 
-    .img
+    .card
+        position: relative
         display: flex
         justify-content: center
         align-items: center
@@ -42,6 +42,24 @@
         font-family: 'Closer-Bold', sans-serif
         font-size: 28px
         margin-bottom: 33px
+        background-color: white
+        overflow: hidden
+        .img
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background-size: cover
+            z-index: 1
+            transition: 0.3s
+            & + span
+                color: white
+        span 
+            z-index: 2
+        &:hover
+            .img
+                transform: scale(1.2)
 
     .col 
         font-family: 'Closer-Bold', sans-serif
@@ -50,16 +68,10 @@
             height: 40px
             width: 40px
 
-    #ideas
-        background-color: white
     #sites
         background-image: url("../images/sites.jpg")
-        background-position: cover
-        color: white
     #design
         background-image: url("../images/design.jpg")
-        background-position: cover
-        color: white
 
 @media screen and (max-width: 1510px)
     .services
@@ -109,7 +121,7 @@
         &_col-1
             .title
                 width: 80%
-        .img
+        .card
             width: 143px
             height: 143px
             margin-bottom: 12px
