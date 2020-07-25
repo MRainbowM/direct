@@ -177,10 +177,10 @@ var handleClick = function handleClick() {
       btn_right = btn;
     }
 
-    if (nextIndex == 0) {
+    if (nextIndex === 0 || nextIndex === -1) {
       btn_left.classList.add('no-active');
       btn_left.classList.remove('active');
-    } else if (nextIndex == maxIndex - 1) {
+    } else if (nextIndex === maxIndex - 1 || nextIndex === maxIndex) {
       btn_right.classList.add('no-active');
       btn_right.classList.remove('active');
     } else {
