@@ -4,9 +4,12 @@
     &_container
         padding-left: calc((100vw - (1560px - 150px)) / 2 )
         display: inline-flex
+        transition: margin-left 0.3s
+    &_item
         transition: 0.3s
-    &_item_hide
-        opacity: 0.3
+        &_hide
+            opacity: 0.3
+            pointer-events: none
 
     
 .slider-arr
@@ -25,7 +28,7 @@
             color: $direct-clr
     .no-active
         svg
-            color: $gray-clr
+            color: $gray-arrow-clr
 
 
 #i-l-arrow

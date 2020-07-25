@@ -154,7 +154,7 @@ var handleClick = function handleClick() {
     var offsetLeft = sliderContainer.offsetLeft;
     var maxIndex = items.length;
     var currentIndex = Math.abs(offsetLeft) / itemWidth;
-    var nextIndex = currentIndex + diffIndex; // debugger
+    var nextIndex = currentIndex + diffIndex;
 
     if (nextIndex >= 0 && nextIndex < maxIndex) {
       isAnimate = true;
@@ -164,11 +164,11 @@ var handleClick = function handleClick() {
         isAnimate = false;
         hideItems(sliderContainer);
       }, 310);
-    } // debugger
+    }
 
-
-    var btns_right = document.querySelectorAll('.slider-arr_right, ' + 'div[' + id + ']');
-    var btns_left = document.querySelectorAll('.slider-arr_left, ' + 'div[' + id + ']');
+    var btns_right = document.querySelectorAll('[data-id="' + id + '"]' + '.slider-arr_right');
+    var btns_left = document.querySelectorAll('[data-id="' + id + '"]' + '.slider-arr_left');
+    debugger;
 
     if (nextIndex === 0 || nextIndex === -1) {
       btns_left.forEach(function (element) {
@@ -204,11 +204,11 @@ var hideItems = function hideItems(parent) {
     var offsetLeft = element.offsetLeft,
         offsetWidth = element.offsetWidth;
     var offsetRight = windowWidth - (offsetLeft + offsetWidth);
-    console.log(offsetLeft, offsetRight);
+    console.log(element, offsetLeft, offsetRight);
 
     if (offsetLeft < 0 || offsetRight < 0) {
       element.classList.add('slider_item_hide');
-    } else if (offsetLeft > 0 && offsetRight > 0) {
+    } else if (offsetLeft >= 0 && offsetRight >= 0) {
       element.classList.remove('slider_item_hide');
     }
   });
@@ -217,13 +217,16 @@ var hideItems = function hideItems(parent) {
 var resetSlider = function resetSlider() {
   var sliders = document.querySelectorAll('.slider_container');
   sliders.forEach(function (element) {
+    element.style.transition = 'none';
     element.style.marginLeft = 0;
+    element.style.transition = null;
   });
   var btns = document.querySelectorAll('.slider-arr_left');
   btns.forEach(function (element) {
     element.classList.add('no-active');
     element.classList.remove('active');
   });
+  hideItems(document);
 };
 
 var onClickLeft = handleClick(-1);
