@@ -15,14 +15,23 @@
 .slider-arr
     display: flex
     justify-content: space-between
-    width: 110px
+    min-width: 100px
+    &_right
+        justify-content: flex-end
     &_left, &_right
+        display: flex
         width: 45px
         height: 45px
+        overflow: hidden
         svg
-            height: 100%
-            width: 100%
+            width: 47px
+            height: 47px
+            min-width: 47px
+
             color: $direct-clr
+        &:hover
+            width: 35px
+        
     .active
         svg
             color: $direct-clr
