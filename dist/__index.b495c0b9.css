@@ -1788,5 +1788,8 @@ a::after {
     margin-top: 14px;
   }
 }
+.parallax {
+  transform-style: preserve-3d;
+}
 
 /*# sourceMappingURL=/__index.b495c0b9.css.map */

@@ -255,13 +255,24 @@ var scrollToProjects = function scrollToProjects() {
 elements.forEach(function (element) {
   element.addEventListener('click', scrollToProjects);
 });
+},{}],"scripts/parallax.js":[function(require,module,exports) {
+var imgs = document.querySelectorAll('.parallax');
+window.addEventListener("mousemove", function (e) {
+  imgs.forEach(function (img) {
+    var xPos = (e.clientX / img.clientWidth - 0.5) * 15;
+    var yPos = (e.clientY / img.clientHeight - 0.5) * 15;
+    img.style.transform = "translate3d(0px, 0px, 0px) rotateY(".concat(yPos, "deg) rotateX(").concat(xPos, "deg)");
+  });
+});
 },{}],"index.js":[function(require,module,exports) {
 require('./scripts/menu');
 
 require('./scripts/slider');
 
 require('./scripts/scroll');
-},{"./scripts/menu":"scripts/menu.js","./scripts/slider":"scripts/slider.js","./scripts/scroll":"scripts/scroll.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require('./scripts/parallax');
+},{"./scripts/menu":"scripts/menu.js","./scripts/slider":"scripts/slider.js","./scripts/scroll":"scripts/scroll.js","./scripts/parallax":"scripts/parallax.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
