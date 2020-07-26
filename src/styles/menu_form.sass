@@ -1,0 +1,95 @@
+.menu_form
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    max-width: 467px
+    padding-top: 10px
+    padding-right: 12px
+    #menu_form_name, #menu_form_phone
+        width: calc( 50% - 10px )
+    #menu_form_mail
+        width: 100%
+    input, textarea 
+        // background-color: $black-input-clr
+        background-color: white
+        padding: 10px 25px
+        font-size: 14px
+        &::placeholder
+            font-size: 14px
+    input
+        height: 49px
+        margin-bottom: 32px
+    textarea
+        width: 100%
+        padding-top: 16px
+        resize: none
+
+    &_text
+        margin-top: 17px
+        font-size: 12px
+        color: $direct-clr
+        a 
+            color: white
+    .cb
+        padding: 0
+        height: 15px
+        width: 15px
+        min-width: 15px
+        margin-right: 14px
+        margin-bottom: -3px
+    &_btns
+        display: flex
+        justify-content: space-between
+        width: 100%
+        margin-top: 23px
+    &_close
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 54px
+        width: 215px
+        border: 2px solid white
+        color: white
+        font-size: 18px
+    &_send
+        display: flex
+        justify-content: center
+        align-items: center
+        background-color: white
+        height: 54px
+        width: 54px
+        svg
+            height: 20px
+            width: 20px
+    &_hide
+        display: none !important
+
+@media screen and (max-width: 690px)
+    .menu_form
+        padding-top: 90px
+        padding-right: 0
+        width: 200%
+        margin-left: -50%
+@media screen and (max-width: 430px)
+    .menu_form
+        width: 156%
+        margin-left: -27%
+        input, textarea 
+            font-size: 12px
+            &::placeholder
+                font-size: 12px
+        input
+            margin-bottom: 15px
+
+        &_text
+            display: flex
+            font-size: 10px
+            white-space: nowrap
+            label
+                width: 100%
+        .cb
+            margin-right: 5px
+        &_btns
+            margin-top: 53px
+           
+

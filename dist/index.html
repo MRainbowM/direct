@@ -23,6 +23,27 @@
         </div>
         <div class="menu">
             <div class="menu_container">
+                <form class="menu_form menu_form_hide">
+                    <input type="text" placeholder="Имя" id="menu_form_name">
+                    <input type="text" placeholder="Телефон" id="menu_form_phone">
+                    <input type="mail" placeholder="E-mail" id="menu_form_mail">
+                    <textarea name="" cols="30" rows="4" placeholder="Вдруг есть что сказать, а некому"></textarea>
+                    <div class="menu_form_text">
+                        <input type="checkbox" class="cb" name="" id="">
+                        <label for="">Согласен с условиями <a href="">пользовательского соглашения</a></label>
+                    </div>
+                    <div class="menu_form_btns direct">
+                        <div class="menu_form_close btn_animate">
+                            <span>Закрыть форму</span>
+                        </div>
+                        <button type="submit" class="menu_form_send">
+                            <svg>
+                                <use href="/icons.2d421eb7.svg#i-r-arrow"></use>
+                            </svg>
+                        </button>
+                    </div>
+
+                </form>
                 <div class="menu_col_1 direct">
                     <div class="menu_soc">
                         <a href="#">
@@ -59,7 +80,7 @@
     </div>
     <div class="main">
         <div class="container direct">
-            <div class="title">Делаем сайты <span> и дизайн.</span></div>
+            <div class="title">Делаем сайты<span> и дизайн.</span></div>
             <div class="hint">В конечном счете судите по сделанному, а не по сказанному.</div>
             <div class="btn_projects btn_animate scroll">
                 <span>Наши проекты</span>
@@ -70,8 +91,8 @@
     <div class="projects">
         <div class="container">
             <div class="title">Проекты</div>
-            <div class="card logitech">
-                <div class="img parallax">
+            <div class="card logitech parallax_container">
+                <div class="img parallax_img">
                     <img src="/logitech.b81e0533.jpg" alt="">
                 </div>
                 <div class="text">
@@ -90,19 +111,18 @@
                     </div>
                 </div>
             </div>
-            <div class="card logitech">
-                <div class="img parallax">
+            <div class="card logitech parallax_container">
+                <div class="img parallax_img">
                     <img src="/logitech.b81e0533.jpg" alt="">
                 </div>
                 <div class="text">
                     <div class="text_container">
-                        <div class="card_title">Logitech. 5 стадий принятия.</div>
-                        <div class="category">Категория: <span class="text_color">Посадочная страница</span></div>
-                        <div class="category">Проект: <a href="" class="text_color">vc.logitech.promo</a></div>
+                        <div class="card_title">Наш клиент продает траву.</div>
+                        <div class="category">Категория: <span class="text_color">Интернет-магазин</span></div>
+                        <div class="category">Проект: <a href="https://green38.ru/" class="text_color">https://green38.ru/</a></div>
                         <div class="description">
-                            <p>Один из наших последних заказчиков - Швейцарская компания Logitech, производитель
-                                компьютерной периферии.</p>
-                            <p>Как это было? Отрицание, гнев, торг, депрессия, принятие. Подробности в кейсе.</p>
+                            <p>А мы сделали для нее интернет-магазин. "Пособничество", - скажете Вы, "Озеленение территорий", - ответим мы.</p>
+                            <p>Интернет-магазин с большим количеством деталей, которые мы полюбили и щепетильно реализовали.</p>
                         </div>
                         <div class="card_btn btn_animate">
                             <span>Открыть кейс</span>
@@ -110,8 +130,8 @@
                     </div>
                 </div>
             </div>
-            <div class="card fizruk">
-                <div class="img parallax">
+            <div class="card fizruk parallax_container">
+                <div class="img parallax_img">
                     <img src="/fizruk.884846e4.jpg" alt="">
                 </div>
                 <div class="text">
@@ -403,7 +423,7 @@
             <form action="" class="contacts_form">
                 <div class="row">
                     <input type="text" placeholder="Имя" id="name">
-                    <input type="phone" placeholder="Телефон" id="phone">
+                    <input type="text" placeholder="Телефон" id="phone">
                     <input type="mail" placeholder="E-mail" id="mail">
                 </div>
                 <textarea name="" id="" cols="30" rows="4" placeholder="Вдруг есть что сказать, а некому"></textarea>
@@ -411,7 +431,7 @@
                     <input type="checkbox" class="cb" name="" id="">
                     <label for="">Согласен с условиями <a href="">пользовательского соглашения</a></label>
                 </div>
-                <button>
+                <button type="submit">
                     <svg id="i-r-arrow">
                         <use href="/icons.2d421eb7.svg#i-r-arrow"></use>
                     </svg>

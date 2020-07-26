@@ -136,6 +136,21 @@ burger.addEventListener('click', function (e) {
     document.body.style.overflow = "hidden";
   }
 });
+var btnContact = document.querySelector('.menu_btn_contact');
+var menuForm = document.querySelector('.menu_form');
+var menuSoc = document.querySelector('.menu_col_1');
+var menuLinks = document.querySelector('.menu_col_2');
+btnContact.addEventListener('click', function (e) {
+  menuSoc.classList.add('menu_col-1_hide');
+  menuLinks.classList.add('menu_col-2_hide');
+  menuForm.classList.remove('menu_form_hide');
+});
+var btnClose = document.querySelector('.menu_form_close');
+btnClose.addEventListener('click', function (e) {
+  menuSoc.classList.remove('menu_col-1_hide');
+  menuLinks.classList.remove('menu_col-2_hide');
+  menuForm.classList.add('menu_form_hide');
+});
 },{}],"scripts/slider.js":[function(require,module,exports) {
 var btnsLeft = document.querySelectorAll('.slider-arr_left');
 var btnsRight = document.querySelectorAll('.slider-arr_right');
@@ -256,12 +271,29 @@ elements.forEach(function (element) {
   element.addEventListener('click', scrollToProjects);
 });
 },{}],"scripts/parallax.js":[function(require,module,exports) {
-var imgs = document.querySelectorAll('.parallax');
-window.addEventListener("mousemove", function (e) {
-  imgs.forEach(function (img) {
-    var xPos = (e.clientX / img.clientWidth - 0.5) * 15;
-    var yPos = (e.clientY / img.clientHeight - 0.5) * 15;
+// const imgs = document.querySelectorAll('.parallax');
+// window.addEventListener("mousemove", (e) => {
+//     imgs.forEach((img) => {
+//         let xPos = (e.clientX / img.clientWidth - 0.5) * 15;
+//         let yPos = (e.clientY / img.clientHeight - 0.5) * 15;
+//         img.style.transform = `translate3d(0px, 0px, 0px) rotateY(${yPos}deg) rotateX(${xPos}deg)`
+//     });
+// })
+var parallax = document.querySelectorAll('.parallax_container');
+parallax.forEach(function (contsiner) {
+  contsiner.addEventListener("mousemove", function (e) {
+    var img = contsiner.querySelector('.parallax_img');
+    var xPos = (e.clientX / img.clientWidth - 0.5) * 12;
+    var yPos = (e.clientY / img.clientHeight - 0.5) * 12;
     img.style.transform = "translate3d(0px, 0px, 0px) rotateY(".concat(yPos, "deg) rotateX(").concat(xPos, "deg)");
+  });
+});
+parallax.forEach(function (contsiner) {
+  contsiner.addEventListener("mouseout", function (e) {
+    var img = contsiner.querySelector('.parallax_img'); // let xPos = (e.clientX / img.clientWidth - 0.5) * 15;
+    // let yPos = (e.clientY / img.clientHeight - 0.5) * 15;
+
+    img.style.transform = "translate3d(0px, 0px, 0px) rotateY(0deg) rotateX(0deg)";
   });
 });
 },{}],"index.js":[function(require,module,exports) {
