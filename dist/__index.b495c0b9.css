@@ -539,15 +539,15 @@ BUTTON {
     display: none;
   }
 }
-a {
+.link {
   line-height: 1;
   display: inline-block;
   cursor: pointer;
 }
-a:hover::after, a:focus::after {
+.link:hover::after, .link:focus::after {
   width: 100%;
 }
-a::after {
+.link::after {
   display: block;
   content: "";
   height: 1px;
@@ -1616,9 +1616,6 @@ a::after {
   justify-content: space-between;
   min-width: 100px;
 }
-.slider-arr_right {
-  justify-content: flex-end;
-}
 .slider-arr_left, .slider-arr_right {
   display: flex;
   width: 45px;
@@ -1630,9 +1627,16 @@ a::after {
   height: 47px;
   min-width: 47px;
   color: #f33333;
+  transition: 0.2s;
 }
-.slider-arr_left:hover, .slider-arr_right:hover {
-  width: 35px;
+.slider-arr_right {
+  justify-content: flex-end;
+}
+.slider-arr_right:hover svg {
+  margin-right: 10px;
+}
+.slider-arr_left:hover svg {
+  margin-left: 10px;
 }
 .slider-arr .active svg {
   color: #f33333;
@@ -1727,7 +1731,7 @@ a::after {
 }
 .footer_links_col-2 #f_i-r-arrow {
   width: 35%;
-  margin-left: 15px;
+  margin-left: 17px;
   transform: rotate(-90deg);
 }
 .footer_logo {
@@ -1940,6 +1944,98 @@ a::after {
   .menu_form_btns {
     margin-top: 53px;
   }
+}
+.preload {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+.preload .cadr {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.preload .cadr-1 {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  transition-delay: 3s;
+  transition-duration: 1s;
+}
+.preload .cadr-1 .logo {
+  display: flex;
+  width: 100%;
+  font-size: 32px;
+  font-family: "Closer-Bold", sans-serif;
+  color: white;
+}
+.preload .cadr-1 .logo span {
+  transition-duration: 2s;
+  opacity: 0;
+  transition-delay: 2s;
+}
+.preload .cadr-1 .logo .point {
+  width: 4px;
+  height: 4px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #f33333;
+  margin-left: 50vh;
+  transform: translate(-500px);
+  transition-duration: 1s;
+  opacity: 0;
+}
+.preload .cadr-1 .logo .line {
+  width: 0;
+  height: 4px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 11px;
+  background-color: #f33333;
+  transition-duration: 1s;
+  transition-delay: 1s;
+}
+.preload .cadr-2 {
+  background-color: #111111;
+  transition-duration: 1s;
+  transition-delay: 3.15s;
+}
+.preload .cadr-3 {
+  background-color: #131313;
+  transition-duration: 1s;
+  transition-delay: 3.25s;
+}
+.preload .cadr-4 {
+  background-color: #0F0F0F;
+  transition-duration: 1s;
+  transition-delay: 3.35s;
+}
+.preload.play .cadr-1 {
+  left: -100%;
+}
+.preload.play .cadr-1 .point {
+  opacity: 1;
+  transform: translate(0);
+}
+.preload.play .cadr-1 .line {
+  width: 19px;
+}
+.preload.play .cadr-1 span {
+  opacity: 1;
+}
+.preload.play .cadr-2 {
+  left: -100%;
+}
+.preload.play .cadr-3 {
+  left: -100%;
+}
+.preload.play .cadr-4 {
+  left: -100%;
 }
 
 /*# sourceMappingURL=/__index.b495c0b9.css.map */

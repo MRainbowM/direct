@@ -16,21 +16,29 @@
     display: flex
     justify-content: space-between
     min-width: 100px
-    &_right
-        justify-content: flex-end
+    
     &_left, &_right
         display: flex
         width: 45px
         height: 45px
         overflow: hidden
+        
         svg
             width: 47px
             height: 47px
             min-width: 47px
-
             color: $direct-clr
+            transition: 0.2s
+    &_right
+        justify-content: flex-end
         &:hover
-            width: 35px
+            svg
+                margin-right: 10px
+    &_left
+        &:hover
+            svg
+                margin-left: 10px
+            // width: 35px
         
     .active
         svg

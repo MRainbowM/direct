@@ -117,7 +117,10 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"scripts/menu.js":[function(require,module,exports) {
+})({"scripts/preload.js":[function(require,module,exports) {
+var preload = document.querySelector('.preload');
+preload.classList.add('play');
+},{}],"scripts/menu.js":[function(require,module,exports) {
 var burger = document.querySelector('.burger');
 var header = document.querySelector('.header');
 var menu = document.querySelector('.menu');
@@ -297,6 +300,8 @@ parallax.forEach(function (contsiner) {
   });
 });
 },{}],"index.js":[function(require,module,exports) {
+require('./scripts/preload');
+
 require('./scripts/menu');
 
 require('./scripts/slider');
@@ -304,7 +309,7 @@ require('./scripts/slider');
 require('./scripts/scroll');
 
 require('./scripts/parallax');
-},{"./scripts/menu":"scripts/menu.js","./scripts/slider":"scripts/slider.js","./scripts/scroll":"scripts/scroll.js","./scripts/parallax":"scripts/parallax.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./scripts/preload":"scripts/preload.js","./scripts/menu":"scripts/menu.js","./scripts/slider":"scripts/slider.js","./scripts/scroll":"scripts/scroll.js","./scripts/parallax":"scripts/parallax.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
