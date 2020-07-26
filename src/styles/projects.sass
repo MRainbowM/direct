@@ -1,22 +1,35 @@
 .projects
     margin-left: auto
     margin-right: auto
+    .container
+        overflow: hidden
     .title
         margin-bottom: 35px
+    .card_hide
+        .img
+            opacity: 0.5
+        .card_title, .category, .description
+            transform: translateX(1000px)
+
+    .card_show
+        .img
+            opacity: 1
+        .card_title, .category, .description
+            transform: translateX(0)
 
 .card
     display: flex
     margin-bottom: 78px
     .img
+        transition: 0.5s
         img
             width: 100%
 
     .text
         display: flex
         flex-direction: column
-        // padding: 15px
-        // width: 50%
-
+.card_title, .category, .description
+    transition: 0.5s
 .text_container    
     max-width: 450px    
     margin: auto auto auto 21%
@@ -60,7 +73,8 @@
     margin-top: -50px
     &:hover
         background-color: $gray-act-clr
-        
+
+
 
 
 @media screen and (max-width: 1920px)

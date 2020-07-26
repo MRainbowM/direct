@@ -5,6 +5,7 @@
     height: 100%
     width: 100%
     z-index: 10
+    pointer-events: none
     .cadr
         position: absolute
         top: 0
@@ -34,8 +35,8 @@
                     margin-top: auto
                     margin-bottom: auto
                     background-color: $direct-clr
-                    margin-left: 50vh
-                    transform: translate(-500px)
+                    margin-left: calc(50% - 80px)
+                    transform: translate(-1000px)
                     transition-duration: 1s
                     opacity: 0
                 .line

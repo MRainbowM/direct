@@ -33,7 +33,6 @@ const handleClick = (diffIndex = 0) => (e) => {
     }
     const btns_right = document.querySelectorAll('[data-id="' + id + '"]' + '.slider-arr_right');
     const btns_left = document.querySelectorAll('[data-id="' + id + '"]' + '.slider-arr_left');
-    debugger
 
     if (nextIndex === 0 || nextIndex === -1) {
         btns_left.forEach((element) => {
@@ -67,7 +66,7 @@ const hideItems = (parent) => {
         const windowWidth = window.innerWidth;
         const { offsetLeft, offsetWidth } = element;
         const offsetRight = windowWidth - (offsetLeft + offsetWidth);
-        console.log(offsetLeft, offsetRight);
+        // console.log(offsetLeft, offsetRight);
         if (offsetLeft < 0 || offsetRight < 0) {
             element.classList.add('slider_item_hide');
         } else if (offsetLeft >= 0 && offsetRight >= 0) {
