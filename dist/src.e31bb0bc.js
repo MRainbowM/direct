@@ -118,8 +118,11 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"scripts/preload.js":[function(require,module,exports) {
-var preload = document.querySelector('.preload');
-preload.classList.add('play');
+// const preloading = document.querySelector('.preloading');
+// preload.classList.add('play');
+var preload = document.querySelector('.preload'); // preload.classList.remove('preload_hide');
+
+preload.classList.add('preload_play');
 },{}],"scripts/menu.js":[function(require,module,exports) {
 var burger = document.querySelector('.burger');
 var header = document.querySelector('.header');
@@ -312,10 +315,10 @@ window.addEventListener('scroll', function (e) {
       card.classList.add('card_show');
       var title = card.querySelector('.card_title'); // const category = card.querySelectorAll('.category');
       // const description = card.querySelector('.description');
-
-      var showTitle = new WordShuffler(title, {
-        timeOffset: 1
-      }); // const showCategory = new WordShuffler(category, {
+      // const showTitle = new WordShuffler(title, {
+      //     timeOffset: 1
+      // });
+      // const showCategory = new WordShuffler(category, {
       //     timeOffset: 3
       // });
       // const showDescription = new WordShuffler(description, {
@@ -536,7 +539,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1118" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "28806" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

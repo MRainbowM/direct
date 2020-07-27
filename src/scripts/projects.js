@@ -15,9 +15,9 @@ window.addEventListener('scroll', (e) => {
             const title = card.querySelector('.card_title');
             // const category = card.querySelectorAll('.category');
             // const description = card.querySelector('.description');
-            const showTitle = new WordShuffler(title, {
-                timeOffset: 1
-            });
+            // const showTitle = new WordShuffler(title, {
+            //     timeOffset: 1
+            // });
             // const showCategory = new WordShuffler(category, {
             //     timeOffset: 3
             // });
