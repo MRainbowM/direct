@@ -6,7 +6,7 @@ window.addEventListener('scroll', (e) => {
 
     cards.forEach((card) => {
         const { top } = card.getBoundingClientRect();
-        const active = window.innerHeight - card.clientHeight
+        const active = window.innerHeight - card.clientHeight + 300
         if (top <= active && arrayShow.indexOf(card) == -1) {
             console.log(active);
             arrayShow.push(card);

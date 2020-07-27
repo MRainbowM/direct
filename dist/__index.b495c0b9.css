@@ -718,22 +718,21 @@ BUTTON {
 .projects .card_hide .img {
   opacity: 0.5;
 }
-.projects .card_hide .card_title, .projects .card_hide .category, .projects .card_hide .description {
-  transform: translateX(1000px);
+.projects .card_hide.card {
+  opacity: 0.5;
+  transform: translateY(100px);
 }
 .projects .card_show .img {
   opacity: 1;
 }
-.projects .card_show .card_title, .projects .card_show .category, .projects .card_show .description {
-  transform: translateX(0);
+.projects .card_show.card {
+  transform: translateY(0);
 }
 
 .card {
   display: flex;
-  margin-bottom: 78px;
-}
-.card .img {
   transition: 0.5s;
+  margin-bottom: 78px;
 }
 .card .img img {
   width: 100%;
@@ -741,10 +740,6 @@ BUTTON {
 .card .text {
   display: flex;
   flex-direction: column;
-}
-
-.card_title, .category, .description {
-  transition: 0.5s;
 }
 
 .text_container {
@@ -1991,21 +1986,21 @@ BUTTON {
   margin-left: auto;
   width: 0;
   transition-timing-function: ease-in;
-  transition-duration: 0.4s;
+  transition-duration: 0.2s;
 }
 .preload .burger .line:nth-child(1) {
   transition-delay: 1.5s;
 }
 .preload .burger .line:nth-child(2) {
-  transition-delay: 1.9s;
+  transition-delay: 1.7s;
 }
 .preload .burger .line:nth-child(3) {
-  transition-delay: 2.3s;
+  transition-delay: 1.9s;
 }
 .preload .main {
   opacity: 0;
   transition-duration: 0.8s;
-  transition-delay: 2.3s;
+  transition-delay: 1.9s;
 }
 .preload.preload_play .logo {
   transform: translate(0);

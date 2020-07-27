@@ -306,7 +306,7 @@ window.addEventListener('scroll', function (e) {
     var _card$getBoundingClie = card.getBoundingClientRect(),
         top = _card$getBoundingClie.top;
 
-    var active = window.innerHeight - card.clientHeight;
+    var active = window.innerHeight - card.clientHeight + 300;
 
     if (top <= active && arrayShow.indexOf(card) == -1) {
       console.log(active);
