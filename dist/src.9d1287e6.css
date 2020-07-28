@@ -1766,16 +1766,16 @@ BUTTON {
   width: 30px;
   color: black;
 }
-.footer_links_col-2 #f_i-instagram {
+.footer_links_col-2 .f_i-instagram svg {
   margin-top: 3px;
 }
-.footer_links_col-2 #f_i-behance {
+.footer_links_col-2 .f_i-behance svg {
   margin-bottom: 5px;
 }
-.footer_links_col-2 #f_i-r-arrow {
-  width: 35%;
-  margin-left: 17px;
+.footer_links_col-2 .f_top-arrow svg {
   transform: rotate(-90deg);
+  margin-left: 17px;
+  width: 35%;
 }
 .footer_logo {
   display: flex;

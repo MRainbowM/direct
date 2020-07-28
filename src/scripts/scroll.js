@@ -13,3 +13,14 @@ const scrollToProjects = () => {
 elements.forEach((element) => {
     element.addEventListener('click', scrollToProjects);
 });
+
+const footerBtn = document.querySelector('.f_top-arrow');
+
+const scrollToStart = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+footerBtn.addEventListener('click', scrollToStart);
