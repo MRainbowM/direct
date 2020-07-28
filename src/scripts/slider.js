@@ -25,6 +25,7 @@ const handleClick = (diffIndex = 0) => (e) => {
     if (nextIndex >= 0 && nextIndex < maxIndex) {
         isAnimate = true;
         const offset = nextIndex * itemWidth
+        console.log(offset);
         sliderContainer.style.marginLeft = '-' + offset + 'px';
         setTimeout(() => {
             isAnimate = false;
