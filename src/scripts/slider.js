@@ -18,14 +18,15 @@ const handleClick = (diffIndex = 0) => (e) => {
 
     const { offsetLeft } = sliderContainer;
     const maxIndex = items.length;
-    const currentIndex = Math.abs(offsetLeft) / itemWidth;
+    let currentIndex = Math.abs(offsetLeft) / Math.abs(itemWidth);
+    currentIndex = Math.abs(currentIndex)
     const nextIndex = currentIndex + diffIndex;
 
     
     if (nextIndex >= 0 && nextIndex < maxIndex) {
         isAnimate = true;
         const offset = nextIndex * itemWidth
-        console.log(offset);
+        // console.log(offset);
         sliderContainer.style.marginLeft = '-' + offset + 'px';
         setTimeout(() => {
             isAnimate = false;
@@ -34,7 +35,7 @@ const handleClick = (diffIndex = 0) => (e) => {
     }
     const btns_right = document.querySelectorAll('[data-id="' + id + '"]' + '.slider-arr_right');
     const btns_left = document.querySelectorAll('[data-id="' + id + '"]' + '.slider-arr_left');
-
+    // console.log(nextIndex);
     if (nextIndex === 0 || nextIndex === -1) {
         btns_left.forEach((element) => {
             element.classList.add('no-active');
