@@ -13,4 +13,4 @@ var t=document.querySelectorAll(".card"),e=[];function r(t,e){var r=this;this.no
 },{}],"Focm":[function(require,module,exports) {
 require("./scripts/preload"),require("./scripts/menu"),require("./scripts/slider"),require("./scripts/scroll"),require("./scripts/parallax"),require("./scripts/projects");
 },{"./scripts/preload":"ClBR","./scripts/menu":"moGU","./scripts/slider":"xStd","./scripts/scroll":"QN18","./scripts/parallax":"TJpn","./scripts/projects":"QjyC"}]},{},["Focm"], null)
-//# sourceMappingURL=src.d028fee3.js.map
+//# sourceMappingURL=dist/src.d028fee3.js.map
