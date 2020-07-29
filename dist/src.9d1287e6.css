@@ -373,6 +373,15 @@ BUTTON {
     transform: rotate(-30deg) translateY(-8px) translateX(6px);
     background-color: white;
   }
+  .burger:hover .line {
+    background-color: #f33333;
+  }
+  .burger:hover .line:nth-child(1) {
+    transform: translateY(8px);
+  }
+  .burger:hover .line:nth-child(3) {
+    transform: translateY(-8px);
+  }
 }
 .btn_animate {
   display: flex;
@@ -2047,25 +2056,52 @@ BUTTON {
   transition: top 0.2s, left 0.2s, width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
   transition-timing-function: ease-out;
 }
-.cursor.cursor-dot {
-  background: #f33333;
-  transition: width 0.2s, height 0.2s;
-}
-
-.cursor-shadow.active {
+.cursor.cursor-shadow.active {
   --size: 80px;
   border-color: rgba(255, 255, 255, 0);
   background-color: rgba(255, 255, 255, 0.1);
 }
-
-.cursor-dot.active {
+.cursor.cursor-shadow.jump {
+  --size: 80px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0);
+  border-width: 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  color: #f33333;
+  border-radius: 50%;
+  z-index: 1;
+  background-image: url("/arrowLong.d4e0bfa9.svg");
+}
+.cursor.cursor-shadow.on_black {
+  border: 1px solid white;
+}
+.cursor.cursor-dot {
+  background: #f33333;
+  transition: width 0.2s, height 0.2s;
+}
+.cursor.cursor-dot.active {
   --size: 0;
+}
+.cursor.cursor-dot.jump {
+  --size: 0;
+}
+.cursor.cursor-dot.on_red {
+  background-color: white;
 }
 
 a {
   cursor: pointer;
 }
 a span {
+  cursor: pointer;
+}
+a svg {
+  cursor: pointer;
+}
+
+button {
   cursor: pointer;
 }
 

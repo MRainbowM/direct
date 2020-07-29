@@ -373,7 +373,7 @@ window.addEventListener("mousemove", function (e) {
     cursor.style.top = e.clientY + 'px';
   });
 });
-var links = document.querySelectorAll('a');
+var links = document.querySelectorAll('.cursor_link');
 links.forEach(function (link) {
   link.addEventListener('mouseenter', function () {
     cursors.forEach(function (cursor) {
@@ -383,6 +383,45 @@ links.forEach(function (link) {
   link.addEventListener('mouseleave', function () {
     cursors.forEach(function (cursor) {
       cursor.classList.remove('active');
+    });
+  });
+});
+var linksDjump = document.querySelectorAll('.cursor_jump');
+linksDjump.forEach(function (link) {
+  link.addEventListener('mouseenter', function () {
+    cursors.forEach(function (cursor) {
+      cursor.classList.add('jump');
+    });
+  });
+  link.addEventListener('mouseleave', function () {
+    cursors.forEach(function (cursor) {
+      cursor.classList.remove('jump');
+    });
+  });
+});
+var redElements = document.querySelectorAll('.cursor_on_red');
+redElements.forEach(function (link) {
+  link.addEventListener('mouseenter', function () {
+    cursors.forEach(function (cursor) {
+      cursor.classList.add('on_red');
+    });
+  });
+  link.addEventListener('mouseleave', function () {
+    cursors.forEach(function (cursor) {
+      cursor.classList.remove('on_red');
+    });
+  });
+});
+var blackElements = document.querySelectorAll('.cursor_on_black');
+blackElements.forEach(function (link) {
+  link.addEventListener('mouseenter', function () {
+    cursors.forEach(function (cursor) {
+      cursor.classList.add('on_black');
+    });
+  });
+  link.addEventListener('mouseleave', function () {
+    cursors.forEach(function (cursor) {
+      cursor.classList.remove('on_black');
     });
   });
 }); // const links = document.querySelectorAll('.cursor-link');
