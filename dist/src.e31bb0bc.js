@@ -337,6 +337,12 @@ window.addEventListener('scroll', function (e) {
 
     if (isOpacity) {
       card.classList.remove('card_active');
+      var activCard = document.querySelector('.card_active');
+
+      if (activCard == null) {
+        card.classList.add('card_active');
+      }
+
       var img = card.querySelector('.parallax_img');
       img.style.transition = '0.5s';
       img.style.transform = " rotateY(0deg) rotateX(0deg)";
@@ -351,8 +357,8 @@ window.addEventListener('scroll', function (e) {
 window.addEventListener("mousemove", function (e) {
   var card = document.querySelector('.card_active');
   var img = card.querySelector('.parallax_img');
-  var xPos = (e.clientX / img.clientWidth - 0.5) * 8;
-  var yPos = (e.clientY / img.clientHeight - 0.5) * 8;
+  var xPos = (e.clientX / img.clientWidth - 0.5) * 6;
+  var yPos = (e.clientY / img.clientHeight - 0.5) * 6;
   img.style.transform = "rotateY(".concat(yPos, "deg) rotateX(").concat(xPos, "deg)");
 });
 },{}],"index.js":[function(require,module,exports) {
