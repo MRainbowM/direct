@@ -18,7 +18,7 @@ window.addEventListener('scroll', (e) => {
             if (activCard == null) {
                 card.classList.add('card_active');
             }
-            
+
             const img = card.querySelector('.parallax_img');
             img.style.transition = '0.5s'
             img.style.transform = ` rotateY(0deg) rotateX(0deg)`
@@ -28,9 +28,8 @@ window.addEventListener('scroll', (e) => {
 
         } else {
             const activCard = document.querySelector('.card_active');
-            if(activCard == null){
-                card.classList.add('card_active');
-            }
+            activCard.classList.remove('card_active');
+            card.classList.add('card_active');
         }
     })
 });

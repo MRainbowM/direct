@@ -352,9 +352,9 @@ window.addEventListener('scroll', function (e) {
     } else {
       var _activCard = document.querySelector('.card_active');
 
-      if (_activCard == null) {
-        card.classList.add('card_active');
-      }
+      _activCard.classList.remove('card_active');
+
+      card.classList.add('card_active');
     }
   });
 });
@@ -405,7 +405,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "48262" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "48780" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
