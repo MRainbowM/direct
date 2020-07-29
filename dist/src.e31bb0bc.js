@@ -341,13 +341,14 @@ window.addEventListener('scroll', function (e) {
 
       if (activCard == null) {
         card.classList.add('card_active');
-      } // const img = card.querySelector('.parallax_img');
-      // img.style.transition = '0.5s'
-      // img.style.transform = ` rotateY(0deg) rotateX(0deg)`
-      // setTimeout(() => {
-      //     img.style.transition = null
-      // }, 500)
+      }
 
+      var img = card.querySelector('.parallax_img');
+      img.style.transition = '0.5s';
+      img.style.transform = " rotateY(0deg) rotateX(0deg)";
+      setTimeout(function () {
+        img.style.transition = null;
+      }, 500);
     } else {
       var _activCard = document.querySelector('.card_active');
 
@@ -364,6 +365,39 @@ window.addEventListener("mousemove", function (e) {
   var yPos = (e.clientY / img.clientHeight - 0.5) * 3.5;
   img.style.transform = "rotateY(".concat(yPos, "deg) rotateX(").concat(xPos, "deg)");
 });
+},{}],"scripts/cursor.js":[function(require,module,exports) {
+var cursors = document.querySelectorAll('.cursor');
+window.addEventListener("mousemove", function (e) {
+  cursors.forEach(function (cursor) {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+});
+var links = document.querySelectorAll('a');
+links.forEach(function (link) {
+  link.addEventListener('mouseenter', function () {
+    cursors.forEach(function (cursor) {
+      cursor.classList.add('active');
+    });
+  });
+  link.addEventListener('mouseleave', function () {
+    cursors.forEach(function (cursor) {
+      cursor.classList.remove('active');
+    });
+  });
+}); // const links = document.querySelectorAll('.cursor-link');
+// links.forEach((link) => {
+//     link.addEventListener('mouseenter', () => {
+//         cursors.forEach((cursor) => {
+//             cursor.classList.add('active');
+//         });
+//     })
+//     link.addEventListener('mouseleave', () => {
+//         cursors.forEach((cursor) => {
+//             cursor.classList.remove('active');
+//         });
+//     })
+// });
 },{}],"index.js":[function(require,module,exports) {
 require('./scripts/preload');
 
@@ -376,7 +410,9 @@ require('./scripts/scroll');
 require('./scripts/parallax');
 
 require('./scripts/projects');
-},{"./scripts/preload":"scripts/preload.js","./scripts/menu":"scripts/menu.js","./scripts/slider":"scripts/slider.js","./scripts/scroll":"scripts/scroll.js","./scripts/parallax":"scripts/parallax.js","./scripts/projects":"scripts/projects.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require('./scripts/cursor');
+},{"./scripts/preload":"scripts/preload.js","./scripts/menu":"scripts/menu.js","./scripts/slider":"scripts/slider.js","./scripts/scroll":"scripts/scroll.js","./scripts/parallax":"scripts/parallax.js","./scripts/projects":"scripts/projects.js","./scripts/cursor":"scripts/cursor.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -404,7 +440,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49199" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "8947" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
