@@ -21,7 +21,6 @@ const handleClick = (diffIndex = 0) => (e) => {
     let currentIndex = Math.abs(offsetLeft) / Math.abs(itemWidth);
     currentIndex = Math.abs(currentIndex)
     const nextIndex = currentIndex + diffIndex;
-
     
     if (nextIndex >= 0 && nextIndex < maxIndex) {
         isAnimate = true;

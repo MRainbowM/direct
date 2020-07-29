@@ -6,21 +6,20 @@
     .title
         margin-bottom: 35px
     .card_hide
-        .img
-            opacity: 0.5
         &.card
-            opacity: 0.5
             transform: translateY(100px)
     .card_show
-        .img
-            opacity: 1
         &.card
             transform: translateY(0)
+    .card_active
+        &.card
+            opacity: 1
 
 .card
     display: flex
     transition: 0.5s
     margin-bottom: 78px
+    opacity: 0.2
     .img
         img
             width: 100%
@@ -70,11 +69,13 @@
     font-family: 'Closer-Medium', sans-serif
     font-size: 22px
     margin-top: -50px
-    &:hover
-        background-color: $gray-act-clr
-
-
-
+    border: none
+    &.btn_animate
+        &:hover
+            border: none
+            color: white
+            &::before, &::after
+                background-color: $gray-act-clr
 
 @media screen and (max-width: 1920px)
     .card
