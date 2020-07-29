@@ -341,14 +341,13 @@ window.addEventListener('scroll', function (e) {
 
       if (activCard == null) {
         card.classList.add('card_active');
-      }
+      } // const img = card.querySelector('.parallax_img');
+      // img.style.transition = '0.5s'
+      // img.style.transform = ` rotateY(0deg) rotateX(0deg)`
+      // setTimeout(() => {
+      //     img.style.transition = null
+      // }, 500)
 
-      var img = card.querySelector('.parallax_img');
-      img.style.transition = '0.5s';
-      img.style.transform = " rotateY(0deg) rotateX(0deg)";
-      setTimeout(function () {
-        img.style.transition = null;
-      }, 500);
     } else {
       var _activCard = document.querySelector('.card_active');
 
@@ -361,8 +360,8 @@ window.addEventListener('scroll', function (e) {
 window.addEventListener("mousemove", function (e) {
   var card = document.querySelector('.card_active');
   var img = card.querySelector('.parallax_img');
-  var xPos = (e.clientX / img.clientWidth - 0.5) * 6;
-  var yPos = (e.clientY / img.clientHeight - 0.5) * 6;
+  var xPos = (e.clientX / img.clientWidth - 0.5) * 3.5;
+  var yPos = (e.clientY / img.clientHeight - 0.5) * 3.5;
   img.style.transform = "rotateY(".concat(yPos, "deg) rotateX(").concat(xPos, "deg)");
 });
 },{}],"index.js":[function(require,module,exports) {
@@ -405,7 +404,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "48780" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49199" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

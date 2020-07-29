@@ -19,12 +19,12 @@ window.addEventListener('scroll', (e) => {
                 card.classList.add('card_active');
             }
 
-            const img = card.querySelector('.parallax_img');
-            img.style.transition = '0.5s'
-            img.style.transform = ` rotateY(0deg) rotateX(0deg)`
-            setTimeout(() => {
-                img.style.transition = null
-            }, 500)
+            // const img = card.querySelector('.parallax_img');
+            // img.style.transition = '0.5s'
+            // img.style.transform = ` rotateY(0deg) rotateX(0deg)`
+            // setTimeout(() => {
+            //     img.style.transition = null
+            // }, 500)
 
         } else {
             const activCard = document.querySelector('.card_active');
@@ -36,7 +36,7 @@ window.addEventListener('scroll', (e) => {
 window.addEventListener("mousemove", (e) => {
     const card = document.querySelector('.card_active');
     const img = card.querySelector('.parallax_img');
-    let xPos = (e.clientX / img.clientWidth - 0.5) * 6;
-    let yPos = (e.clientY / img.clientHeight - 0.5) * 6;
+    let xPos = (e.clientX / img.clientWidth - 0.5) * 3.5;
+    let yPos = (e.clientY / img.clientHeight - 0.5) * 3.5;
     img.style.transform = `rotateY(${yPos}deg) rotateX(${xPos}deg)`
 });
