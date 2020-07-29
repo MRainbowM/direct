@@ -19,12 +19,12 @@ window.addEventListener('scroll', (e) => {
                 card.classList.add('card_active');
             }
 
-            // const img = card.querySelector('.parallax_img');
-            // img.style.transition = '0.5s'
-            // img.style.transform = ` rotateY(0deg) rotateX(0deg)`
-            // setTimeout(() => {
-            //     img.style.transition = null
-            // }, 500)
+            const img = card.querySelector('.parallax_img');
+            img.style.transition = '0.5s'
+            img.style.transform = ` rotateY(0deg) rotateX(0deg)`
+            setTimeout(() => {
+                img.style.transition = null
+            }, 500)
 
         } else {
             const activCard = document.querySelector('.card_active');
