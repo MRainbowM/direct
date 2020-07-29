@@ -27,7 +27,10 @@ window.addEventListener('scroll', (e) => {
             }, 500)
 
         } else {
-            card.classList.add('card_active');
+            const activCard = document.querySelector('.card_active');
+            if(activCard == null){
+                card.classList.add('card_active');
+            }
         }
     })
 });
