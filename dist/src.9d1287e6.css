@@ -1287,13 +1287,65 @@ BUTTON {
   width: 450px;
   height: 226px;
   object-fit: cover;
-  margin-bottom: 39px;
 }
-.events_item_col span {
+.events_item_col .events_item_text {
   width: 450px;
   font-size: 18px;
   font-family: "Closer-Medium", sans-serif;
   line-height: 1.3;
+  margin-top: 39px;
+}
+
+.events_item_link {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.events_item_link-hover {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  color: white;
+  z-index: 3;
+  padding: 22px 30px;
+  opacity: 0;
+  transition: 0.4s;
+}
+.events_item_link-hover span {
+  font-size: 14px;
+}
+.events_item_link-hover svg {
+  height: 20px;
+  width: 40px;
+}
+.events_item_link img {
+  position: relative;
+  z-index: 1;
+}
+.events_item_link::before, .events_item_link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+  z-index: 2;
+}
+.events_item_link::before {
+  top: -100%;
+}
+.events_item_link::after {
+  top: 100%;
+}
+.events_item_link:hover .events_item_link-hover {
+  opacity: 1;
+}
+.events_item_link:hover::before, .events_item_link:hover::after {
+  top: 0;
+  background-color: #f33333;
+  opacity: 0.6;
 }
 
 @media screen and (max-width: 1420px) {
@@ -1357,9 +1409,9 @@ BUTTON {
   .events_item_col img {
     width: 300px;
     height: 150px;
-    margin-bottom: 21px;
   }
-  .events_item_col span {
+  .events_item_col .events_item_text {
+    margin-top: 21px;
     font-size: 14px;
     width: 300px;
   }
@@ -1814,12 +1866,17 @@ BUTTON {
   max-width: 155px;
   width: 100%;
 }
-.footer_logo a .line {
+.footer_logo a .container_line {
+  display: flex;
+  width: 19px;
+  justify-content: flex-end;
+  margin-right: 15px;
+}
+.footer_logo a .container_line .line {
   width: 19px;
   height: 4px;
   margin-top: auto;
   margin-bottom: auto;
-  margin-right: 15px;
   background-color: #f33333;
   transition: 0.2s;
 }
@@ -2089,24 +2146,6 @@ BUTTON {
 }
 .cursor.cursor-dot.on_red {
   background-color: white;
-}
-
-a {
-  cursor: pointer;
-}
-a span {
-  cursor: pointer;
-}
-a svg {
-  cursor: pointer;
-}
-
-button {
-  cursor: pointer;
-}
-
-a:hover {
-  text-decoration: none;
 }
 
 .preload .logo {

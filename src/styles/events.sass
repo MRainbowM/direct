@@ -31,12 +31,56 @@
                 width: 450px
                 height: 226px
                 object-fit: cover
-                margin-bottom: 39px
-            span
+            .events_item_text
                 width: 450px
                 font-size: 18px
                 font-family: 'Closer-Medium', sans-serif
                 line-height: 1.3
+                margin-top: 39px
+.events_item_link
+    display: flex
+    flex-direction: column
+    position: relative
+    overflow: hidden
+    &-hover
+        width: 100%
+        display: flex
+        justify-content: space-between
+        position: absolute
+        color: white
+        z-index: 3
+        padding: 22px 30px
+        opacity: 0
+        transition: 0.4s
+        span
+            font-size: 14px
+        svg
+            height: 20px
+            width: 40px
+    img
+        position: relative
+        z-index: 1
+    &::before, &::after
+        content: ''
+        position: absolute
+        left: 0
+        width: 100%
+        height: 100%
+        transition: 0.3s
+        z-index: 2
+        
+    &::before
+        top: -100%
+    &::after
+        top: 100%
+    &:hover
+        .events_item_link-hover
+            opacity: 1
+        &::before , &::after
+            top: 0
+            background-color: $direct-clr
+            opacity: 0.6
+                
 
 @media screen and (max-width: 1420px)
     .events
@@ -87,8 +131,8 @@
                 img 
                     width: 300px
                     height: 150px
-                    margin-bottom: 21px
-                span 
+                .events_item_text 
+                    margin-top: 21px
                     font-size: 14px
                     width: 300px
         &_arr-bottom

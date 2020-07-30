@@ -76,14 +76,19 @@
             display: flex
             max-width: 155px
             width: 100%
-            .line
+            .container_line
+                display: flex
                 width: 19px
-                height: 4px
-                margin-top: auto
-                margin-bottom: auto
+                justify-content: flex-end
                 margin-right: 15px
-                background-color: $direct-clr
-                transition: 0.2s
+
+                .line
+                    width: 19px
+                    height: 4px
+                    margin-top: auto
+                    margin-bottom: auto
+                    background-color: $direct-clr
+                    transition: 0.2s
         &:hover
             .line
                 width: 15px
