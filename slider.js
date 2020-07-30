@@ -4,18 +4,10 @@ const btnsRight = document.querySelectorAll('.slider-arr_right');
 let isAnimate = false;
 
 const handleClick = (diffIndex = 0) => (e) => {
-    console.log(e.currentTarget);
     if (isAnimate) return;
 
-    const elSel = e.currentTarget;
-    let id = '';
-    if(elSel.getAttribute('data-id')){
-        id = elSel.getAttribute('data-id');
-    } else {
-        console.log('no btn')
-        id = elSel.closest('.slider').id
-    }
-
+    const btn = e.currentTarget;
+    const id = btn.getAttribute('data-id');
     const sliderElement = document.getElementById(id);
     const sliderContainer = sliderElement.querySelector('.slider_container');
 
@@ -35,7 +27,7 @@ const handleClick = (diffIndex = 0) => (e) => {
         setTimeout(() => {
             isAnimate = false;
             hideItems(sliderContainer);
-        }, 320)
+        }, 310)
     }
     const btns_right = document.querySelectorAll('[data-id="' + id + '"]' + '.slider-arr_right');
     const btns_left = document.querySelectorAll('[data-id="' + id + '"]' + '.slider-arr_left');
@@ -123,8 +115,6 @@ const initSwipe = () => {
     sliderContainers.forEach((slider) => {
         slider.addEventListener('touchstart', onTouchStart);
         slider.addEventListener('touchend', onTouchEnd);
-        slider.addEventListener('mousedown', onMouseStart);
-        slider.addEventListener('mouseup', onMouseEnd);
     });
 };
 
@@ -137,21 +127,58 @@ function onTouchEnd(e) {
     let absDistX = Math.abs(distX);
     let distOk = (absDistX > touchMinDist);
     if (distOk) {
-        (distX < 0) ? onClickRight(e) : onClickLeft(e);
-    }
-}
-function onMouseStart(e) {
-    touchStartX = e.pageX;
-} 
-
-function onMouseEnd(e) {
-    let distX = e.pageX - touchStartX;
-    let absDistX = Math.abs(distX);
-    let distOk = (absDistX > touchMinDist);
-    if (distOk) {
-        (distX < 0) ? onClickRight(e) : onClickLeft(e);
+        let touchDirect = (distX < 0) ? 'left' : 'right';
+        touchSetCarucel(e, touchDirect)
     }
 }
 
+function touchSetCarucel(e, direct) {
+    let list = e.target.closest('.slider')
+    console.log(list);
+    debugger
+    if (parent) {
+        let step = (direct === 'left') ? 1 : (direct === 'right') ? -1 : 0
+        let section = list.parentElement.parentElement
+        let button = section.querySelector('button[onclick]')
+        setCarusel(button, step)
+    }
+}
+
+function setCarusel(button, step) {
+    let section = button.parentElement
+    let buttons = section.querySelectorAll('button[onclick]')
+    let list = section.querySelector('[data-carusel]')
+    if (list.firstElementChild) {
+        let lenght = list.childElementCount
+        let w = list.firstElementChild.offsetWidth + 10
+        let viewLenght = Math.floor(list.offsetWidth / w)
+        let count = lenght - viewLenght
+                            // console.log({list, buttons, lenght, viewLenght, count})
+        let index = +(list.dataset.carusel) + step
+        if(index >= 0 && index <= count) {
+            list.style.transform = `translateX(calc(${index} * ${w}px * -1))`
+            list.dataset.carusel = index
+        }
+        if(index <= 0)  {
+            buttons[0].style.opacity = 0        
+            buttons[0].style.pointerEvents = 'none'        
+        } else {
+            buttons[0].style.opacity =  1       
+            buttons[0].style.pointerEvents = null        
+        }
+        if(index >= count) {
+            buttons[1].style.opacity = 0        
+            buttons[1].style.pointerEvents = 'none'        
+        } else {
+            buttons[1].style.opacity =  1       
+            buttons[1].style.pointerEvents = null        
+        }
+    } else {
+        buttons[0].style.opacity = 0        
+        buttons[0].style.pointerEvents = 'none'
+        buttons[1].style.opacity = 0        
+        buttons[1].style.pointerEvents = 'none'
+    }
+}
 
 initSwipe();
