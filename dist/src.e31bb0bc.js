@@ -121,10 +121,22 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 // const preloading = document.querySelector('.preloading');
 // preload.classList.add('play');
 var preload = document.querySelector('.preload');
-preload.classList.add('preload_play');
+
+if (window.innerWidth > 765) {
+  preload.classList.add('preload_play');
+} else {
+  preload.classList.add('preload_play_mobi');
+}
+
 setTimeout(function () {
   preload.classList.remove('preload');
-  preload.classList.remove('preload_play');
+  console.log(preload.classList);
+
+  if (preload.classList.contains('preload_play')) {
+    preload.classList.remove('preload_play');
+  } else if (preload.classList.contains('preload_play_mobi')) {
+    preload.classList.remove('preload_play_mobi');
+  }
 }, 2900);
 },{}],"scripts/menu.js":[function(require,module,exports) {
 var burger = document.querySelector('.burger');
@@ -530,7 +542,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1334" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41753" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -2259,5 +2259,25 @@ BUTTON {
 .preload.preload_play .main {
   opacity: 1;
 }
+.preload.preload_play_mobi .logo {
+  font-size: 23px;
+  transform: translate(0);
+}
+.preload.preload_play_mobi .logo span {
+  opacity: 1;
+}
+.preload.preload_play_mobi .logo .point {
+  opacity: 1;
+}
+.preload.preload_play_mobi .logo .line {
+  width: 10px;
+  margin-right: 9px;
+}
+.preload.preload_play_mobi .burger .line {
+  width: 26px;
+}
+.preload.preload_play_mobi .main {
+  opacity: 1;
+}
 
 /*# sourceMappingURL=/src.9d1287e6.css.map */
