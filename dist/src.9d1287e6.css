@@ -1595,7 +1595,7 @@ BUTTON {
   margin-right: 0;
 }
 .contacts_form input {
-  height: 49px;
+  height: 50px;
   margin-right: 32px;
   width: 100%;
 }
@@ -1620,20 +1620,33 @@ BUTTON {
   color: white;
 }
 .contacts_form_btn {
-  height: 48px;
-  width: 48px;
+  display: flex;
+  justify-content: flex-end;
+  height: 50px;
+  width: 50px;
   background-color: white;
   margin-left: auto;
   margin-top: -197px;
   margin-right: 161px;
 }
-.contacts_form_btn:hover a {
-  margin-left: 5px;
+.contacts_form_btn-container {
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  margin-right: 15px;
+  height: 100%;
+  width: 15px;
+  transition: 0.3s;
 }
 .contacts_form_btn svg {
-  width: 35%;
-  height: 100%;
+  min-width: 40px;
+  width: 40px;
+  height: 50px;
   color: black;
+}
+.contacts_form_btn:hover .contacts_form_btn-container {
+  margin-right: 11px;
+  width: 25px;
 }
 
 @media screen and (max-width: 1360px) {
@@ -1655,7 +1668,7 @@ BUTTON {
   .contacts_form button {
     margin-left: auto;
     margin-right: 8px;
-    margin-top: -71px;
+    margin-top: -74px;
   }
 }
 @media screen and (max-width: 710px) {
@@ -1980,7 +1993,7 @@ BUTTON {
   font-size: 14px;
 }
 .menu_form input {
-  height: 49px;
+  height: 50px;
   margin-bottom: 32px;
 }
 .menu_form textarea {
@@ -2033,7 +2046,7 @@ BUTTON {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 54px;
+  height: 50px;
   width: 215px;
   border: 2px solid white;
   color: white;
@@ -2041,15 +2054,28 @@ BUTTON {
 }
 .menu_form_send {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
   background-color: white;
-  height: 54px;
-  width: 54px;
+  height: 50px;
+  width: 50px;
+}
+.menu_form_send-container {
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  margin-right: 15px;
+  height: 100%;
+  width: 15px;
+  transition: 0.3s;
 }
 .menu_form_send svg {
-  height: 20px;
-  width: 20px;
+  min-width: 40px;
+  width: 40px;
+  height: 50px;
+}
+.menu_form_send:hover .menu_form_send-container {
+  margin-right: 11px;
+  width: 25px;
 }
 .menu_form_hide {
   display: none !important;
