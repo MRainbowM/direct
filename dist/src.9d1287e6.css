@@ -91,6 +91,10 @@ BUTTON {
   background-color: #f33333;
 }
 
+.white .link::after {
+  background-color: white;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -273,6 +277,10 @@ BUTTON {
   font-family: "Closer-Bold", sans-serif;
   transition: 0.3s;
 }
+.header .logo .container_line {
+  display: flex;
+  width: 30px;
+}
 .header .logo .line {
   width: 19px;
   height: 4px;
@@ -280,6 +288,11 @@ BUTTON {
   margin-bottom: auto;
   margin-right: 11px;
   background-color: #f33333;
+  transition: 0.2s;
+}
+.header .logo:hover .line {
+  width: 15px;
+  margin-left: 4px;
 }
 
 .burger {
@@ -655,18 +668,19 @@ BUTTON {
   font-size: 54px;
   font-family: "Closer-Bold", sans-serif;
   color: white;
+  position: relative;
+  padding-left: 32px;
 }
 .menu_a:hover::before {
-  opacity: 1;
+  width: 19px;
 }
 .menu_a::before {
+  position: absolute;
   display: block;
-  margin-right: 32px;
+  margin-left: -32px;
   content: "";
-  opacity: 0;
   height: 4px;
-  width: 19px;
-  min-width: 19px;
+  width: 0;
   background-color: #f33333;
   transition: 0.5s;
 }
@@ -2189,6 +2203,11 @@ BUTTON {
 .cursor.cursor-shadow.on_black {
   border: 1px solid white;
 }
+.cursor.cursor-shadow.on_white {
+  --size: 80px;
+  background-color: black;
+  opacity: 0.05;
+}
 .cursor.cursor-dot {
   background: #f33333;
   transition: width 0.2s, height 0.2s;
@@ -2201,6 +2220,9 @@ BUTTON {
 }
 .cursor.cursor-dot.on_red {
   background-color: white;
+}
+.cursor.cursor-dot.on_white {
+  --size: 0;
 }
 
 .preload .logo {

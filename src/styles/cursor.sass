@@ -1,6 +1,5 @@
 *
     cursor: none
-    
 
 .cursor
     --size: 8px
@@ -36,6 +35,11 @@
             background-image: url('./images/arrowLong.svg')
         &.on_black
             border: 1px solid white
+        &.on_white
+            --size: 80px
+            background-color: black
+            opacity: 0.05
+
         
 
     &.cursor-dot 
@@ -47,16 +51,8 @@
             --size: 0
         &.on_red
             background-color: white
+        &.on_white
+            --size: 0
 
-// a 
-//     cursor: pointer
-//     span
-//         cursor: pointer
-//     svg
-//         cursor: pointer
-// button
-//     cursor: pointer
-// a:hover 
-//     text-decoration: none
 
 

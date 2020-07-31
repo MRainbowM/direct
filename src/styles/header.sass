@@ -12,6 +12,11 @@
         font-size: 32px
         font-family: 'Closer-Bold', sans-serif
         transition: .3s
+        .container_line
+            display: flex
+            // justify-content: flex-end
+            width: 30px
+
         .line
             width: 19px
             height: 4px
@@ -19,7 +24,11 @@
             margin-bottom: auto
             margin-right: 11px
             background-color: $direct-clr
-
+            transition: 0.2s
+        &:hover
+            .line
+                width: 15px
+                margin-left: 4px
 .burger
     display: flex
     flex-direction: column

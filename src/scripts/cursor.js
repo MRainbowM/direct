@@ -62,6 +62,20 @@ blackElements.forEach((link) => {
         });
     })
 });
+
+const whiteElements = document.querySelectorAll('.cursor_on_white');
+whiteElements.forEach((link) => {
+    link.addEventListener('mouseenter', () => {
+        cursors.forEach((cursor) => {
+            cursor.classList.add('on_white');
+        });
+    })
+    link.addEventListener('mouseleave', () => {
+        cursors.forEach((cursor) => {
+            cursor.classList.remove('on_white');
+        });
+    })
+});
 // const links = document.querySelectorAll('.cursor-link');
 // links.forEach((link) => {
 //     link.addEventListener('mouseenter', () => {
