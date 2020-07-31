@@ -1,6 +1,10 @@
 .services
     width: 100%
     background-color: $gray-clr
+    .title, .description, #year, span
+        &::selection
+            color: white
+            background-color: $direct-clr
 
     .container
         flex-direction: row

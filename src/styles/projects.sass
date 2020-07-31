@@ -1,6 +1,10 @@
 .projects
     margin-left: auto
     margin-right: auto
+    .title, .text, .card_title, .category, .description, span, p, .text_color, img
+        &::selection
+            color: white
+            background-color: $direct-clr
     .container
         overflow: hidden
     .title
@@ -42,7 +46,6 @@
         margin-bottom: 8px
         &:last-child
             font-family: 'Closer-Regular', sans-serif
-            
         
     .description
         font-size: 14px

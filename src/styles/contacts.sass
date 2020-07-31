@@ -2,6 +2,10 @@
     width: 100%
     background-color: $direct-clr
     color: white
+    .title, span, .subtitle, input, textarea, label, a
+        &::selection
+            color: white
+            background-color: black
     .container
         flex-direction: row
         flex-wrap: wrap
