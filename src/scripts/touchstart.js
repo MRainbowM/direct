@@ -12,8 +12,8 @@ document.addEventListener('touchstart', (e) => {
     });
 });
 
-document.addEventListener('mouseover', (e) => {
-    cursors.forEach(cursor => {
-        cursor.style.display = null;
-    });
-});
+// document.addEventListener('mouseover', (e) => {
+//     cursors.forEach(cursor => {
+//         cursor.style.display = null;
+//     });
+// });

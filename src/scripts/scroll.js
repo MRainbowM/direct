@@ -26,11 +26,10 @@ const scrollToStart = () => {
 
 footerBtn.addEventListener('click', scrollToStart);
 
+// TODO: скролл по ссылкам в меню
+
+
 //Люди: кнопка "хочу с вами" 
 const peoplesBtn = document.querySelector('.btn_peoples');
 
 // TODO: скролл к форме в меню
-
-
-
-
