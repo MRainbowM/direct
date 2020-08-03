@@ -46,6 +46,17 @@
         height: 4px
         background-color: black
         transition: .5s
+
+    &.show
+        .line
+            background-color: white
+        .line:nth-child(1) 
+            transform: rotate(30deg) translateY(11px) translateX(6px)
+        .line:nth-child(2)
+            opacity: 0 
+        .line:nth-child(3) 
+            transform: rotate(-30deg) translateY(-9px) translateX(6px)
+.burger.show_hover
     &:hover
         .line
             background-color: $direct-clr
@@ -53,21 +64,17 @@
             transform: translateY(12px)
         .line:nth-child(3) 
             transform: translateY(-12px)
-
-    &.show
-        .line:nth-child(1) 
-            transform: rotate(30deg) translateY(11px) translateX(6px)
-            background-color: white
-        .line:nth-child(2)
-            opacity: 0 
-            background-color: white
-        .line:nth-child(3) 
-            transform: rotate(-30deg) translateY(-9px) translateX(6px)
-            background-color: white
-        
+.burger.show_hover.show
+    &.show_hover
         &:hover
             .line
                 background-color: $direct-clr
+            .line:nth-child(1)
+                transform: rotate(30deg) translateY(11px) translateX(6px)
+            .line:nth-child(2)
+                opacity: 0 
+            .line:nth-child(3) 
+                transform: rotate(-30deg) translateY(-9px) translateX(6px)
 
 .show
     position: relative

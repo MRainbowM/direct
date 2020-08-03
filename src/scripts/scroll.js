@@ -1,4 +1,5 @@
-const elements = document.querySelectorAll('.scroll');
+// Проекты
+const toProjectsBtn = document.querySelectorAll('.scroll_to_projects');
 
 const scrollToProjects = () => {
     const main = document.querySelector('.main');
@@ -10,7 +11,7 @@ const scrollToProjects = () => {
     });
 }
 
-elements.forEach((element) => {
+toProjectsBtn.forEach((element) => {
     element.addEventListener('click', scrollToProjects);
 });
 
@@ -24,3 +25,12 @@ const scrollToStart = () => {
 }
 
 footerBtn.addEventListener('click', scrollToStart);
+
+//Люди: кнопка "хочу с вами" 
+const peoplesBtn = document.querySelector('.btn_peoples');
+
+// TODO: скролл к форме в меню
+
+
+
+

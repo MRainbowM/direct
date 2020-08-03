@@ -35,7 +35,7 @@ const handleClick = (diffIndex = 0) => (e) => {
         setTimeout(() => {
             isAnimate = false;
             hideItems(sliderContainer);
-        }, 320)
+        }, 320);
     }
     const btns_right = document.querySelectorAll('[data-id="' + id + '"]' + '.slider-arr_right');
     const btns_left = document.querySelectorAll('[data-id="' + id + '"]' + '.slider-arr_left');
