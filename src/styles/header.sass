@@ -1,5 +1,8 @@
 .header
     padding-top: 43px
+    // position: sticky
+    // top: 0
+    // z-index: 11
     span
         &::selection
             color: white
@@ -9,7 +12,7 @@
         flex-direction: row
         max-width: 1750px
         margin-left: auto
-        margin-right: auto
+        margin-right: auto 
         
     .logo
         display: flex
@@ -18,7 +21,6 @@
         transition: .3s
         .container_line
             display: flex
-            // justify-content: flex-end
             width: 30px
 
         .line
@@ -34,6 +36,7 @@
                 width: 15px
                 margin-left: 4px
 .burger
+    position: fixed
     display: flex
     flex-direction: column
     justify-content: space-between
@@ -41,17 +44,22 @@
     height: 34px
     margin-left: auto
     padding-bottom: 6px
+    cursor: pointer
+    right: calc(100vw - 1750px - 85px)
+    margin-top: 10px
+    z-index: 10
     .line
         width: 48px
         height: 4px
         background-color: black
         transition: .5s
+        margin-left: auto
 
     &.show
         .line
             background-color: white
         .line:nth-child(1) 
-            transform: rotate(30deg) translateY(11px) translateX(6px)
+            transform: rotate(30deg) translateY(12px) translateX(6px)
         .line:nth-child(2)
             opacity: 0 
         .line:nth-child(3) 
@@ -65,65 +73,80 @@
         .line:nth-child(3) 
             transform: translateY(-12px)
 .burger.show_hover.show
-    &.show_hover
-        &:hover
-            .line
-                background-color: $direct-clr
-            .line:nth-child(1)
-                transform: rotate(30deg) translateY(11px) translateX(6px)
-            .line:nth-child(2)
-                opacity: 0 
-            .line:nth-child(3) 
-                transform: rotate(-30deg) translateY(-9px) translateX(6px)
+    &:hover
+        .line
+            background-color: $direct-clr
+        .line:nth-child(1)
+            transform: rotate(30deg) translateY(11px) translateX(6px)
+        .line:nth-child(2)
+            opacity: 0 
+        .line:nth-child(3) 
+            transform: rotate(-30deg) translateY(-9px) translateX(6px)
 
+.header.show
+    position: sticky
+    top: 0
 .show
     position: relative
-    z-index: 4
+    z-index: 5
     .logo
         color: white 
-        z-index: 4
-
+        z-index: 5
 
 @media screen and (max-width: 1920px)
     .header
         &_container
             margin-left: 85px
-            margin-right: 85px
+            // margin-right: 85px
+        .burger
+            right: 85px
 
 @media screen and (max-width: 900px)
     .header
         &_container
             margin-left: 76px
-            margin-right: 76px
+            // margin-right: 76px
+        .burger
+            right: 76px
 
 @media screen and (max-width: 765px)
     .header
         padding-top: 50px
         &_container
             margin-left: 47px
-            margin-right: 43px
+            // margin-right: 43px
         .logo
             font-size: 23px
             .line
                 width: 14px
                 margin-right: 9px
-    .burger
-        height: 26px
-        .line
-            width: 26px
-        &.show
-            .line:nth-child(1) 
-                transform: rotate(30deg) translateY(5px) translateX(4px)
-                background-color: white
-            .line:nth-child(3) 
-                transform: rotate(-30deg) translateY(-8px) translateX(6px)
-                background-color: white
-        &:hover
+        .burger
+            height: 26px
+            right: 43px
             .line
-                background-color: $direct-clr
-            .line:nth-child(1) 
-                transform: translateY(8px)
-            .line:nth-child(3) 
-                transform: translateY(-8px)
+                width: 26px
+            &.show
+                .line:nth-child(1) 
+                    transform: rotate(30deg) translateY(5px) translateX(4px)
+                    background-color: white
+                .line:nth-child(3) 
+                    transform: rotate(-30deg) translateY(-8px) translateX(6px)
+                    background-color: white
+            &.show_hover.show
+                &:hover
+                    .line
+                        background-color: $direct-clr
+                    .line:nth-child(1)
+                        transform: rotate(30deg) translateY(5px) translateX(4px)
+                    .line:nth-child(3) 
+                        transform: rotate(-30deg) translateY(-8px) translateX(6px)
+            &.show_hover
+                &:hover
+                    .line
+                        background-color: $direct-clr
+                    .line:nth-child(1) 
+                        transform: translateY(8px)
+                    .line:nth-child(3) 
+                        transform: translateY(-8px)
 
             

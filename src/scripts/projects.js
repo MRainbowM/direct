@@ -3,8 +3,8 @@ window.addEventListener('scroll', (e) => {
     cards.forEach((card) => {
         const { top } = card.getBoundingClientRect();
         const bottom = window.innerHeight - card.clientHeight - top
-        const breakPointOpacity = window.innerHeight * 0.01;
-        const isOpacity = top < breakPointOpacity || bottom < breakPointOpacity
+        const breakPointOpacity = window.innerHeight * 0.05 - window.innerHeight * 0.55;
+        const isOpacity = top  < breakPointOpacity || bottom < breakPointOpacity
         const active = window.innerHeight - card.clientHeight + 300
         if (top <= active) {
             card.classList.remove('card_hide');

@@ -33,14 +33,6 @@ btnClose.addEventListener('click', (e) => {
     menuForm.classList.add('menu_form_hide');
 });
 
-const menuLinksAll = document.querySelectorAll('.menu_a');
-menuLinksAll.forEach((link) => {
-    link.addEventListener('click', (e) => {
-        burger.classList.remove('show')
-        header.classList.remove('show')
-        menu.classList.remove('menu_show')
-        document.body.style.overflow = "visible"
-    })
-})
+
 
 
