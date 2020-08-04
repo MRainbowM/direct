@@ -11,12 +11,13 @@
         width: 100%
     input, textarea 
         background-color: $black-input-clr
-        // background-color: white
         padding: 10px 25px
         font-size: 14px
         color: white
         &::placeholder
             font-size: 14px
+        &:hover
+            background-color: $black-hover-input-clr
     input
         height: 50px
         margin-bottom: 32px
@@ -95,7 +96,7 @@
     &_hide
         display: none !important
 
-@media screen and (max-width: 690px)
+@media screen and (max-width: 760px)
     .menu_form
         padding-top: 90px
         padding-right: 0
