@@ -5,7 +5,6 @@ let scrollPoint = 0;
 window.addEventListener('scroll', (e) => {
     const { scrollTop } = document.scrollingElement;
     const lines = burger.querySelectorAll('.line');
-
     burger.classList.add('burger_animate');
     if (scrollTop > scrollPoint) {
         lines.forEach(line => {
@@ -20,19 +19,5 @@ window.addEventListener('scroll', (e) => {
         burger.classList.remove('burger_animate');
     }, 400);
     scrollPoint = scrollTop;
-
-
-
-
-
-    // if (scrollTop > 90) {
-    //     // headerLogo.style.opacity = 0;
-    //     headerLogo.style.display = 'none';
-    // } else {
-    //     headerLogo.style.display = null;
-    //     // headerLogo.style.opacity = 1;
-    // }
-
-
 });
 

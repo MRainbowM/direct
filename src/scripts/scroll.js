@@ -34,12 +34,13 @@ const menuLinks = document.querySelectorAll('.menu_a');
 menuLinks.forEach(link => {
     const linkTo = link.getAttribute('data-link');
     const section = document.querySelector('#' + linkTo);
-    const scrollPoint = section.offsetTop;
     link.addEventListener('click', (e) => {
         burger.classList.remove('show')
         header.classList.remove('show')
         menu.classList.remove('menu_show')
         document.body.style.overflow = "visible"
+        let scrollPoint = section.offsetTop;
+        console.log(scrollPoint);
         window.scrollTo({
             top: scrollPoint,
             behavior: 'smooth'

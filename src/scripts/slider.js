@@ -4,7 +4,7 @@ const btnsRight = document.querySelectorAll('.slider-arr_right');
 let isAnimate = false;
 
 const handleClick = (diffIndex = 0) => (e) => {
-    console.log(e.currentTarget);
+    // console.log(e.currentTarget);
     if (isAnimate) return;
 
     const elSel = e.currentTarget;
@@ -12,7 +12,6 @@ const handleClick = (diffIndex = 0) => (e) => {
     if(elSel.getAttribute('data-id')){
         id = elSel.getAttribute('data-id');
     } else {
-        console.log('no btn')
         id = elSel.closest('.slider').id
     }
 
@@ -21,6 +20,7 @@ const handleClick = (diffIndex = 0) => (e) => {
 
     const items = sliderContainer.querySelectorAll('.slider_item');
     const itemWidth = items[0].clientWidth;
+    console.log(itemWidth);
 
     const { offsetLeft } = sliderContainer;
     const maxIndex = items.length;
