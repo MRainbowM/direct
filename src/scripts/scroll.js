@@ -9,6 +9,7 @@ const scrollToProjects = () => {
         top: height,
         behavior: 'smooth'
     });
+
 }
 
 toProjectsBtn.forEach((element) => {
