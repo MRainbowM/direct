@@ -3,40 +3,28 @@ const btnsRight = document.querySelectorAll('.slider-arr_right');
 
 let isAnimate = false;
 
-const handleClick = (diffIndex = 0) => (e) => {
-    // console.log(e.currentTarget);
-    if (isAnimate) return;
-
-    const elSel = e.currentTarget;
-    let id = '';
-    if (elSel.getAttribute('data-id')) {
-        id = elSel.getAttribute('data-id');
-    } else {
-        id = elSel.closest('.slider').id
-    }
-
+const handleSlider = (id, nextIndex) => {
     const sliderElement = document.getElementById(id);
     const sliderContainer = sliderElement.querySelector('.slider_container');
-
     const items = sliderContainer.querySelectorAll('.slider_item');
-    const itemWidth = items[0].clientWidth;
-    console.log(itemWidth);
-
-    const { offsetLeft } = sliderContainer;
     const maxIndex = items.length;
-    let currentIndex = Math.abs(offsetLeft) / Math.abs(itemWidth);
-    currentIndex = Math.abs(currentIndex)
-    const nextIndex = currentIndex + diffIndex;
-
+    const itemWidth = items[0].clientWidth;
+    let offset = 0;
     if (nextIndex >= 0 && nextIndex < maxIndex) {
         isAnimate = true;
-        const offset = nextIndex * itemWidth
-        sliderContainer.style.marginLeft = '-' + offset + 'px';
-        setTimeout(() => {
-            isAnimate = false;
-            hideItems(sliderContainer);
-        }, 320);
+        offset = nextIndex * itemWidth;
+    } else if (nextIndex >= maxIndex) {
+        isAnimate = true;
+        offset = (maxIndex - 1) * itemWidth;
+    } else if (nextIndex < 0) {
+        isAnimate = true;
+        offset = 0;
     }
+    sliderContainer.style.marginLeft = '-' + offset + 'px';
+    setTimeout(() => {
+        isAnimate = false;
+        hideItems(sliderContainer);
+    }, 320);
     const btns_right = document.querySelectorAll('[data-id="' + id + '"]' + '.slider-arr_right');
     const btns_left = document.querySelectorAll('[data-id="' + id + '"]' + '.slider-arr_left');
     if (nextIndex === 0 || nextIndex === -1) {
@@ -65,6 +53,42 @@ const handleClick = (diffIndex = 0) => (e) => {
     }
 }
 
+const handleClick = (diffIndex = 0) => (e) => {
+    // console.log(e.currentTarget);
+    if (isAnimate) return;
+
+    const elSel = e.currentTarget;
+    let id = '';
+    if (elSel.getAttribute('data-id')) {
+        id = elSel.getAttribute('data-id');
+    } else {
+        id = elSel.closest('.slider').id
+    }
+
+    const sliderElement = document.getElementById(id);
+    const sliderContainer = sliderElement.querySelector('.slider_container');
+
+    const items = sliderContainer.querySelectorAll('.slider_item');
+    const itemWidth = items[0].clientWidth;
+
+    let currentIndex = currentPosition(sliderContainer, itemWidth);
+    const nextIndex = currentIndex + diffIndex;
+
+    handleSlider(id, nextIndex);
+
+}
+
+
+// текущая позиция
+const currentPosition = (sliderContainer, itemWidth) => {
+    const { offsetLeft } = sliderContainer;
+    let currentIndex = Math.abs(offsetLeft) / itemWidth;
+    currentIndex = Math.ceil(currentIndex);
+    return currentIndex;
+}
+
+
+// скрыть карточки 
 const hideItems = (parent) => {
     const items = parent.querySelectorAll('.slider_item');
     items.forEach((element) => {
@@ -118,6 +142,11 @@ btnsRight.forEach((element) => {
 let touchStartX = 0;
 let touchMinDist = 30;
 let sliderSel;
+let startOffset = 0;
+let moveOffset = 0;
+let currentIndex = 0;
+let itemWidth = 0;
+let sliderId = '';
 
 const initSwipe = () => {
     const sliderContainers = document.querySelectorAll('.slider');
@@ -133,59 +162,82 @@ const initSwipe = () => {
 
 function onTouchStart(e) {
     touchStartX = e.changedTouches[0].pageX;
+    const slider = e.currentTarget;
+    sliderId = slider.getAttribute('id');
+    sliderSel = slider.querySelector('.slider_container');
+    sliderSel.style.transition = 'none';
+    const items = sliderSel.querySelectorAll('.slider_item');
+    itemWidth = items[0].clientWidth;
+    currentIndex = currentPosition(sliderSel, itemWidth)
+    startOffset = currentIndex * itemWidth;
 }
 
 function onTouchMove(e) {
-    if(touchStartX != 0) {
-        sliderSel = e.currentTarget;
+    if (touchStartX != 0) {
         let cursor = touchStartX - e.changedTouches[0].pageX;
-        sliderSel.style.transform = 'translate(' + cursor + 'px)';
-        if(cursor > 0) {
-            sliderSel.style.transform = 'translate(-' + cursor + 'px)';
-        } else {
-            cursor = cursor * -1;
-            sliderSel.style.transform = 'translate(' + cursor + 'px)';
-        }
+        moveOffset = startOffset + cursor;
+        sliderSel.style.marginLeft = (moveOffset * -1) + 'px';
     }
 }
 
 function onTouchEnd(e) {
-    sliderSel.style.transform = null
-    let distX = e.changedTouches[0].pageX - touchStartX;
-    let absDistX = Math.abs(distX);
-    let distOk = (absDistX > touchMinDist);
-    if (distOk) {
-        (distX < 0) ? onClickRight(e) : onClickLeft(e);
+    startOffset = 0;
+    sliderSel.style.transition = null
+    let nextIndex = moveOffset / itemWidth;
+    let diffIndex = nextIndex - currentIndex;
+
+    if (diffIndex > 0) {
+        nextIndex = Math.ceil(nextIndex);
+    } else if (diffIndex < 0) {
+        nextIndex = Math.floor(nextIndex);
     }
+    
+    let distX = e.changedTouches[0].pageX - touchStartX;
+    let distOk = Math.abs(distX) > touchMinDist;
+    if (distOk) {
+        handleSlider(sliderId, nextIndex);
+    }
+    touchStartX = 0;
 }
 ///-----
 function onMouseStart(e) {
     touchStartX = e.pageX;
+    const slider = e.currentTarget;
+    sliderId = slider.getAttribute('id');
+    sliderSel = slider.querySelector('.slider_container');
+    sliderSel.style.transition = 'none';
+    const items = sliderSel.querySelectorAll('.slider_item');
+    itemWidth = items[0].clientWidth;
+    currentIndex = currentPosition(sliderSel, itemWidth)
+    startOffset = currentIndex * itemWidth;
 }
 
 function onMouseMove(e) {
-    if(touchStartX != 0) {
-        sliderSel = e.currentTarget;
+    if (touchStartX != 0) {
         let cursor = touchStartX - e.pageX;
-        sliderSel.style.transform = 'translate(' + cursor + 'px)';
-        if(cursor > 0) {
-            sliderSel.style.transform = 'translate(-' + cursor + 'px)';
-        } else {
-            cursor = cursor * -1;
-            sliderSel.style.transform = 'translate(' + cursor + 'px)';
-        }
+        moveOffset = startOffset + cursor;
+        sliderSel.style.marginLeft = (moveOffset * -1) + 'px';
     }
 }
 
 function onMouseEnd(e) {
-    sliderSel.style.transform = null
-    let distX = e.pageX - touchStartX;
-    touchStartX = 0;
-    let absDistX = Math.abs(distX);
-    let distOk = (absDistX > touchMinDist);
-    if (distOk) {
-        (distX < 0) ? onClickRight(e) : onClickLeft(e);
+    startOffset = 0;
+    sliderSel.style.transition = null
+    let nextIndex = moveOffset / itemWidth;
+    let diffIndex = nextIndex - currentIndex;
+
+    if (diffIndex > 0) {
+        nextIndex = Math.ceil(nextIndex);
+    } else if (diffIndex < 0) {
+        nextIndex = Math.floor(nextIndex);
     }
+    
+    let distX = e.pageX - touchStartX;
+    let distOk = Math.abs(distX) > touchMinDist;
+    if (distOk) {
+        handleSlider(sliderId, nextIndex);
+    }
+    touchStartX = 0;
 }
 
 

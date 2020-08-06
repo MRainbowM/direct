@@ -11,9 +11,14 @@ const menuLinks = document.querySelector('.menu_col_2');
 const btn = document.querySelector('#open-form');
 
 btn.addEventListener('click', (e) => {
-    burger.classList.add('show')
-    header.classList.add('show')
-    menu.classList.add('menu_show')
+    burger.classList.add('show');
+    const lines = burger.querySelectorAll('.line');
+    lines.forEach(line => {
+        line.style.width = null;
+    });
+
+    header.classList.add('show');
+    menu.classList.add('menu_show');
     document.body.style.overflow = "hidden"
     menuSoc.classList.add('menu_col-1_hide');
     menuLinks.classList.add('menu_col-2_hide');
