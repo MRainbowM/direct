@@ -6,8 +6,6 @@ window.addEventListener('scroll', (e) => {
     const { scrollTop } = document.scrollingElement;
     const lines = burger.querySelectorAll('.line');
     burger.classList.add('burger_animate');
-    console.log(scrollTop);
-    console.log(scrollPoint);
     if (scrollTop > scrollPoint && scrollTop > 0) {
         lines.forEach(line => {
             line.style.width = '0';

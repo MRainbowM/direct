@@ -9,7 +9,7 @@ const handleClick = (diffIndex = 0) => (e) => {
 
     const elSel = e.currentTarget;
     let id = '';
-    if (elSel.getAttribute('data-id')) {
+    if(elSel.getAttribute('data-id')){
         id = elSel.getAttribute('data-id');
     } else {
         id = elSel.closest('.slider').id
@@ -115,42 +115,24 @@ btnsRight.forEach((element) => {
 
 //swipe
 
-let touchStartX = 0;
-let touchMinDist = 30;
-let sliderSel;
+let touchStartX = 0
+let touchMinDist = 30
 
 const initSwipe = () => {
     const sliderContainers = document.querySelectorAll('.slider');
     sliderContainers.forEach((slider) => {
         slider.addEventListener('touchstart', onTouchStart);
-        slider.addEventListener('touchmove', onTouchMove);
         slider.addEventListener('touchend', onTouchEnd);
         slider.addEventListener('mousedown', onMouseStart);
-        slider.addEventListener('mousemove', onMouseMove);
         slider.addEventListener('mouseup', onMouseEnd);
     });
 };
 
 function onTouchStart(e) {
     touchStartX = e.changedTouches[0].pageX;
-}
-
-function onTouchMove(e) {
-    if(touchStartX != 0) {
-        sliderSel = e.currentTarget;
-        let cursor = touchStartX - e.changedTouches[0].pageX;
-        sliderSel.style.transform = 'translate(' + cursor + 'px)';
-        if(cursor > 0) {
-            sliderSel.style.transform = 'translate(-' + cursor + 'px)';
-        } else {
-            cursor = cursor * -1;
-            sliderSel.style.transform = 'translate(' + cursor + 'px)';
-        }
-    }
-}
+} 
 
 function onTouchEnd(e) {
-    sliderSel.style.transform = null
     let distX = e.changedTouches[0].pageX - touchStartX;
     let absDistX = Math.abs(distX);
     let distOk = (absDistX > touchMinDist);
@@ -158,29 +140,12 @@ function onTouchEnd(e) {
         (distX < 0) ? onClickRight(e) : onClickLeft(e);
     }
 }
-///-----
 function onMouseStart(e) {
     touchStartX = e.pageX;
-}
-
-function onMouseMove(e) {
-    if(touchStartX != 0) {
-        sliderSel = e.currentTarget;
-        let cursor = touchStartX - e.pageX;
-        sliderSel.style.transform = 'translate(' + cursor + 'px)';
-        if(cursor > 0) {
-            sliderSel.style.transform = 'translate(-' + cursor + 'px)';
-        } else {
-            cursor = cursor * -1;
-            sliderSel.style.transform = 'translate(' + cursor + 'px)';
-        }
-    }
-}
+} 
 
 function onMouseEnd(e) {
-    sliderSel.style.transform = null
     let distX = e.pageX - touchStartX;
-    touchStartX = 0;
     let absDistX = Math.abs(distX);
     let distOk = (absDistX > touchMinDist);
     if (distOk) {
