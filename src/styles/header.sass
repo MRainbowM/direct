@@ -1,8 +1,5 @@
 .header
     padding-top: 43px
-    // position: sticky
-    // top: 0
-    // z-index: 11
     span
         &::selection
             color: white
@@ -64,6 +61,7 @@
             opacity: 0 
         .line:nth-child(3) 
             transform: rotate(-30deg) translateY(-9px) translateX(6px)
+
 .burger.show_hover
     &:hover
         .line
@@ -72,6 +70,13 @@
             transform: translateY(12px)
         .line:nth-child(3) 
             transform: translateY(-12px)
+
+.burger.show_hover.hover_white
+    &:hover
+        .line
+            background-color: white
+
+
 .burger.show_hover.show
     &:hover
         .line
@@ -148,5 +153,10 @@
                         transform: translateY(8px)
                     .line:nth-child(3) 
                         transform: translateY(-8px)
+            
+            &.show_hover.hover_white
+                &:hover
+                    .line
+                        background-color: white
 
             
