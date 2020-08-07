@@ -25,15 +25,29 @@
             font-size: 14px
     &_gif
         display: flex
-            
-.oval_1, .oval_1
-    width: 50px
-    height: 250px
-    // background: red
-    border: red 2px solid
-    // -moz-border-radius: 50%
-    // -webkit-border-radius: 50%
-    border-radius: 50%
-// .oval_1
+        z-index: 3
+    &_gif-container
+        display: flex
+        width: 457px
+        overflow: hidden
+        justify-content: flex-end
+        img 
+            min-width: 480px
+            z-index: 5
 
-// .oval_2
+            
+.oval_1, .oval_2
+    position: fixed
+    width: 26px
+    height: 350px
+    border: $direct-clr 2px solid
+    margin-top: 53px
+    border-radius: 50%
+    margin-left: -3px
+    
+.oval_1
+    border-right: 0px
+
+.oval_2
+    border-right: $direct-clr 2px solid
+    z-index: 4
