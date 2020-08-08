@@ -10,6 +10,9 @@ const menuLinks = document.querySelector('.menu_col_2');
 // кнопка в разделе ЛЮДИ: "хочу с вами"
 const btn = document.querySelector('#open-form');
 
+// модалка после отправки формы
+const contactPage = document.querySelector('.contact_page');
+
 btn.addEventListener('click', (e) => {
     burger.classList.add('show');
     const lines = burger.querySelectorAll('.line');
@@ -39,6 +42,9 @@ burger.addEventListener('click', (e) => {
         menuSoc.classList.remove('menu_col-1_hide');
         menuLinks.classList.remove('menu_col-2_hide');
         menuForm.classList.add('menu_form_hide');
+
+        // скрыть модалку после отправки формы
+        contactPage.classList.remove('contact_page_show');
     } else {
         burger.classList.add('show');
         header.classList.add('show');
@@ -54,12 +60,20 @@ btnContact.addEventListener('click', (e) => {
     menuForm.classList.remove('menu_form_hide');
 });
 
+
+// отправить форму обратной связи в меню
 const btnSend = document.querySelector('.menu_form_send');
+
 btnSend.addEventListener('click', (e) => {
-    menuSoc.classList.remove('menu_col-1_hide');
-    menuLinks.classList.remove('menu_col-2_hide');
+    // menuSoc.classList.remove('menu_col-1_hide');
+    // menuLinks.classList.remove('menu_col-2_hide');
     menuForm.classList.add('menu_form_hide');
+    
+    contactPage.classList.add('contact_page_show');
+
 });
+
+
 
 
 
