@@ -14,12 +14,15 @@
     &_show
         right: 0
     &_container
+        display: flex
+        flex-direction: column
         width: 73%
         max-height: calc(100vh - 265px)
         overflow: scroll 
         height: 100%
         margin-left: -8px
         padding-right: 10px
+
         &::-webkit-scrollbar //скроллбар 
             width: 5px
 
@@ -31,12 +34,13 @@
     h4
         font-family: 'Closer-Bold', sans-serif
         font-size: 14px
+        margin-bottom: 25px
     p 
         font-size: 14px
-        margin-top: 25px
         margin-bottom: 25px
         line-height: 1.8
     ul 
+        margin-bottom: 25px
         font-size: 14px
         list-style-type: disc
         padding-left: 20px
@@ -44,4 +48,8 @@
             font-family: 'Closer-Regular', sans-serif
             line-height: 1.8
 
+@media screen and (max-width: 450px)
+    .policy_container
+        h2
+            font-size: 16px
 

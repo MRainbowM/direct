@@ -20,6 +20,7 @@ const policy = document.querySelector('.policy');
 // модалка после отправки формы
 const contactPage = document.querySelector('.contact_page');
 
+let policyHideMenu = false; // если ссылка открыта не из меню
 
 policyLinks.forEach(link => { // поль-е согл-е
     link.addEventListener('click', (e) => {
@@ -27,11 +28,14 @@ policyLinks.forEach(link => { // поль-е согл-е
         burger.classList.add('burger_show_on_white');
         policy.classList.add('policy_show');
         let isShowMenu = burger.classList.contains('burger_show');
-        if(!isShowMenu) {
+        if (!isShowMenu) {
             document.body.style.overflow = "hidden"
             document.body.style.marginRight = "7px"
             header.classList.add('header_show');
             burger.classList.add('burger_show');
+            policyHideMenu = true;
+        } else {
+            policyHideMenu = false;
         }
         linesBurger.forEach(line => {
             line.style.width = null; //сброс стилей
@@ -79,10 +83,16 @@ burger.addEventListener('click', (e) => {
         document.body.style.overflow = "hidden";
         document.body.style.marginRight = "7px";
     }
-    if(isPolityShow){
+    if (isPolityShow) {
+        document.body.style.overflow = "visible";
+        document.body.style.marginRight = null;
         header.classList.remove('header_show_on_white');
         burger.classList.remove('burger_show_on_white');
         policy.classList.remove('policy_show');
+        if (policyHideMenu) {
+            burger.classList.remove('burger_show');
+            header.classList.remove('header_show');
+        }
     }
 });
 
