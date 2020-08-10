@@ -4,7 +4,7 @@ const peoplesSection = document.querySelector('.peoples');
 const peoplesHide = peoplesSection.querySelectorAll('.content_hide');
 let i = 0;
 peoplesHide.forEach(element => {
-    i = i + 0.3;
+    i = i + 0.2;
     element.style.transitionDelay = i + 's';
 });
 
@@ -12,7 +12,7 @@ const eventsSection = document.querySelector('.events');
 const eventsHide = eventsSection.querySelectorAll('.content_hide');
 i = 0;
 eventsHide.forEach(element => {
-    i = i + 0.3;
+    i = i + 0.2;
     element.style.transitionDelay = i + 's';
 });
 
@@ -20,7 +20,7 @@ const contactsSection = document.querySelector('.contacts');
 const contactsHide = contactsSection.querySelectorAll('.content_hide');
 i = 0;
 contactsHide.forEach(element => {
-    i = i + 0.3;
+    i = i + 0.2;
     element.style.transitionDelay = i + 's';
 });
 
