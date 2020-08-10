@@ -35,9 +35,9 @@ const showElements = () => {
         const isShow = offsetTop < scrollPoint;
         if (isShow) {
             // debugger
-            setTimeout(() => {
-                element.classList.add('content_show');
-            }, 600);
+            element.classList.add('content_show');
+            // setTimeout(() => {
+            // }, 600);
             setTimeout(() => {
                 element.classList.remove('content_hide');
             }, 2000);
