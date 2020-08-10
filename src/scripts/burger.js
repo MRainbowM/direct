@@ -10,7 +10,7 @@ window.addEventListener('scroll', (e) => {
     const lines = burger.querySelectorAll('.line');
     burger.classList.add('burger_animate');
 
-    // в футере делаем берый бургер
+    // в футере делаем белый бургер
     if (scrollTop >= footer.offsetTop) { 
         lines.forEach(line => {
             line.style.backgroundColor = 'white';

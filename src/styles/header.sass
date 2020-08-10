@@ -45,6 +45,7 @@
     right: calc(100vw - 1750px - 85px)
     margin-top: 10px
     z-index: 10
+    top: 43px
     .line
         width: 48px
         height: 4px
@@ -52,7 +53,7 @@
         transition: .5s
         margin-left: auto
 
-    &.show
+    &.burger_show
         .line
             background-color: white
         .line:nth-child(1) 
@@ -77,7 +78,7 @@
             background-color: white
 
 
-.burger.show_hover.show
+.burger.show_hover.burger_show
     &:hover
         .line
             background-color: $direct-clr
@@ -88,21 +89,30 @@
         .line:nth-child(3) 
             transform: rotate(-30deg) translateY(-9px) translateX(6px)
 
-.header.show
+.header.header_show
     position: sticky
     top: 0
-.show
-    position: relative
     z-index: 5
     .logo
         color: white 
         z-index: 5
+.burger_show
+    color: white
+    z-index: 5
+
+    // поль-е согл-е
+.burger_show.burger_show_on_white, .burger_show_on_white
+    .line 
+        background-color: black
+
+.header_show.header_show_on_white, .header_show_on_white
+    .logo
+        color: black
 
 @media screen and (max-width: 1920px)
     .header
         &_container
             margin-left: 85px
-            // margin-right: 85px
         .burger
             right: 85px
 
@@ -130,14 +140,17 @@
             right: 43px
             .line
                 width: 26px
-            &.show
+            &.burger_show
                 .line:nth-child(1) 
                     transform: rotate(30deg) translateY(5px) translateX(4px)
                     background-color: white
                 .line:nth-child(3) 
                     transform: rotate(-30deg) translateY(-8px) translateX(6px)
                     background-color: white
-            &.show_hover.show
+            &.burger_show.burger_show_on_white
+                .line 
+                    background-color: black
+            &.show_hover.burger_show
                 &:hover
                     .line
                         background-color: $direct-clr

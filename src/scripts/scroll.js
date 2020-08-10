@@ -49,7 +49,5 @@ menuLinks.forEach(link => {
     });
 });
 
-//Люди: кнопка "хочу с вами" 
-const peoplesBtn = document.querySelector('.btn_peoples');
 
 // TODO: скролл к форме в меню

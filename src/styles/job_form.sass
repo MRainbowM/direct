@@ -1,0 +1,93 @@
+.job_page
+    position: fixed
+    display: flex
+    right: -100%
+    top: 0
+    z-index: 3
+    width: 100%
+    height: 100vh
+    background-color: black
+    transition: .5s
+    &_show
+        right: 0
+.job_form
+    display: flex
+    width: 100%
+    height: 100%
+    color: white
+    &_container
+        width: calc(100% - 190px)
+        max-width: 930px
+        display: flex
+        margin: auto
+        flex-wrap: wrap
+        justify-content: space-between
+
+        .title
+            font-family: 'Closer-Bold', sans-serif
+            font-size: 54px
+            width: 100%
+            margin-bottom: 30px
+        input, textarea 
+            background-color: $black-input-clr
+            padding: 10px 25px
+            font-size: 14px
+            color: white
+            &::placeholder
+                font-size: 14px
+            &:hover
+                background-color: $black-hover-input-clr
+        input
+            height: 50px
+        textarea
+            width: 100%
+            padding-top: 16px
+            resize: none
+            height: 100%
+        #job_form_name, #job_form_phone
+            width: calc( 50% - 10px )
+        #job_form_job
+            width: 100%
+            margin-top: 30px
+
+    .cb
+        padding: 0
+        height: 15px
+        width: 15px
+        min-width: 15px
+        margin-right: 14px
+        position: absolute
+        z-index: -1
+        opacity: 0
+        margin-bottom: -3px
+        &+label::before
+            content: ''
+            display: inline-block
+            margin-right: 14px
+            width: 15px
+            height: 15px
+            flex-shrink: 0
+            flex-grow: 0
+            background-color: $black-input-clr
+    .cb:checked+label::before
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e")
+        background-size: 60%
+        background-repeat: no-repeat
+        background-position: center
+    &_col-1, &_col-2
+        width: calc(50% - 35px)
+    &_col-1
+        display: flex 
+        justify-content: space-between
+        flex-wrap: wrap
+    &_col-2
+    &_text
+        margin-top: 22px
+        font-size: 12px
+        color: $direct-clr
+        a 
+            color: white
+    &_btn
+        width: 100%
+        margin-top: 40px
+    &_send
