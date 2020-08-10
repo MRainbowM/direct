@@ -1,6 +1,3 @@
-// const preloading = document.querySelector('.preloading');
-// preload.classList.add('play');
-
 const preload = document.querySelector('.preload');
 if (window.innerWidth > 765) {
     preload.classList.add('preload_play');
