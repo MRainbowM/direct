@@ -1,10 +1,19 @@
 let cursors = document.querySelectorAll('.cursor');
+
+let cursorShadow = document.querySelector('.cursor-shadow');
+let cursorDot = document.querySelector('.cursor-dot');
 window.addEventListener("mousemove", (e) => {
-    cursors.forEach((cursor) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        // cursor.style.transform = 'translate3d('+e.clientX + 'px, 0,' + e.clientY + 'px)';
-    });
+    // cursors.forEach((cursor) => {
+    //     // cursor.style.left = e.clientX + 'px';
+    //     // cursor.style.top = e.clientY + 'px';
+    //     cursor.style.transform = 'translate3d('+e.clientX + 'px, ' + e.clientY + 'px, 0)';
+    //     // cursor.style.transform = 'translate3d('+e.clientX + 'px, 0,' + e.clientY + 'px)';
+    // });
+    // cursorDot.style.transform = 'translate3d(' + e.clientX + 'px, 0,' + e.clientY + 'px)';
+    cursorDot.style.left = e.clientX + 'px';
+    cursorDot.style.top = e.clientY + 'px';
+    cursorShadow.style.transform = 'matrix(1, 0, 0, 1,' + e.clientX + ', ' + e.clientY + ')';
+
 });
 
 
