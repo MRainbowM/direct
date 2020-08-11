@@ -3,6 +3,7 @@ window.addEventListener("mousemove", (e) => {
     cursors.forEach((cursor) => {
         cursor.style.left = e.clientX + 'px';
         cursor.style.top = e.clientY + 'px';
+        // cursor.style.transform = 'translate3d('+e.clientX + 'px, 0,' + e.clientY + 'px)';
     });
 });
 
