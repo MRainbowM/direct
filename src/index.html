@@ -27,13 +27,15 @@
         <div class="menu cursor_on_black">
             <div class="menu_container">
                 <form class="menu_form menu_form_hide">
-                    <input type="text" placeholder="Имя" id="menu_form_name">
-                    <input type="tel" placeholder="Телефон" id="menu_form_phone">
-                    <input type="mail" placeholder="E-mail" id="menu_form_mail">
-                    <textarea name="" cols="30" rows="4" placeholder="Вдруг есть что сказать, а некому"></textarea>
+                    <input type="text" placeholder="Имя" id="menu_form_name" required>
+                    <input type="tel" placeholder="Телефон" id="menu_form_phone" required>
+                    <input type="mail" placeholder="E-mail" id="menu_form_mail" required>
+                    <textarea name="" cols="30" rows="4" placeholder="Вдруг есть что сказать, а некому"
+                        required></textarea>
                     <div class="menu_form_text">
-                        <input type="checkbox" class="cb" name="" id="menu_form_cb" checked>
-                        <label for="menu_form_cb">Согласен с условиями <a class="policy_link cursor_link">пользовательского
+                        <input type="checkbox" class="cb" name="" id="menu_form_cb" checked required>
+                        <label for="menu_form_cb">Согласен с условиями <a
+                                class="policy_link cursor_link">пользовательского
                                 соглашения</a></label>
                     </div>
                     <div class="menu_form_btns direct">
@@ -106,17 +108,19 @@
                 <div class="job_form_container">
                     <div class="title">Хочешь в команду?</div>
                     <div class="job_form_col-1">
-                        <input type="text" placeholder="Имя" id="job_form_name">
-                        <input type="tel" placeholder="Телефон" id="job_form_phone">
-                        <input type="text" placeholder="Желаемая должность" id="job_form_job">
+                        <input type="text" placeholder="Имя" id="job_form_name" required>
+                        <input type="tel" placeholder="Телефон" id="job_form_phone" required>
+                        <input type="text" placeholder="Желаемая должность" id="job_form_job" required>
                     </div>
                     <div class="job_form_col-2">
                         <textarea name="" cols="30" rows="4"
-                            placeholder="Ссылки на соц. сети (обязательно)/ Текст любого содержания"></textarea>
+                            placeholder="Ссылки на соц. сети (обязательно)/ Текст любого содержания"
+                            required></textarea>
                     </div>
                     <div class="job_form_text">
-                        <input type="checkbox" class="cb" name="" id="job_form_cb" checked>
-                        <label for="job_form_cb">Согласен с условиями <a class="policy_link cursor_link">пользовательского
+                        <input type="checkbox" class="cb" name="" id="job_form_cb" checked required>
+                        <label for="job_form_cb">Согласен с условиями <a
+                                class="policy_link cursor_link">пользовательского
                                 соглашения</a></label>
                     </div>
                     <div class="job_form_btn direct">
@@ -331,9 +335,13 @@
                     <div class="reviews_item">
                         <div class="reviews_item_container">
                             <div class="reviews_item_quote">“У всех мозговой штурм, а у них мозговой бунт”</div>
-                            <div class="reviews_item_author direct"> <span class="text_color cursor_review-1">Михаил
-                                    Шурыгин</span>,
-                                агентство <span class="hide">интернет-маркетинга</span> Диалог</div>
+                            <div class="reviews_item_author direct">
+                                <span class="text_color">
+                                    <span>Михаил Шурыгин</span>
+                                    <span class="text_color_hover cursor_review-1"></span>
+                                </span>, агентство <span class="hide">интернет-маркетинга</span>
+                                <span>Диалог</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -341,9 +349,13 @@
                     <div class="reviews_item">
                         <div class="reviews_item_container">
                             <div class="reviews_item_quote">“Хорошие ребятки. Обратимся к ним еще”</div>
-                            <div class="reviews_item_author direct"> <span
-                                    class="text_color cursor_review-1">Константин</span>,
-                                Green build</div>
+                            <div class="reviews_item_author direct">
+                                <span class="text_color">
+                                    <span>Константин</span>
+                                    <span class="text_color_hover cursor_review-1"></span>
+                                </span>
+                                <span>, Green build</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -351,8 +363,13 @@
                     <div class="reviews_item">
                         <div class="reviews_item_container">
                             <div class="reviews_item_quote">“То, что мы и хотели”</div>
-                            <div class="reviews_item_author direct"><span class="text_color cursor_review-1">Андрей
-                                    Андреевич</span>, Министерство образования</div>
+                            <div class="reviews_item_author direct">
+                                <span class="text_color">
+                                    <span>Андрей Андреевич</span>
+                                    <span class="text_color_hover cursor_review-1"></span>
+                                </span>
+                                <span>, Министерство образования</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -360,9 +377,13 @@
                     <div class="reviews_item">
                         <div class="reviews_item_container">
                             <div class="reviews_item_quote">“Дорогое удовольствие”</div>
-                            <div class="reviews_item_author direct"><span
-                                    class="text_color cursor_review-1">Константин</span>
-                                , Gmate</div>
+                            <div class="reviews_item_author direct">
+                                <span class="text_color">
+                                    <span>Константин</span>
+                                    <span class="text_color_hover cursor_review-1"></span>
+                                </span>
+                                <span>, Gmate</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -388,7 +409,7 @@
             <div class="services_col-1">
                 <div class="row">
                     <div class="title">Услуги</div>
-                    <div class="description">
+                    <div class="description content_hide">
                         <span>Это мог быть блок, посвященный нашему списку услуг. Но мы делаем только сайты и
                             дизайн.</span>
                         <span>Идеи - основа всех наших проектов.</span>
@@ -396,7 +417,7 @@
                 </div>
                 <span id="year">Делаем качественно с 2016 года.</span>
             </div>
-            <div class="services_col-2">
+            <div class="services_col-2 content_hide">
                 <div class="col ideas">
                     <div class="services_card">
                         <span>Идеи</span>
@@ -426,7 +447,8 @@
         <div class="container">
             <div class="peoples_row-1">
                 <div class="title" id="peoples">Люди</div>
-                <span class="content_hide">Нас совсем немного и мы гордимся этим. Каждый наш проект получается выверенным и уникальным. Мы и сами своего рода инди-группа.</span>
+                <span class="content_hide">Нас совсем немного и мы гордимся этим. Каждый наш проект получается
+                    выверенным и уникальным. Мы и сами своего рода инди-группа.</span>
             </div>
             <div class="peoples_row-2">
                 <div class="col content_hide">
@@ -558,7 +580,7 @@
         <div class="container">
             <div class="contacts_col-1">
                 <div class="title">Контакты</div>
-                <div class="text content_hide">
+                <div class="text">
                     <span>Работаем со всеми городами мира.</span>
                     <span>Оставьте свои контакты, мы свяжемся с вами.</span>
                 </div>
@@ -587,14 +609,14 @@
             </div>
             <form action="" class="contacts_form">
                 <div class="row">
-                    <input type="text" placeholder="Имя" id="name" class="cursor_link">
-                    <input type="tel" placeholder="Телефон" id="phone" class="cursor_link">
-                    <input type="mail" placeholder="E-mail" id="mail" class="cursor_link">
+                    <input type="text" placeholder="Имя" id="name" class="cursor_link" required>
+                    <input type="tel" placeholder="Телефон" id="phone" class="cursor_link" required>
+                    <input type="mail" placeholder="E-mail" id="mail" class="cursor_link" required>
                 </div>
                 <textarea name="" id="" cols="30" rows="4" placeholder="Вдруг есть что сказать, а некому"
-                    class="cursor_link"></textarea>
+                    class="cursor_link" required></textarea>
                 <div class="text">
-                    <input type="checkbox" class="cb" name="" id="contacts_cb" checked>
+                    <input type="checkbox" class="cb" name="" id="contacts_cb" checked required>
                     <label for="contacts_cb">Согласен с условиями <a class="policy_link cursor_link">пользовательского
                             соглашения</a></label>
                 </div>
@@ -614,7 +636,7 @@
                 <div class="title">По любым вопросам</div>
                 <a href="#" class="link cursor_link">hello@studio-direct.ru</a>
             </div>
-            <div class="footer_links">
+            <div class="footer_links content_hideх">
                 <div class="footer_links_col-1">
                     <a href="#projects" class="cursor_link">Проекты</a>
                     <a href="#peoples" class="cursor_link">Люди</a>
@@ -654,7 +676,7 @@
                     <span>Директ</span>
                 </a>
             </div>
-            <div class="footer_info">
+            <div class="footer_info content_hide">
                 <span>ИНН 381304570959</span>
                 <span>ОГРНИП 314385002000085</span>
                 <span class="last">Все права защищены (собственно, их никто и не атаковал).</span>

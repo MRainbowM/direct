@@ -17,16 +17,17 @@
         background-color: transparent
         border: 1px solid black
         --size: 40px
-        // transition: top .2s, left .2s, width .2s, height .2s, background-color .2s, border-color 0.2s
         transition: top .05s, left .05s, transform .05s, width .2s, height .2s, background-color .2s, border-color 0.2s
-        // transition: transform .2s, width .2s, height .2s, background-color .2s, border-color 0.2s
         transition-timing-function: ease-out
-        // -webkit-transition: top 200ms, left 200ms, width 200ms, height 200ms, background-color 200ms, border-color  200ms 
         &.active 
+            top: -40px
+            left: -40px
             --size: 80px
             border-color: rgba(255,255,255, 0)
             background-color: rgba(255,255,255,.1)
         &.jump
+            top: -40px
+            left: -40px
             background-image: url('./images/arrowLong.svg')
             --size: 80px
             background-color: rgba(255,255,255,.1)
@@ -43,6 +44,8 @@
         &.on_black
             border: 1px solid white
         &.on_white
+            top: -40px
+            left: -40px
             --size: 80px
             background-color: black
             opacity: 0.05
@@ -56,6 +59,8 @@
             background-image: url('./images/review-4.jpg')
            
         &.review-1, &.review-2, &.review-3, &.review-4
+            top: -80px
+            left: -80px
             --size: 160px
             border-color: rgba(255,255,255, 0)
             border-width: 0
@@ -65,9 +70,6 @@
             background-size: cover
             border-radius: 50%
             z-index: 1
-
-        
-        
 
     &.cursor-dot 
         background: $direct-clr
