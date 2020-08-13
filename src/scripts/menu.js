@@ -10,7 +10,7 @@ const menuLinks = document.querySelector('.menu_col_2');
 
 // кнопка в разделе ЛЮДИ: "хочу с вами"
 const btnPeoles = document.querySelector('.btn_peoples');
-const jobPage = document.querySelector('.job_page');
+const jobFormPage = document.querySelector('.job_form_page');
 
 // ссылка на пользовательское соглашение
 const policyLinks = document.querySelectorAll('.policy_link');
@@ -19,6 +19,7 @@ const policy = document.querySelector('.policy');
 
 // модалка после отправки формы
 const contactPage = document.querySelector('.contact_page');
+const jobPage = document.querySelector('.job_page');
 
 let policyHideMenu = false; // если ссылка открыта не из меню
 
@@ -47,7 +48,7 @@ policyLinks.forEach(link => { // поль-е согл-е
 btnPeoles.addEventListener('click', (e) => {
     burger.classList.add('burger_show');
 
-    jobPage.classList.add('job_page_show');
+    jobFormPage.classList.add('job_form_page_show');
     linesBurger.forEach(line => {
         line.style.width = null; //сброс стилей
     });
@@ -73,8 +74,9 @@ burger.addEventListener('click', (e) => {
         menuLinks.classList.remove('menu_col-2_hide');
         menuForm.classList.add('menu_form_hide');
 
-        // скрыть модалку после отправки формы
+        // скрыть модалку 
         contactPage.classList.remove('contact_page_show');
+        jobFormPage.classList.remove('job_form_page_show');
         jobPage.classList.remove('job_page_show');
     } else if (!isShowMenu && !isPolityShow) {
         burger.classList.add('burger_show');

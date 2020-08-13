@@ -1,0 +1,70 @@
+.job_page
+    position: fixed
+    display: flex
+    right: -100%
+    top: 0
+    z-index: 3
+    width: 100%
+    height: 100vh
+    background-color: black
+    transition: .5s
+    &_show
+        right: 0
+    &_container
+        display: flex
+        margin: auto
+        max-width: calc(928px + 170px)
+        max-height: calc(361px + 100)
+        padding: 100px 85px 0
+
+    &_col-1
+        display: flex
+        flex-direction: column
+        width: 70%
+        color: white
+        .title
+            font-family: 'Closer-Bold', sans-serif
+            font-size: 54px
+            line-height: 1.2
+            margin-bottom: 15px
+        .text 
+            font-size: 14px
+    &_col-2
+        width: 30%
+        margin-top: -110px
+        img
+            height: 500px
+            width: 266px
+
+
+@media screen and (max-width: 800px)
+    .job_page
+        &_col-1
+            .title
+                font-size: 32px
+        &_col-2
+            margin-top: -40px
+            img
+                height: 300px
+                width: 159px
+
+@media screen and (max-width: 800px)
+    .job_page
+        &_container
+            width: 100%
+            flex-direction: column
+            padding: 100px 50px 0
+        &_col-1
+            width: 100%
+        &_col-2
+            display: flex
+            justify-content: flex-end
+            width: 100%
+            margin-top: 0
+
+@media screen and (max-width: 415px)
+    .job_page
+        &_col-1
+            .title
+                font-size: 26px
+
