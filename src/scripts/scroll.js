@@ -26,22 +26,33 @@ const scrollToStart = () => {
 }
 
 footerBtn.addEventListener('click', scrollToStart);
-// TODO: скролл по ссылкам в меню
-
+// скролл по ссылкам в меню
 const burger = document.querySelector('.burger');
 const header = document.querySelector('.header')
 const menu = document.querySelector('.menu')
 const menuLinks = document.querySelectorAll('.menu_a');
 menuLinks.forEach(link => {
-    const linkTo = link.getAttribute('data-link');
-    const section = document.querySelector('#' + linkTo);
+    let linkTo = link.getAttribute('data-link');
+    let section = document.querySelector('#' + linkTo);
     link.addEventListener('click', (e) => {
-        burger.classList.remove('show')
-        header.classList.remove('show')
+        burger.classList.remove('burger_show')
+        header.classList.remove('header_show')
         menu.classList.remove('menu_show')
         document.body.style.overflow = "visible"
         let scrollPoint = section.offsetTop;
-        console.log(scrollPoint);
+        window.scrollTo({
+            top: scrollPoint,
+            behavior: 'smooth'
+        });
+    });
+});
+// скролл по ссылкам в футере
+const footerLinks = document.querySelectorAll('.footer_a');
+footerLinks.forEach(link => {
+    let linkTo = link.getAttribute('data-link');
+    let section = document.querySelector('#' + linkTo);
+    link.addEventListener('click', (e) => {
+        let scrollPoint = section.offsetTop;
         window.scrollTo({
             top: scrollPoint,
             behavior: 'smooth'
@@ -49,5 +60,4 @@ menuLinks.forEach(link => {
     });
 });
 
-
-// TODO: скролл к форме в меню
+// TODO: плавный сколл в сафари
