@@ -103,37 +103,13 @@ btnContact.addEventListener('click', (e) => {
     menuSoc.classList.add('menu_col-1_hide');
     menuLinks.classList.add('menu_col-2_hide');
     menuForm.classList.remove('menu_form_hide');
+    menuForm.style.opacity = 0;
+    setTimeout(() => {
+        menuForm.style.opacity = 1;
+    }, 100)
 });
 
 
-// отправить форму обратной связи в меню
-// const btnSendMenu = document.querySelector('.menu_form_send');
-
-// btnSendMenu.addEventListener('click', (e) => {
-//     // menuSoc.classList.remove('menu_col-1_hide');
-//     // menuLinks.classList.remove('menu_col-2_hide');
-//     menuForm.classList.add('menu_form_hide');
-
-//     contactPage.classList.add('contact_page_show');
-
-// });
-
-// отправить форму из  контактов
-// const btnSendContacts = document.querySelector('.contacts_form_btn');
-
-// btnSendContacts.addEventListener('click', (e) => {
-//     menuForm.classList.add('menu_form_hide');
-//     contactPage.classList.add('contact_page_show');
-//     burger.classList.add('burger_show');
-//     header.classList.add('header_show');
-//     document.body.style.overflow = "hidden";
-//     document.body.style.marginRight = "7px"
-
-//     linesBurger.forEach(line => {
-//         line.style.width = null;
-//     });
-
-// });
 
 
 
