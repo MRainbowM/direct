@@ -2,6 +2,9 @@ let cursors = document.querySelectorAll('.cursor');
 
 let cursorShadow = document.querySelector('.cursor-shadow');
 let cursorDot = document.querySelector('.cursor-dot');
+let cursorArrow = document.querySelector('.cursor-arrow');
+
+
 window.addEventListener("mousemove", (e) => {
     // cursors.forEach((cursor) => {
     //     // cursor.style.left = e.clientX + 'px';
@@ -13,6 +16,12 @@ window.addEventListener("mousemove", (e) => {
     cursorDot.style.left = e.clientX + 'px';
     cursorDot.style.top = e.clientY + 'px';
     cursorShadow.style.transform = 'matrix(1, 0, 0, 1,' + e.clientX + ', ' + e.clientY + ')';
+    // cursorArrow.style.transform = 'matrix(1, 0, 0, 1,' + e.clientX + ', ' + e.clientY + ')';
+
+    let x = e.clientX - 60;
+    let y = e.clientY - 55;
+    cursorArrow.style.left = x + 'px';
+    cursorArrow.style.top = y + 'px';
 
 });
 
@@ -36,13 +45,23 @@ linksDjump.forEach((link) => {
     link.addEventListener('mouseenter', () => {
         cursors.forEach((cursor) => {
             cursor.classList.add('jump');
+
+            cursorArrow.style.transform = 'rotate(0deg) scale(1)';
+            cursorArrow.style.opacity = 1;
+
         });
     })
     link.addEventListener('mouseleave', () => {
         cursors.forEach((cursor) => {
             cursor.classList.remove('jump');
+
+            cursorArrow.style.transform = 'rotate(-135deg) scale(0.5)';
+            cursorArrow.style.opacity = 0;
+
         });
     })
+
+
 });
 
 const redElements = document.querySelectorAll('.cursor_on_red');
@@ -142,21 +161,24 @@ review4Elements.forEach((link) => {
 });
 
 
+//arrow
+
+const initArrow = () => {
+    const { Back } = window;
+    // const cursor = document.querySelector(".cursor-arrow");
+    const cursorIcon = document.querySelector(".cursor-arrow__icon");
+    const cursorBox = cursorArrow.getBoundingClientRect();
+    // const easing = Back.easeOut.config(1.7);
+    const animationDuration = 0.3;
+    // const cursorSide = null; // will be "left" or "right"
+    const cursorInsideSwiper = false;
+    cursorArrow.style.transform = 'rotate(-135deg) scale(0.5)';
+    cursorArrow.style.opacity = 0;
+}
+
+initArrow();
 
 
-// const links = document.querySelectorAll('.cursor-link');
-// links.forEach((link) => {
-//     link.addEventListener('mouseenter', () => {
-//         cursors.forEach((cursor) => {
-//             cursor.classList.add('active');
-//         });
-//     })
-//     link.addEventListener('mouseleave', () => {
-//         cursors.forEach((cursor) => {
-//             cursor.classList.remove('active');
-//         });
-//     })
-// });
 
 
 
