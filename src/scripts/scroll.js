@@ -37,7 +37,6 @@ footerLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         startScroll(section);
 
-
         // let scrollPoint = section.offsetTop;
         // window.scrollTo({
         //     top: scrollPoint,
@@ -45,8 +44,6 @@ footerLinks.forEach(link => {
         // });
     });
 });
-
-// TODO: плавный сколл в сафари
 
 const startScroll = (section) => {
     let direction = 0;
@@ -84,5 +81,4 @@ const scroll = (el, direction) => {
         window.webkitRequestAnimationFrame ||
         window.msRequestAnimationFrame;
     window.requestAnimationFrame = requestAnimationFrame;
-
 })();

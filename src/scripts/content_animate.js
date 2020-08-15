@@ -11,6 +11,7 @@ peoplesHide.forEach(element => {
 const eventsSection = document.querySelector('.events');
 const eventsHide = eventsSection.querySelectorAll('.content_hide');
 i = 0;
+
 eventsHide.forEach(element => {
     i = i + 0.2;
     element.style.transitionDelay = i + 's';
@@ -24,7 +25,28 @@ contactsHide.forEach(element => {
     element.style.transitionDelay = i + 's';
 });
 
+const footerSection = document.querySelector('.content_hide_footer');
+const footerHide = document.querySelectorAll('.content_hide');
+footerHide.forEach(element => {
+    if (element.classList.contains('footer_mail') ||
+        element.classList.contains('footer_links')) {
+        element.style.transitionDelay = '0.2s';
+    }
+    if (element.classList.contains('footer_logo') ||
+        element.classList.contains('footer_info')) {
+        element.style.transitionDelay = '0.4s';
+    }
+});
 
+
+
+
+
+
+// const footerTop = footerHide.offsetTop
+// console.log(footerHide);
+// elContentHide.push(footerHide);
+// console.log(elContentHide);
 
 
 const showElements = () => {
@@ -34,10 +56,7 @@ const showElements = () => {
         let scrollPoint = scrollTop + window.innerHeight;
         const isShow = offsetTop < scrollPoint;
         if (isShow) {
-            // debugger
             element.classList.add('content_show');
-            // setTimeout(() => {
-            // }, 600);
             setTimeout(() => {
                 element.classList.remove('content_hide');
             }, 2000);
