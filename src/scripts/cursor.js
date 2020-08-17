@@ -19,7 +19,7 @@ window.addEventListener("mousemove", (e) => {
     // cursorArrow.style.transform = 'matrix(1, 0, 0, 1,' + e.clientX + ', ' + e.clientY + ')';
 
     let x = e.clientX - 60;
-    let y = e.clientY - 55;
+    let y = e.clientY - 40;
     cursorArrow.style.left = x + 'px';
     cursorArrow.style.top = y + 'px';
 
