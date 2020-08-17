@@ -164,14 +164,6 @@ review4Elements.forEach((link) => {
 //arrow
 
 const initArrow = () => {
-    const { Back } = window;
-    // const cursor = document.querySelector(".cursor-arrow");
-    const cursorIcon = document.querySelector(".cursor-arrow__icon");
-    const cursorBox = cursorArrow.getBoundingClientRect();
-    // const easing = Back.easeOut.config(1.7);
-    const animationDuration = 0.3;
-    // const cursorSide = null; // will be "left" or "right"
-    const cursorInsideSwiper = false;
     cursorArrow.style.transform = 'rotate(-135deg) scale(0.5)';
     cursorArrow.style.opacity = 0;
 }

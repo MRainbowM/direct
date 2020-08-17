@@ -9,7 +9,7 @@ const menuSoc = document.querySelector('.menu_col_1');
 const menuLinks = document.querySelector('.menu_col_2');
 
 // кнопка в разделе ЛЮДИ: "хочу с вами"
-const btnPeoles = document.querySelector('.btn_peoples');
+const btnPeoples = document.querySelector('.btn_peoples');
 const jobFormPage = document.querySelector('.job_form_page');
 
 // ссылка на пользовательское соглашение
@@ -44,18 +44,19 @@ policyLinks.forEach(link => { // поль-е согл-е
     });
 });
 
-
-btnPeoles.addEventListener('click', (e) => {
-    burger.classList.add('burger_show');
-
-    jobFormPage.classList.add('job_form_page_show');
-    linesBurger.forEach(line => {
-        line.style.width = null; //сброс стилей
+if(btnPeoples != null) {
+    btnPeoples.addEventListener('click', (e) => {
+        burger.classList.add('burger_show');
+    
+        jobFormPage.classList.add('job_form_page_show');
+        linesBurger.forEach(line => {
+            line.style.width = null; //сброс стилей
+        });
+        header.classList.add('header_show');
+        document.body.style.overflow = "hidden"
+        document.body.style.marginRight = "7px"
     });
-    header.classList.add('header_show');
-    document.body.style.overflow = "hidden"
-    document.body.style.marginRight = "7px"
-});
+}
 //
 
 burger.addEventListener('click', (e) => {

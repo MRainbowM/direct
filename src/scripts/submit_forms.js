@@ -33,12 +33,12 @@ contactsForm.addEventListener('submit', (e) => {
 
 });
 
-jobForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    jobPage.classList.add('job_page_show');
-});
-
-
+if(jobForm != null) {
+    jobForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        jobPage.classList.add('job_page_show');
+    });
+}
 
 const submitFormConnect = (e) => {
 

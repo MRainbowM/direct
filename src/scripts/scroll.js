@@ -8,7 +8,8 @@ toProjectsBtn.forEach((element) => {
 
 const footerBtn = document.querySelector('.f_top-arrow');
 footerBtn.addEventListener('click', (e) => {
-    const mainSection = document.querySelector('#main');
+    // const mainSection = document.querySelector('#main');
+    const mainSection = document.querySelector('body');
     startScroll(mainSection);
 });
 

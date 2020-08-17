@@ -1,11 +1,6 @@
 .contacts
     width: 100%
-    background-color: $direct-clr
-    color: white
-    .title, span, .subtitle, input, textarea, label, a
-        &::selection
-            color: white
-            background-color: black
+    
     .container
         flex-direction: row
         flex-wrap: wrap
@@ -46,6 +41,24 @@
     &_phone
         width: min-content
         white-space: nowrap
+
+//colors theme
+
+.contacts_index
+    &.contacts
+        background-color: $direct-clr
+        color: white
+    .title, span, .subtitle, input, textarea, label, a
+        &::selection
+            color: white
+            background-color: black
+
+
+.contacts_contacts
+     .title, span, .subtitle, input, textarea, label, a
+        &::selection
+            color: white
+            background-color: $direct-clr
 
 @media screen and (max-width: 1020px)
     .contacts

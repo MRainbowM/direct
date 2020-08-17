@@ -4,15 +4,10 @@
     width: 100%
 
     input, textarea
-        background-color: $red-input-clr
         padding: 10px 22px
         font-size: 14px
-        color: white
         &::placeholder
-            color: $placeholder-clr
             font-size: 14px
-        &:hover
-            background-color: $red-hover-input-clr
 
     .cb
         padding: 0
@@ -29,7 +24,7 @@
             margin-right: 14px
             width: 15px
             height: 15px
-            background-color: $red-input-clr
+           
     .cb:checked+label::before
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e")
         background-size: 60%
@@ -64,16 +59,12 @@
         font-size: 12px
         label
             line-height: 1.3
-            color: $red-text-clr
-            a
-                color: white
 
     &_btn
         display: flex
         justify-content: flex-end
         height: 50px
         width: 50px
-        background-color: white
         margin-left: auto
         margin-top: -197px
         margin-right: 161px
@@ -89,7 +80,6 @@
             min-width: 40px
             width: 40px
             height: 50px
-            color: black
         &:hover
             .contacts_form_btn-container
                 margin-right: 11px
@@ -114,6 +104,53 @@
             margin-left: auto
             margin-right: 8px
             margin-top: -74px
+
+
+//colors theme
+.contacts_index
+    .contacts_form
+        input, textarea
+            background-color: $red-input-clr
+            color: white
+            &::placeholder
+                color: $red-placeholder-clr
+            &:hover
+                background-color: $red-hover-input-clr
+        .cb
+            &+label::before
+                background-color: $red-input-clr
+        .text
+            label
+                color: $red-text-clr
+            a
+                color: white
+        &_btn
+            background-color: white
+            svg
+                color: black
+
+.contacts_contacts
+    .contacts_form
+        input, textarea
+            background-color: $gray-input-clr
+            color: white
+            &::placeholder
+                color: $gray-placeholder-clr
+            // &:hover
+            //     background-color: $red-hover-input-clr
+        .cb
+            &+label::before
+                background-color: $red-input-clr
+        .text
+            label
+                color: $gray-placeholder-clr
+            a
+                color: $direct-clr
+        &_btn
+            background-color: $direct-clr
+            svg
+                color: black
+// background-color: $direct-clr
 
 @media screen and (max-width: 710px)
     .contacts_form
