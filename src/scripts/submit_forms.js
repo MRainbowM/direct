@@ -7,19 +7,19 @@ const header = document.querySelector('.header');
 const linesBurger = burger.querySelectorAll('.line');
 
 // модалка после отправки формы
-const contactPage = document.querySelector('.contact_page');
+const contactPage = document.querySelector('.response_page');
 const jobPage = document.querySelector('.job_page');
 
 menuForm.addEventListener('submit', (e) => {
     e.preventDefault();
     menuForm.classList.add('menu_form_hide');
-    contactPage.classList.add('contact_page_show');
+    contactPage.classList.add('response_page_show');
 });
 
 contactsForm.addEventListener('submit', (e) => {
     e.preventDefault();
     menuForm.classList.add('menu_form_hide');
-    contactPage.classList.add('contact_page_show');
+    contactPage.classList.add('response_page_show');
 
     menuForm.classList.add('menu_form_hide');
     burger.classList.add('burger_show');

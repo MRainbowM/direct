@@ -11,13 +11,13 @@
 <body>
     <div class="header" id="main">
         <div class="header_container">
-            <div class="logo cursor_on_white">
+            <a href="./index.html" class="logo cursor_on_white">
                 <div class="container_line">
                     <div class="point"></div>
                     <div class="line"></div>
                 </div>
                 <span>Директ</span>
-            </div>
+            </a>
             <div class="burger cursor_on_white show_hover">
                 <div class="line"></div>
                 <div class="line"></div>
@@ -78,26 +78,26 @@
                     </a>
                 </div>
                 <div class="menu_col_2">
-                    <a class="menu_a cursor_link" data-link="main">Главная</a>
+                    <a class="menu_a cursor_link" href="./index.html">Главная</a>
                     <a class="menu_a cursor_link" data-link="projects">Проекты</a>
                     <a class="menu_a cursor_link" data-link="events">События</a>
                     <a class="menu_a cursor_link" href="./contacts.html">Контакты</a>
                 </div>
             </div>
         </div>
-        <div class="contact_page cursor_on_black">
-            <div class="contact_page_container">
-                <div class="contact_page_text">
+        <div class="response_page cursor_on_black">
+            <div class="response_page_container">
+                <div class="response_page_text">
                     <div class="title">Круто, когда к нам обращаются.</div>
                     <span>Спасибо, в ближайшее время свяжемся!</span>
                 </div>
-                <div class="contact_page_gif">
+                <div class="response_page_gif">
 
                     <div class="oval_1">
                         <div class="oval_1_1"></div>
                     </div>
                     <div class="oval_2"></div>
-                    <div class="contact_page_gif-container">
+                    <div class="response_page_gif-container">
                         <img src="./images/dog.gif" alt="">
                     </div>
                 </div>
@@ -204,16 +204,16 @@
             </div>
             <div class="contacts_col-2">
                 <div class="row">
-                    <div class="subtitle">Адрес</div>
-                    <div class="text">
-                        <span>г. Иркутск, ул. Карла либкнехта, д. 107А, оф. 11</span>
-                    </div>
-                </div>
-                <div class="row">
                     <div class="subtitle">Часы работы</div>
                     <div class="text">
                         <span>Пн-пт: 09:00-18:00</span>
                         <span>Сб, вс: тут уж простите.</span>
+                    </div>
+                </div>
+                <div class="row contacts_address">
+                    <div class="subtitle">Адрес</div>
+                    <div class="text">
+                        <span>г. Иркутск, ул. Карла либкнехта, д. 107А, оф. 11</span>
                     </div>
                 </div>
                 <div class="row">
@@ -226,15 +226,15 @@
             </div>
             <form action="" class="contacts_form">
                 <div class="row">
-                    <input type="text" placeholder="Имя" id="name" class="cursor_on_white" required>
-                    <input type="tel" placeholder="Телефон" id="phone" class="cursor_on_white phone" required>
-                    <input type="email" placeholder="E-mail" id="mail" class="cursor_on_white" required>
+                    <input type="text" placeholder="Имя" id="contacts_contacts_name" class="cursor_on_white" required>
+                    <input type="tel" placeholder="Телефон" id="contacts_contacts_phone" class="cursor_on_white phone" required>
+                    <input type="email" placeholder="E-mail" id="contacts_contacts_mail" class="cursor_on_white" required>
                 </div>
                 <textarea name="" id="" cols="30" rows="4" placeholder="Вдруг есть что сказать, а некому"
                     class="cursor_on_white"></textarea>
                 <div class="text">
-                    <input type="checkbox" class="cb" name="" id="contacts_cb" checked required>
-                    <label for="contacts_cb">Согласен с условиями <a class="policy_link cursor_on_white">пользовательского
+                    <input type="checkbox" class="cb" name="" id="contacts_contacts_cb" checked required>
+                    <label for="contacts_contacts_cb">Согласен с условиями <a class="policy_link cursor_on_white">пользовательского
                             соглашения</a></label>
                 </div>
                 <button type="submit" class="contacts_form_btn cursor_on_white">

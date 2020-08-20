@@ -18,7 +18,7 @@ const policyLinks = document.querySelectorAll('.policy_link');
 const policy = document.querySelector('.policy');
 
 // модалка после отправки формы
-const contactPage = document.querySelector('.contact_page');
+const contactPage = document.querySelector('.response_page');
 const jobPage = document.querySelector('.job_page');
 
 let policyHideMenu = false; // если ссылка открыта не из меню
@@ -76,7 +76,7 @@ burger.addEventListener('click', (e) => {
         menuForm.classList.add('menu_form_hide');
 
         // скрыть модалку 
-        contactPage.classList.remove('contact_page_show');
+        contactPage.classList.remove('response_page_show');
         jobFormPage.classList.remove('job_form_page_show');
         jobPage.classList.remove('job_page_show');
     } else if (!isShowMenu && !isPolityShow) {
