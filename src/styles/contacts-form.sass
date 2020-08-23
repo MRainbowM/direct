@@ -38,7 +38,7 @@
         margin-top: 41px
         margin-left: 34%
         width: calc(50% - 32px)
-        #mail
+        #mail, #contacts_contacts_mail
             margin-right: 0
 
     input
@@ -154,8 +154,10 @@
 @media screen and (max-width: 1100px)
     .contacts_contacts
         .contacts_form
+            max-width: 560px
             .row
                 flex-wrap: wrap
+                margin-bottom: 0
                 input
                     width: calc(50% - 15px)
                     margin-right: 0
@@ -166,12 +168,29 @@
         .contacts_form
             .row
                 margin-right: 0
-                margin-bottom: 0
+                input
+                     width: calc(50% - 8px)
+
+                #contacts_contacts_mail
+                    width: 100%
             textarea
                 margin-right: 0
+            .text
+                width: calc( 100% - 50px )
             &_btn
                 margin-top: 0
                 margin-right: 0
+    .contacts_form
+        input, textarea
+            padding: 10px
+            font-size: 12px
+        &::placeholder
+            font-size: 12px
+        .row
+            input
+                height: 44px
+        
+
 
 @media screen and (max-width: 710px)
     .contacts_index
@@ -180,11 +199,7 @@
                 flex-wrap: wrap
                 margin-bottom: 0
                 margin-right: 0
-                input
-                    height: 44px
-                    font-size: 12px
-                    &::placeholder
-                        font-size: 12px
+                    
                 #name, #phone
                     width: calc(50% - 8px)
                     margin-right: 0
