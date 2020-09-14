@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты</title>
-    <link rel="stylesheet" href="/src.9d1287e6.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.sass">
 </head>
 
 <body>
     <div class="header" id="main">
         <div class="header_container">
-            <a href="/index.html" class="logo cursor_on_white">
+            <a href="./index.html" class="logo cursor_on_white">
                 <div class="container_line">
                     <div class="point"></div>
                     <div class="line"></div>
@@ -27,13 +27,15 @@
         <div class="menu cursor_on_black">
             <div class="menu_container">
                 <form class="menu_form menu_form_hide">
-                    <input type="text" placeholder="Имя" id="menu_form_name" required="" class="cursor_link">
-                    <input type="tel" placeholder="Телефон" id="menu_form_phone" required="" class="phone cursor_link">
-                    <input type="email" placeholder="E-mail" id="menu_form_mail" required="" class="cursor_link">
-                    <textarea name="" cols="30" rows="4" placeholder="Вдруг есть что сказать, а некому" class="cursor_link"></textarea>
+                    <input type="text" placeholder="Имя" id="menu_form_name" required class="cursor_link">
+                    <input type="tel" placeholder="Телефон" id="menu_form_phone" required class="phone cursor_link">
+                    <input type="email" placeholder="E-mail" id="menu_form_mail" required class="cursor_link">
+                    <textarea name="" cols="30" rows="4" placeholder="Вдруг есть что сказать, а некому"
+                        class="cursor_link"></textarea>
                     <div class="menu_form_text">
-                        <input type="checkbox" class="cb cursor_link" name="" id="menu_form_cb" checked="" required="">
-                        <label for="menu_form_cb cursor_link">Согласен с условиями <a class="policy_link cursor_link">пользовательского
+                        <input type="checkbox" class="cb cursor_link" name="" id="menu_form_cb" checked required>
+                        <label for="menu_form_cb cursor_link">Согласен с условиями <a
+                                class="policy_link cursor_link">пользовательского
                                 соглашения</a></label>
                     </div>
                     <div class="menu_form_btns direct">
@@ -42,7 +44,7 @@
                                 <span>Отправить</span>
                                 <div class="btn_send_form_svg">
                                     <svg>
-                                        <use href="/icons.2d421eb7.svg#i-long-r-arrow"></use>
+                                        <use href="./images/icons.svg#i-long-r-arrow"></use>
                                     </svg>
                                 </div>
                             </div>
@@ -54,17 +56,17 @@
                     <div class="menu_soc">
                         <a href="#" class="cursor_link" id="i-instagram">
                             <svg>
-                                <use href="/icons.2d421eb7.svg#i-instagram"></use>
+                                <use href="./images/icons.svg#i-instagram"></use>
                             </svg>
                         </a>
                         <a href="#" class="cursor_link">
                             <svg>
-                                <use href="/icons.2d421eb7.svg#i-vk"></use>
+                                <use href="./images/icons.svg#i-vk"></use>
                             </svg>
                         </a>
                         <a href="#" class="cursor_link" id="i-behance">
                             <svg>
-                                <use href="/icons.2d421eb7.svg#i-behance"></use>
+                                <use href="./images/icons.svg#i-behance"></use>
                             </svg>
                         </a>
                     </div>
@@ -76,10 +78,10 @@
                     </a>
                 </div>
                 <div class="menu_col_2">
-                    <a class="menu_a cursor_link" href="/index.html">Главная</a>
+                    <a class="menu_a cursor_link" href="./index.html">Главная</a>
                     <a class="menu_a cursor_link" data-link="projects">Проекты</a>
                     <a class="menu_a cursor_link" data-link="events">События</a>
-                    <a class="menu_a cursor_link" href="/contacts.html">Контакты</a>
+                    <a class="menu_a cursor_link" href="./contacts.html">Контакты</a>
                 </div>
             </div>
         </div>
@@ -96,7 +98,7 @@
                     </div>
                     <div class="oval_2"></div>
                     <div class="response_page_gif-container">
-                        <img src="/dog.224d596c.gif" alt="">
+                        <img src="./images/dog.gif" alt="">
                     </div>
                 </div>
             </div>
@@ -191,63 +193,34 @@
             </div>
         </div>
     </div>
-    <div class="contacts contacts_contacts" id="contacts">
+    <div class="project-card">
         <div class="container">
-            <div class="contacts_col-1">
-                <div class="title">Контакты</div>
-                <div class="text">
-                    <span>Работаем со всеми городами мира.</span>
-                    <span>Оставьте свои контакты, мы свяжемся с вами.</span>
+            <div class="back">
+                <div class="back_icon">
+                    <svg>
+                        <use href="./images/icons.svg#i-long-r-arrow"></use>
+                    </svg>
                 </div>
+                <div class="back_text">Вернуться</div>
             </div>
-            <div class="contacts_col-2">
-                <div class="row">
-                    <div class="subtitle">Часы работы</div>
-                    <div class="text">
-                        <span>Пн-пт: 09:00-18:00</span>
-                        <span>Сб, вс: тут уж простите.</span>
+            <div class="project-card_row">
+                <div class="project-card_row_col-1">
+                    <h1>Logitech. 5 стадий принятия.</h1>
+                    <p>Промо сайт для  шведской компании - </p>
+                    <p>производителя компьютерной периферии “logitech”</p>
+                    <div class="project-card_line"></div>
+                    <h3>Предисловие</h3>
+                    <div class="project-card_row_description">
+                        <p>У компании Logitech большой ассортимент товаров. К нам обратились за разработкой одностраничного сайта для презентации камер для видеоконференций. Окей, работаем.</p>
                     </div>
                 </div>
-                <div class="row contacts_address">
-                    <div class="subtitle">Адрес</div>
-                    <div class="text">
-                        <span>г. Иркутск, ул. Карла либкнехта, д. 107А, оф. 11</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="subtitle">Связь</div>
-                    <div class="text white">
-                        <a href="tel:+7 (3952) 41 51 99" class="link cursor_on_white contacts_phone">+7 (3952)
-                            41-51-99</a>
-                        <a class="link cursor_on_white">hello@studio-direct.ru</a>
+                <div class="project-card_row_col-2">
+                    <div class="project-card_row_img">
+                        <img src="./images/logitech.jpg" alt="">
                     </div>
                 </div>
             </div>
-            <form action="" class="contacts_form">
-                <div class="row">
-                    <input type="text" placeholder="Имя" id="contacts_contacts_name" class="cursor_on_white" required="">
-                    <input type="tel" placeholder="Телефон" id="contacts_contacts_phone" class="cursor_on_white phone" required="">
-                    <input type="email" placeholder="E-mail" id="contacts_contacts_mail" class="cursor_on_white" required="">
-                </div>
-                <textarea name="" id="" cols="30" rows="4" placeholder="Вдруг есть что сказать, а некому" class="cursor_on_white"></textarea>
-                <div class="text">
-                    <input type="checkbox" class="cb" name="" id="contacts_contacts_cb" checked="" required="">
-                    <label for="contacts_contacts_cb">Согласен с условиями <a class="policy_link cursor_on_white">пользовательского
-                            соглашения</a></label>
-                </div>
-                <button type="submit" class="contacts_form_btn cursor_on_white">
-                    <div class="contacts_form_btn-container cursor_on_white">
-                        <svg>
-                            <use href="/icons.2d421eb7.svg#i-long-r-arrow"></use>
-                        </svg>
-                    </div>
-                </button>
-            </form>
         </div>
-    </div>
-    <div class="map">
-        <script type="text/javascript" charset="utf-8" async="" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A21f150ac3f8c54e5f740e2fecb2c9c38b0618508a4d3d9288f4e10443e5979d1&amp;width=100%25&amp;height=440&amp;lang=ru_RU&amp;scroll=true">
-        </script>
     </div>
     <div class="footer cursor_on_black">
         <div class="container">
@@ -265,23 +238,23 @@
                 <div class="footer_links_col-2 direct">
                     <a href="#" class="a-icon btn_animate cursor_link">
                         <svg id="f_i-instagram">
-                            <use href="/icons.2d421eb7.svg#i-instagram"></use>
+                            <use href="./images/icons.svg#i-instagram"></use>
                         </svg>
                     </a>
                     <a href="#" class="a-icon f_i-vk btn_animate cursor_link">
                         <svg>
-                            <use href="/icons.2d421eb7.svg#i-vk"></use>
+                            <use href="./images/icons.svg#i-vk"></use>
                         </svg>
                     </a>
                     <a href="#" class="a-icon f_i-behance btn_animate cursor_link">
                         <svg>
-                            <use href="/icons.2d421eb7.svg#i-behance"></use>
+                            <use href="./images/icons.svg#i-behance"></use>
                         </svg>
                     </a>
                     <a class="a-icon f_top-arrow cursor_link">
                         <div class="f_top-arrow-container">
                             <svg class="cursor_link">
-                                <use href="/icons.2d421eb7.svg#i-long-r-arrow"></use>
+                                <use href="./images/icons.svg#i-long-r-arrow"></use>
                             </svg>
                         </div>
                     </a>
@@ -307,11 +280,12 @@
         <div class="cursor cursor-dot"></div>
         <div class="cursor cursor-arrow">
             <svg class="cursor-arrow__icon" viewBox="0 0 117.25 86.75">
-                <path class="cursor-arrow__path" d="M111.45,42.5,74.65,5.7l-9.9,9.9,20.6,20.6H6.45v14h78.9L64.75,70.8l9.9,9.9,36.8-36.8A1,1,0,0,0,111.45,42.5Z"></path>
+                <path class="cursor-arrow__path"
+                    d="M111.45,42.5,74.65,5.7l-9.9,9.9,20.6,20.6H6.45v14h78.9L64.75,70.8l9.9,9.9,36.8-36.8A1,1,0,0,0,111.45,42.5Z" />
             </svg>
         </div>
     </div>
-    <script src="/contacts.8963fd48.js"></script>
+    <script src="./index.js"></script>
 
 </body>
 

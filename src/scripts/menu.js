@@ -31,7 +31,7 @@ policyLinks.forEach(link => { // поль-е согл-е
         let isShowMenu = burger.classList.contains('burger_show');
         if (!isShowMenu) {
             document.body.style.overflow = "hidden"
-            document.body.style.marginRight = "7px"
+            // document.body.style.marginRight = "7px"
             header.classList.add('header_show');
             burger.classList.add('burger_show');
             policyHideMenu = true;
@@ -54,7 +54,7 @@ if(btnPeoples != null) {
         });
         header.classList.add('header_show');
         document.body.style.overflow = "hidden"
-        document.body.style.marginRight = "7px"
+        // document.body.style.marginRight = "7px"
     });
 }
 //
@@ -77,14 +77,16 @@ burger.addEventListener('click', (e) => {
 
         // скрыть модалку 
         contactPage.classList.remove('response_page_show');
-        jobFormPage.classList.remove('job_form_page_show');
-        jobPage.classList.remove('job_page_show');
+        if(jobFormPage){
+            jobFormPage.classList.remove('job_form_page_show');
+            jobPage.classList.remove('job_page_show');
+        }
     } else if (!isShowMenu && !isPolityShow) {
         burger.classList.add('burger_show');
         header.classList.add('header_show');
         menu.classList.add('menu_show');
         document.body.style.overflow = "hidden";
-        document.body.style.marginRight = "7px";
+        // document.body.style.marginRight = "7px";
     }
     if (isPolityShow) {
         document.body.style.overflow = "visible";

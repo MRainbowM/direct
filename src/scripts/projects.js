@@ -35,8 +35,10 @@ window.addEventListener('scroll', (e) => {
 });
 window.addEventListener("mousemove", (e) => {
     const card = document.querySelector('.card_active');
-    const img = card.querySelector('.parallax_img');
-    let xPos = (e.clientX / img.clientWidth - 0.5) * 3.5;
-    let yPos = (e.clientY / img.clientHeight - 0.5) * 3.5;
-    img.style.transform = `rotateY(${yPos}deg) rotateX(${xPos}deg)`
+    if(card){
+        const img = card.querySelector('.parallax_img');
+        let xPos = (e.clientX / img.clientWidth - 0.5) * 3.5;
+        let yPos = (e.clientY / img.clientHeight - 0.5) * 3.5;
+        img.style.transform = `rotateY(${yPos}deg) rotateX(${xPos}deg)`
+    }
 });

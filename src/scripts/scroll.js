@@ -47,11 +47,13 @@ footerLinks.forEach(link => {
 });
 
 const startScroll = (section) => {
-    let direction = 0;
-    scrollPoint = section.getBoundingClientRect().top
-    direction = (scrollPoint < 0) ? -1 : (scrollPoint > 0) ? 1 : 0;
-    if (direction == 0) return;
-    scroll(section, direction);
+    if(section){
+        let direction = 0;
+        scrollPoint = section.getBoundingClientRect().top
+        direction = (scrollPoint < 0) ? -1 : (scrollPoint > 0) ? 1 : 0;
+        if (direction == 0) return;
+        scroll(section, direction);
+    }
 }
 
 const scroll = (el, direction) => {

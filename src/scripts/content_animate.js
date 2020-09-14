@@ -1,29 +1,27 @@
 const elContentHide = document.querySelectorAll('.content_hide');
 
+const setDelay = (section) => {
+    if (section) {
+        const contactsHide = section.querySelectorAll('.content_hide');
+        let i = 0;
+        contactsHide.forEach(element => {
+            i = i + 0.2;
+            element.style.transitionDelay = i + 's';
+        });
+    }
+}
+
+const reviewsSection = document.querySelector('.reviews');
+setDelay(reviewsSection);
+
 const peoplesSection = document.querySelector('.peoples');
-const peoplesHide = peoplesSection.querySelectorAll('.content_hide');
-let i = 0;
-peoplesHide.forEach(element => {
-    i = i + 0.2;
-    element.style.transitionDelay = i + 's';
-});
+setDelay(peoplesSection);
 
 const eventsSection = document.querySelector('.events');
-const eventsHide = eventsSection.querySelectorAll('.content_hide');
-i = 0;
-
-eventsHide.forEach(element => {
-    i = i + 0.2;
-    element.style.transitionDelay = i + 's';
-});
+setDelay(eventsSection);
 
 const contactsSection = document.querySelector('.contacts');
-const contactsHide = contactsSection.querySelectorAll('.content_hide');
-i = 0;
-contactsHide.forEach(element => {
-    i = i + 0.2;
-    element.style.transitionDelay = i + 's';
-});
+setDelay(contactsSection);
 
 const footerSection = document.querySelector('.content_hide_footer');
 const footerHide = document.querySelectorAll('.content_hide');
@@ -37,17 +35,6 @@ footerHide.forEach(element => {
         element.style.transitionDelay = '0.4s';
     }
 });
-
-
-
-
-
-
-// const footerTop = footerHide.offsetTop
-// console.log(footerHide);
-// elContentHide.push(footerHide);
-// console.log(elContentHide);
-
 
 const showElements = () => {
     elContentHide.forEach(element => {

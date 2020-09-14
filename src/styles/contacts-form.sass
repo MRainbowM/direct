@@ -171,12 +171,16 @@
             .row
                 margin-right: 0
                 input
-                     width: calc(50% - 8px)
+                    width: calc(50% - 8px)
+                    &::placeholder
+                        font-size: 12px
 
                 #contacts_contacts_mail
                     width: 100%
             textarea
                 margin-right: 0
+                &::placeholder
+                    font-size: 12px
             .text
                 width: calc( 100% - 50px )
             &_btn
@@ -185,8 +189,6 @@
     .contacts_form
         input, textarea
             padding: 10px
-            font-size: 12px
-        &::placeholder
             font-size: 12px
         .row
             input
@@ -201,6 +203,9 @@
                 flex-wrap: wrap
                 margin-bottom: 0
                 margin-right: 0
+                input
+                    &::placeholder
+                        font-size: 12px
                     
                 #name, #phone
                     width: calc(50% - 8px)
