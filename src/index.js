@@ -11,3 +11,5 @@ require('./scripts/links_drags')
 require('./scripts/submit_forms')
 require('./scripts/content_animate')
 require('./scripts/imask')
+
+require('./scripts/projects-filters')
