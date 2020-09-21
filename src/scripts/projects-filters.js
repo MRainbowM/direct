@@ -56,4 +56,7 @@ applyFilter(btnsYears, btnsProj, 'year-active')
 applyFilter(btnsProj, btnsYears, 'filter-active')
 
 const event = new Event("click");
-btnsYears[0].dispatchEvent(event);
+setTimeout(() => {
+    btnsYears[0].dispatchEvent(event);
+    btnsProj[0].dispatchEvent(event);
+}, 10)
