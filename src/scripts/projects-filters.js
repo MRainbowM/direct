@@ -32,26 +32,10 @@ const applyFilter = (btns, activName) => {
 const btnsGroupYears = document.querySelector('.projects-p_years');
 const btnsYears = btnsGroupYears.querySelectorAll('a');
 applyFilter(btnsYears, 'year-active')
-// btnsYears.forEach(element => {
-//     element.addEventListener('click', (e) => {
-//         const filterValue = element.getAttribute('data-filter');
-//         iso.arrange({
-//             filter: filterValue
-//         });
-//         element.classList.add('year-active');
-//         btnsYears.forEach(el => {
-//             if(element != el) {
-//                 el.classList.remove('year-active');
-//             }
-//         });
-//     });
-// });
 
 const btnsGroupProj = document.querySelector('.projects-p_filter');
 const btnsProj = btnsGroupProj.querySelectorAll('a');
 applyFilter(btnsProj, 'filter-active')
 
-
-
-
-
+const event = new Event("click");
+btnsYears[0].dispatchEvent(event);
