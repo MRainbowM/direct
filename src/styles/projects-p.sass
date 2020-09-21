@@ -4,6 +4,8 @@
         &::selection
             color: white
             background-color: $direct-clr
+    .container
+        padding-bottom: 57px
     &_row
         display: flex
         justify-content: space-between
@@ -27,8 +29,8 @@
         margin-top: 57px
         margin-bottom: 44px
         font-family: 'Closer-Medium', sans-serif
-        font-size: 18px
-        a 
+        div 
+            font-size: 18px
             width: 108px
         .year-active
             color: $direct-clr
@@ -55,5 +57,48 @@
             color: white
             border: none
             background-color: $direct-clr
+
+
+@media screen and ( max-width: 900px )
+    .projects-p
+        margin-top: 30px
+        .container
+            padding-left: 138px
+        h1
+            font-size: 50px
+            margin-bottom: 4px
+        &_row
+            flex-direction: column
+
+            &_col-2
+                padding-top: 55px
+        &_years
+            margin-top: 69px
+            margin-bottom: 21px
+            div 
+                width: 125px
+
+@media screen and ( max-width: 600px )
+    .projects-p
+        margin-top: 17px
+        .container
+            padding-left: 47px
+            padding-right: 42px
+        h1
+            font-size: 40px
+            margin-bottom: 19px
+        &_row
+
+            &_col-1
+                padding-left: 23px
+            &_col-2
+                padding-top: 74px
+        &_years
+            flex-wrap: wrap
+            margin-top: 41px
+            margin-bottom: 12px
+            div 
+                width: 105px
+                height: 38px
 
 
