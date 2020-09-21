@@ -1,5 +1,9 @@
 .projects-p
     padding-top: 73px
+    h1, p, span, img
+        &::selection
+            color: white
+            background-color: $direct-clr
     &_row
         display: flex
         justify-content: space-between
@@ -26,7 +30,7 @@
         font-size: 18px
         a 
             width: 108px
-        .year_active
+        .year-active
             color: $direct-clr
     
     &_filter
