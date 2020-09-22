@@ -22,10 +22,12 @@ window.addEventListener('scroll', (e) => {
     }
 
     //в контактах делаем ховер белым
-    if (scrollTop >= contacts.offsetTop && scrollTop <= footer.offsetTop) { 
-        burger.classList.add('hover_white');
-    } else {
-        burger.classList.remove('hover_white');
+    if(contacts && footer) {
+        if (scrollTop >= contacts.offsetTop && scrollTop <= footer.offsetTop) { 
+            burger.classList.add('hover_white');
+        } else {
+            burger.classList.remove('hover_white');
+        }
     }
 
     if (scrollTop > scrollPoint && scrollTop > 0) {

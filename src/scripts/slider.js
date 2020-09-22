@@ -105,19 +105,22 @@ const hideItems = (parent) => {
 
 const resetSlider = () => {
     const sliders = document.querySelectorAll('.slider_container');
-    sliders.forEach((element) => {
-        element.style.transition = 'none';
-        element.style.marginLeft = 0;
-        element.style.transition = null;
-
-    });
+    if(sliders) {
+        sliders.forEach((element) => {
+            element.style.transition = 'none';
+            element.style.marginLeft = 0;
+            element.style.transition = null;
+    
+        });
+    }
 
     const btns = document.querySelectorAll('.slider-arr_left');
-    btns.forEach((element) => {
-        element.classList.add('no-active');
-        element.classList.remove('active');
-    });
-
+    if(btns) {
+        btns.forEach((element) => {
+            element.classList.add('no-active');
+            element.classList.remove('active');
+        });
+    }
     hideItems(document);
 }
 
