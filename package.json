@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html --public-url /direct/dist/"
+    "build": "parcel build ./src/index.html --public-url /direct/dist/",
+    "build2": "parcel build ./src/index.html --public-url /static/"
   },
   "author": "",
   "license": "ISC",

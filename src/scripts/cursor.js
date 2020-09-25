@@ -106,59 +106,27 @@ whiteElements.forEach((link) => {
     })
 });
 
-const review1Elements = document.querySelectorAll('.cursor_review-1');
-review1Elements.forEach((link) => {
+const reviewImgElements = document.querySelectorAll('[data-review-img]');
+console.log(reviewImgElements);
+reviewImgElements.forEach((link) => {
     link.addEventListener('mouseenter', () => {
         cursors.forEach((cursor) => {
-            cursor.classList.add('review-1');
+            cursor.classList.add('review-img');
+            cursorDot.style.opacity = 0;
+            let url = link.getAttribute('data-review-img');
+            console.log(url);
+            cursor.style.backgroundImage = url;
         });
     })
     link.addEventListener('mouseleave', () => {
         cursors.forEach((cursor) => {
-            cursor.classList.remove('review-1');
+            cursor.classList.remove('review-img');
+            cursorDot.style.opacity = null;
+            cursor.style.backgroundImage = null;
         });
     })
 });
 
-const review2Elements = document.querySelectorAll('.cursor_review-2');
-review2Elements.forEach((link) => {
-    link.addEventListener('mouseenter', () => {
-        cursors.forEach((cursor) => {
-            cursor.classList.add('review-2');
-        });
-    })
-    link.addEventListener('mouseleave', () => {
-        cursors.forEach((cursor) => {
-            cursor.classList.remove('review-2');
-        });
-    })
-});
-const review3Elements = document.querySelectorAll('.cursor_review-3');
-review3Elements.forEach((link) => {
-    link.addEventListener('mouseenter', () => {
-        cursors.forEach((cursor) => {
-            cursor.classList.add('review-3');
-        });
-    })
-    link.addEventListener('mouseleave', () => {
-        cursors.forEach((cursor) => {
-            cursor.classList.remove('review-3');
-        });
-    })
-});
-const review4Elements = document.querySelectorAll('.cursor_review-4');
-review4Elements.forEach((link) => {
-    link.addEventListener('mouseenter', () => {
-        cursors.forEach((cursor) => {
-            cursor.classList.add('review-4');
-        });
-    })
-    link.addEventListener('mouseleave', () => {
-        cursors.forEach((cursor) => {
-            cursor.classList.remove('review-4');
-        });
-    })
-});
 
 
 //arrow

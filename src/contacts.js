@@ -1,7 +1,0 @@
-require('./scripts/cursor')
-require('./scripts/touchstart')
-require('./scripts/menu')
-require('./scripts/burger')
-require('./scripts/submit_forms')
-require('./scripts/imask')
-require('./scripts/scroll')
