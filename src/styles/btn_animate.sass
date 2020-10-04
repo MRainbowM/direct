@@ -4,12 +4,13 @@
     align-items: center
     position: relative
     overflow: hidden
-    border: 2px solid
+    border: 2px solid black
     transition: 0.3s
     font-family: 'Closer-SemiBold', sans-serif
     span
         position: relative
         z-index: 2
+        color: black
     &::before, &::after
         content: ''
         position: absolute
@@ -23,19 +24,14 @@
     &::after
         top: 100%
     &:hover
+        border: none
+        span
+            color: white
         &::before, &::after
             top: 0
+            background-color: currentColor
 
-    
-    
-.logitech
-    .btn_animate
-        &:hover
-            border: none
-            color: white
-            &::before, &::after
-                background-color: $logitech-clr
-            
+           
             
 .fizruk
     .btn_animate

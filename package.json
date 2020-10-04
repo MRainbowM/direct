@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel ./src/index.html",
+    "start2": "parcel ./src/success_feedback.html",
     "build": "parcel build ./src/index.html --public-url /direct/dist/",
     "build2": "parcel build ./src/index.html --public-url /static/"
   },
