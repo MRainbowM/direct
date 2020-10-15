@@ -34,6 +34,8 @@ window.addEventListener('scroll', (e) => {
         lines.forEach(line => {
             line.style.width = '0';
         });
+    //    if(!burger.contains('burger_show')){
+    //    }
     } else {
         lines.forEach(line => {
             line.style.width = null;

@@ -47,8 +47,9 @@ policyLinks.forEach(link => { // поль-е согл-е
 if(btnPeoples != null) {
     btnPeoples.addEventListener('click', (e) => {
         burger.classList.add('burger_show');
-    
-        jobFormPage.classList.add('job_form_page_show');
+        if(jobFormPage) {
+            jobFormPage.classList.add('job_form_page_show');
+        }
         linesBurger.forEach(line => {
             line.style.width = null; //сброс стилей
         });
@@ -76,7 +77,9 @@ burger.addEventListener('click', (e) => {
         menuForm.classList.add('menu_form_hide');
 
         // скрыть модалку 
-        contactPage.classList.remove('response_page_show');
+        if(contactPage) {
+            contactPage.classList.remove('response_page_show');
+        }
         if(jobFormPage){
             jobFormPage.classList.remove('job_form_page_show');
             jobPage.classList.remove('job_page_show');
@@ -101,16 +104,17 @@ burger.addEventListener('click', (e) => {
     }
 });
 
-
-btnContact.addEventListener('click', (e) => {
-    menuSoc.classList.add('menu_col-1_hide');
-    menuLinks.classList.add('menu_col-2_hide');
-    menuForm.classList.remove('menu_form_hide');
-    menuForm.style.opacity = 0;
-    setTimeout(() => {
-        menuForm.style.opacity = 1;
-    }, 100)
-});
+if(btnContact) {
+    btnContact.addEventListener('click', (e) => {
+        menuSoc.classList.add('menu_col-1_hide');
+        menuLinks.classList.add('menu_col-2_hide');
+        menuForm.classList.remove('menu_form_hide');
+        menuForm.style.opacity = 0;
+        setTimeout(() => {
+            menuForm.style.opacity = 1;
+        }, 100)
+    });
+}
 
 
 

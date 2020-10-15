@@ -10,11 +10,11 @@ const linesBurger = burger.querySelectorAll('.line');
 const contactPage = document.querySelector('.response_page');
 const jobPage = document.querySelector('.job_page');
 
-menuForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    menuForm.classList.add('menu_form_hide');
-    contactPage.classList.add('response_page_show');
-});
+// menuForm.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     menuForm.classList.add('menu_form_hide');
+//     contactPage.classList.add('response_page_show');
+// });
 
 // if(contactsForm){
 //     contactsForm.addEventListener('submit', (e) => {
@@ -34,12 +34,12 @@ menuForm.addEventListener('submit', (e) => {
 //     });
 // }
 
-if(jobForm != null) {
-    jobForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        jobPage.classList.add('job_page_show');
-    });
-}
+// if(jobForm != null) {
+//     jobForm.addEventListener('submit', (e) => {
+//         e.preventDefault();
+//         jobPage.classList.add('job_page_show');
+//     });
+// }
 
 const submitFormConnect = (e) => {
 

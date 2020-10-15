@@ -7,11 +7,13 @@ toProjectsBtn.forEach((element) => {
 });
 
 const footerBtn = document.querySelector('.f_top-arrow');
-footerBtn.addEventListener('click', (e) => {
-    // const mainSection = document.querySelector('#main');
-    const mainSection = document.querySelector('body');
-    startScroll(mainSection);
-});
+if(footerBtn) {
+    footerBtn.addEventListener('click', (e) => {
+        // const mainSection = document.querySelector('#main');
+        const mainSection = document.querySelector('body');
+        startScroll(mainSection);
+    });
+}
 
 // скролл по ссылкам в меню
 const burger = document.querySelector('.burger');
