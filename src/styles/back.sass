@@ -1,27 +1,35 @@
+.back_container
+    width: 140px
+    margin-bottom: 40px
 .back
     display: flex
     width: 100%
-    margin-bottom: 40px
     &_icon
         display: flex
         justify-content: start
         width: 18px
         overflow: hidden
         margin-right: 17px
+        transition: 0.2s
         svg
             height: 35px
             min-width: 50px
             transform: rotate(180deg)
             color: #d8d8d8
+            transition: 0.2s
+    &:hover
+        .back_icon
+            margin-left: -5px
+            margin-right: 22px
+        svg
+            color: $direct-clr
     &_text
         font-size: 16px
         line-height: 2
 
-
-
 @media screen and ( max-width: 900px )
-    .back
+    .back_container
         margin-bottom: 62px
 @media screen and ( max-width: 600px )
-    .back
+    .back_container
         margin-bottom: 25px

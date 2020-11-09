@@ -10,15 +10,15 @@
         display: flex
         justify-content: space-between
         width: 100%
-        
+
         &_col-1
             display: flex
             flex-direction: column
-            h1 
+            h1
                 margin-bottom: 28px
                 font-family: 'Closer-Bold', sans-serif
                 font-size: 32px
-            p 
+            p
                 font-size: 16px
                 line-height: 1.5
         &_col-2
@@ -31,35 +31,59 @@
         font-family: 'Closer-Medium', sans-serif
         user-select: none
         -webkit-user-select: none
-        div 
+        div
             font-size: 18px
             width: 108px
         .year-active
             color: $direct-clr
-    
+
     &_filter
         display: flex
         font-family: 'Closer-SemiBold', sans-serif
         font-size: 18px
+        width: 264px
+        max-width: 264px
+        position: relative
+        height: 54px
+        &_col-1-1, &_col-2-1
+            top: 0
+            border: 1px solid black
+            height: 100%
+            width: 50%
+            position: absolute
+            z-index: 1
+        &_col-1-1
+            border-right: none
+        &_col-2-1
+            left: 50%
+            border-left: none
         &_col-1, &_col-2
+            margin-top: 1px
             display: flex
             align-items: center
             justify-content: center
-            height: 54px
-            width: 132px
-            border: 1px solid black
-            z-index: 1
+            height: calc(100% - 1px)
+            width: 50%
+            -webkit-transition: color .5s ease
+            transition: color .5s ease
+            border: none
+            z-index: 2
         &_col-1.filter-active
             margin-right: -1px
-            z-index: 2
         &_col-2.filter-active
-            z-index: 2
             margin-left: -1px
         .filter-active
             color: white
-            border: none
+        &_swipe
+            position: absolute
+            top: 0
+            left: 0
+            height: 100%
+            width: 50%
             background-color: $direct-clr
-
+            transition: left .5s ease
+            -webkit-transition: left .5s ease
+            z-index: 1
 
 @media screen and ( max-width: 900px )
     .projects-p
@@ -77,7 +101,7 @@
         &_years
             margin-top: 69px
             margin-bottom: 21px
-            div 
+            div
                 width: 125px
 
 @media screen and ( max-width: 600px )
@@ -99,8 +123,6 @@
             flex-wrap: wrap
             margin-top: 41px
             margin-bottom: 12px
-            div 
+            div
                 width: 105px
                 height: 38px
-
-

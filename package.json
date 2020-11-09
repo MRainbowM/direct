@@ -6,6 +6,8 @@
   "scripts": {
     "start": "parcel ./src/index.html",
     "start2": "parcel ./src/success_feedbackjob.html",
+    "start3": "parcel ./src/event.html",
+    "start4": "parcel ./src/404.html",
     "build": "parcel build ./src/index.html --public-url /direct/dist/",
     "build2": "parcel build ./src/index.html --public-url /static/"
   },
@@ -20,6 +22,7 @@
     "ev-emitter": "^1.1.1",
     "fizzy-ui-utils": "^2.0.7",
     "get-size": "^2.0.3",
+    "imagesloaded": "^4.1.4",
     "imask": "^6.0.5",
     "isotope-layout": "^3.0.6",
     "jquery": "^3.5.1",
