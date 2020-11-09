@@ -1,16 +1,31 @@
+.presentation
+    display: flex
+    position: absolute
+    top: 59px
+    right: 172px
+    svg
+        height: 17px
+        max-width: 17px
+        width: 100%
+
+        color: $direct-clr
+    span
+        margin-left: 10px
+        font-size: 14px
+        font-family: Gilroy-Bold
 .header
     padding-top: 43px
     span
         &::selection
             color: white
             background-color: $direct-clr
-    &_container 
+    &_container
         display: flex
         flex-direction: row
         max-width: 1750px
         margin-left: auto
-        margin-right: auto 
-        
+        margin-right: auto
+
     .logo
         display: flex
         font-size: 32px
@@ -57,27 +72,26 @@
     &.burger_show
         .line
             background-color: white
-        .line:nth-child(1) 
+        .line:nth-child(1)
             transform: rotate(30deg) translateY(12px) translateX(6px)
         .line:nth-child(2)
-            opacity: 0 
-        .line:nth-child(3) 
+            opacity: 0
+        .line:nth-child(3)
             transform: rotate(-30deg) translateY(-9px) translateX(6px)
 
 .burger.show_hover
     &:hover
         .line
             background-color: $direct-clr
-        .line:nth-child(1) 
+        .line:nth-child(1)
             transform: translateY(12px)
-        .line:nth-child(3) 
+        .line:nth-child(3)
             transform: translateY(-12px)
 
 .burger.show_hover.hover_white
     &:hover
         .line
             background-color: white
-
 
 .burger.show_hover.burger_show
     &:hover
@@ -86,8 +100,8 @@
         .line:nth-child(1)
             transform: rotate(30deg) translateY(11px) translateX(6px)
         .line:nth-child(2)
-            opacity: 0 
-        .line:nth-child(3) 
+            opacity: 0
+        .line:nth-child(3)
             transform: rotate(-30deg) translateY(-9px) translateX(6px)
 
 .header.header_show
@@ -95,7 +109,7 @@
     top: 0
     z-index: 5
     .logo
-        color: white 
+        color: white
         z-index: 5
 .burger_show
     color: white
@@ -103,7 +117,7 @@
 
     // поль-е согл-е
 .burger_show.burger_show_on_white, .burger_show_on_white
-    .line 
+    .line
         background-color: black
 
 .header_show.header_show_on_white, .header_show_on_white
@@ -111,9 +125,12 @@
         color: black
 
 @media screen and (min-width: 1921px)
+    .presentation
+        right: calc(( 100vw - 1560px) / 2 + 2px)
     .burger
         // right: calc((100vw - 1835px)/2 - 85px)
         right: calc((100vw - 1835px)/2)
+
 @media screen and (max-width: 1920px)
     .header
         &_container
@@ -130,6 +147,8 @@
             right: 76px
 
 @media screen and (max-width: 765px)
+    .presentation
+        right: 100px
     .header
         padding-top: 50px
         &_container
@@ -146,14 +165,14 @@
             .line
                 width: 26px
             &.burger_show
-                .line:nth-child(1) 
+                .line:nth-child(1)
                     transform: rotate(30deg) translateY(5px) translateX(4px)
                     background-color: white
-                .line:nth-child(3) 
+                .line:nth-child(3)
                     transform: rotate(-30deg) translateY(-8px) translateX(6px)
                     background-color: white
             &.burger_show.burger_show_on_white
-                .line 
+                .line
                     background-color: black
             &.show_hover.burger_show
                 &:hover
@@ -161,20 +180,37 @@
                         background-color: $direct-clr
                     .line:nth-child(1)
                         transform: rotate(30deg) translateY(5px) translateX(4px)
-                    .line:nth-child(3) 
+                    .line:nth-child(3)
                         transform: rotate(-30deg) translateY(-8px) translateX(6px)
             &.show_hover
                 &:hover
                     .line
                         background-color: $direct-clr
-                    .line:nth-child(1) 
+                    .line:nth-child(1)
                         transform: translateY(8px)
-                    .line:nth-child(3) 
+                    .line:nth-child(3)
                         transform: translateY(-8px)
-            
+
             &.show_hover.hover_white
                 &:hover
                     .line
                         background-color: white
 
-            
+@media screen and (max-width: 500px)
+    .presentation
+        right: 85px
+        span
+            font-size: 12px
+
+@media screen and (max-width: 440px)
+    .presentation
+        right: 80px
+        max-width: 105px
+        span
+            margin-left: 7px
+            margin-top: -11px
+            font-size: 12px
+
+@media screen and (max-width: 360px)
+    .presentation
+        display: none
