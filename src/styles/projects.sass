@@ -18,6 +18,16 @@
     .card_active
         &.card
             opacity: 1
+    // показать больше
+    .card_get_start
+        &.card
+            transform: translateY(100px)
+            opacity: 0
+    .card_get_play
+        &.card
+            transform: translateY(0)
+            opacity: 1
+
 
 .card
     display: flex
@@ -76,8 +86,19 @@
     &.btn_animate
         &:hover
             border: none
+            color:  black
             &::before, &::after
                 background-color: $gray-act-clr
+            span
+                color: black
+    .btn_all_projects_loader
+        @extend .dot-flashing
+    &._loading
+        .btn_all_projects_body
+            display: none
+    &:not(._loading)
+        .btn_all_projects_loader
+            display: none
 
 @media screen and (max-width: 1920px)
     .card

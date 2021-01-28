@@ -7,7 +7,6 @@ if(preload){
     }
     setTimeout(() => {
         preload.classList.remove('preload');
-        console.log(preload.classList);
         if (preload.classList.contains('preload_play')) {
             preload.classList.remove('preload_play');
         } else if (preload.classList.contains('preload_play_mobi')) {

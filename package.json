@@ -8,13 +8,15 @@
     "start2": "parcel ./src/success_feedbackjob.html",
     "start3": "parcel ./src/event.html",
     "start4": "parcel ./src/404.html",
-    "build": "parcel build ./src/index.html --public-url /direct/dist/",
-    "build2": "parcel build ./src/index.html --public-url /static/"
+    "prebuild": "rimraf dist",
+    "build": "npm run prebuild && parcel build ./src/index.html --public-url /direct/dist/",
+    "build2": "npm run prebuild && parcel build ./src/index.html --public-url /static/"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
+    "rimraf": "^3.0.2",
     "sass": "^1.26.10"
   },
   "dependencies": {

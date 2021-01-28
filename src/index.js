@@ -1,3 +1,5 @@
+import 'regenerator-runtime/runtime'
+
 require('./scripts/preload')
 require('./scripts/cursor')
 require('./scripts/touchstart')
@@ -13,3 +15,5 @@ require('./scripts/content_animate')
 require('./scripts/imask')
 
 require('./scripts/projects-filters')
+
+require('./scripts/get_project')

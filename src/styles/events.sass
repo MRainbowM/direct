@@ -12,7 +12,7 @@
         padding-bottom: 60px
         .title
             width: 240px
-        span 
+        span
             width: 58%
             padding-top: 15px
             font-size: 16px
@@ -35,6 +35,12 @@
                 width: 450px
                 height: 226px
                 object-fit: cover
+                filter: gray
+                -webkit-filter: grayscale(1)
+                -moz-filter: grayscale(100%)
+                -ms-filter: grayscale(100%)
+                -o-filter: grayscale(100%)
+                filter: grayscale(100%)
             .events_item_text
                 width: 450px
                 font-size: 18px
@@ -72,7 +78,7 @@
         height: 100%
         transition: 0.3s
         z-index: 2
-        
+
     &::before
         top: -100%
     &::after
@@ -84,7 +90,6 @@
             top: 0
             background-color: $direct-clr
             opacity: 0.6
-                
 
 @media screen and (max-width: 1420px)
     .events
@@ -121,7 +126,7 @@
         .container
             flex-wrap: wrap
             padding-bottom: 44px
-            span 
+            span
                 width: 100%
                 padding-top: 9px
         &_item
@@ -129,13 +134,13 @@
             margin-right: 30px
             &_date
                 margin-bottom: 17px
-                
+
             &_col
                 width: 300px
-                img 
+                img
                     width: 300px
                     height: 150px
-                .events_item_text 
+                .events_item_text
                     margin-top: 21px
                     font-size: 14px
                     width: 300px
@@ -147,12 +152,11 @@
         padding-top: 54px
         padding-bottom: 9px
 
-
 @media screen and (max-width: 376px)
     .events_item
         margin-right: 20px
         &_col
             width: 250px
-            img 
+            img
                 width: 250px
                 height: 125px

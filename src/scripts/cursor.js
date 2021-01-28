@@ -1,3 +1,5 @@
+const { config } = require("../config");
+
 let cursors = document.querySelectorAll('.cursor');
 
 let cursorShadow = document.querySelector('.cursor-shadow');
@@ -25,9 +27,8 @@ window.addEventListener("mousemove", (e) => {
 
 });
 
-
-const links = document.querySelectorAll('.cursor_link');
-links.forEach((link) => {
+/// start hover ссылок
+export const addEventForLinks = (link) => {
     link.addEventListener('mouseenter', () => {
         cursors.forEach((cursor) => {
             cursor.classList.add('active');
@@ -38,10 +39,17 @@ links.forEach((link) => {
             cursor.classList.remove('active');
         });
     })
-});
+};
 
-const linksDjump = document.querySelectorAll('.cursor_jump');
-linksDjump.forEach((link) => {
+const links = document.querySelectorAll('.cursor_link');
+
+links.forEach((link) => {
+    addEventForLinks(link);
+});
+/// end hover ссылок
+
+/// start Стрелочки перехода
+export const addEventForLinksDjump = (link) => {
     link.addEventListener('mouseenter', () => {
         cursors.forEach((cursor) => {
             cursor.classList.add('jump');
@@ -60,9 +68,14 @@ linksDjump.forEach((link) => {
 
         });
     })
+};
 
+const linksDjump = document.querySelectorAll('.cursor_jump');
 
+linksDjump.forEach((link) => {
+    addEventForLinksDjump(link);
 });
+/// end Стрелочки перехода
 
 const redElements = document.querySelectorAll('.cursor_on_red');
 redElements.forEach((link) => {
@@ -92,8 +105,8 @@ blackElements.forEach((link) => {
     })
 });
 
-const whiteElements = document.querySelectorAll('.cursor_on_white');
-whiteElements.forEach((link) => {
+/// start hover ссылок на белом
+export const addEventForLinksWhite = (link) => {
     link.addEventListener('mouseenter', () => {
         cursors.forEach((cursor) => {
             cursor.classList.add('on_white');
@@ -104,7 +117,13 @@ whiteElements.forEach((link) => {
             cursor.classList.remove('on_white');
         });
     })
+};
+const whiteElements = document.querySelectorAll('.cursor_on_white');
+whiteElements.forEach((link) => {
+    addEventForLinksWhite(link);
 });
+/// end hover ссылок на белом
+
 
 const reviewImgElements = document.querySelectorAll('[data-review-img]');
 console.log(reviewImgElements);

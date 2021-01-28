@@ -1,5 +1,5 @@
-const cards = document.querySelectorAll('.card');
 window.addEventListener('scroll', (e) => {
+    const cards = document.querySelectorAll('.card');
     cards.forEach((card) => {
         const { top } = card.getBoundingClientRect();
         const bottom = window.innerHeight - card.clientHeight - top

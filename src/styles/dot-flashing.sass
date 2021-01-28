@@ -1,0 +1,49 @@
+/**
+ * ==============================================
+ * Dot Flashing
+ * ==============================================
+ */
+.dot-flashing
+    position: relative
+    width: 10px
+    height: 10px
+    border-radius: 5px
+    background-color: $direct-clr
+    color: $direct-clr
+    animation: dotFlashing .5s infinite linear alternate
+    animation-delay: .25s
+
+
+    &::before, &::after
+        content: ''
+        display: inline-block
+        position: absolute
+        top: 0
+
+
+    &::before
+        left: -15px
+        width: 10px
+        height: 10px
+        border-radius: 5px
+        background-color: $direct-clr
+        color: $direct-clr
+        animation: dotFlashing .5s infinite alternate
+        animation-delay: 0s
+
+
+    &::after
+        left: 15px
+        width: 10px
+        height: 10px
+        border-radius: 5px
+        background-color: $direct-clr
+        color: $direct-clr
+        animation: dotFlashing .5s infinite alternate
+        animation-delay: .5s
+
+@keyframes dotFlashing
+    0%
+        background-color: $direct-clr
+    50%, 100%
+        background-color: lighten($direct-clr, 20%)
