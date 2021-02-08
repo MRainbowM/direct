@@ -895,6 +895,7 @@ var cursors = document.querySelectorAll('.cursor');
 var cursorShadow = document.querySelector('.cursor-shadow');
 var cursorDot = document.querySelector('.cursor-dot');
 var cursorArrow = document.querySelector('.cursor-arrow');
+var cursorsReview = document.querySelectorAll('.cursor-review-img');
 window.addEventListener("mousemove", function (e) {
   // cursors.forEach((cursor) => {
   //     // cursor.style.left = e.clientX + 'px';
@@ -911,6 +912,10 @@ window.addEventListener("mousemove", function (e) {
   var y = e.clientY - 40;
   cursorArrow.style.left = x + 'px';
   cursorArrow.style.top = y + 'px';
+  cursorsReview.forEach(function (cursor) {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
 }); /// start hover ссылок
 
 var addEventForLinks = function addEventForLinks(link) {
@@ -1003,25 +1008,61 @@ whiteElements.forEach(function (link) {
 }); /// end hover ссылок на белом
 
 var reviewImgElements = document.querySelectorAll('[data-review-img]');
+var cursorReviews = document.querySelectorAll('[data-cursor-review-id]');
 console.log(reviewImgElements);
 reviewImgElements.forEach(function (link) {
+  var review_id = link.getAttribute('data-review-img');
   link.addEventListener('mouseenter', function () {
-    cursors.forEach(function (cursor) {
-      cursor.classList.add('review-img');
-      cursorDot.style.opacity = 0;
-      var url = link.getAttribute('data-review-img');
-      console.log(url);
-      cursor.style.backgroundImage = url;
+    cursorReviews.forEach(function (cursor_review) {
+      var id = cursor_review.getAttribute('data-cursor-review-id');
+
+      if (id == review_id) {
+        cursorShadow.style.opacity = 0;
+        cursorDot.style.opacity = 0;
+        cursor_review.style.height = '160px';
+        cursor_review.style.width = '160px';
+      }
     });
   });
   link.addEventListener('mouseleave', function () {
-    cursors.forEach(function (cursor) {
-      cursor.classList.remove('review-img');
-      cursorDot.style.opacity = null;
-      cursor.style.backgroundImage = null;
+    cursorReviews.forEach(function (cursor_review) {
+      var id = cursor_review.getAttribute('data-cursor-review-id');
+
+      if (id == review_id) {
+        cursor_review.style.height = '0px';
+        cursor_review.style.width = '0px';
+        cursorShadow.style.opacity = 1;
+        cursorDot.style.opacity = 1;
+      }
     });
-  });
-}); //arrow
+  }); // link.addEventListener('mouseleave', () => {
+  //     cursors.forEach((cursor) => {
+  //         cursor.classList.remove('review-img');
+  //         cursorDot.style.opacity = null;
+  //         cursor.style.backgroundImage = null;
+  //     });
+  // })
+}); // const reviewImgElements = document.querySelectorAll('[data-review-img]');
+// console.log(reviewImgElements);
+// reviewImgElements.forEach((link) => {
+//     link.addEventListener('mouseenter', () => {
+//         cursors.forEach((cursor) => {
+//             cursor.classList.add('review-img');
+//             cursorDot.style.opacity = 0;
+//             let url = link.getAttribute('data-review-img');
+//             console.log(url);
+//             cursor.style.backgroundImage = url;
+//         });
+//     })
+//     link.addEventListener('mouseleave', () => {
+//         cursors.forEach((cursor) => {
+//             cursor.classList.remove('review-img');
+//             cursorDot.style.opacity = null;
+//             cursor.style.backgroundImage = null;
+//         });
+//     })
+// });
+//arrow
 
 var initArrow = function initArrow() {
   cursorArrow.style.transform = 'rotate(-135deg) scale(0.5)';
@@ -10625,7 +10666,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1052" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "19787" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

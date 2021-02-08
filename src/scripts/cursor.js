@@ -6,6 +6,7 @@ let cursorShadow = document.querySelector('.cursor-shadow');
 let cursorDot = document.querySelector('.cursor-dot');
 let cursorArrow = document.querySelector('.cursor-arrow');
 
+let cursorsReview = document.querySelectorAll('.cursor-review-img');
 
 window.addEventListener("mousemove", (e) => {
     // cursors.forEach((cursor) => {
@@ -24,6 +25,11 @@ window.addEventListener("mousemove", (e) => {
     let y = e.clientY - 40;
     cursorArrow.style.left = x + 'px';
     cursorArrow.style.top = y + 'px';
+
+    cursorsReview.forEach(cursor => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
 
 });
 
@@ -126,26 +132,71 @@ whiteElements.forEach((link) => {
 
 
 const reviewImgElements = document.querySelectorAll('[data-review-img]');
+const cursorReviews = document.querySelectorAll('[data-cursor-review-id]');
 console.log(reviewImgElements);
 reviewImgElements.forEach((link) => {
+
+    let review_id = link.getAttribute('data-review-img');
+
     link.addEventListener('mouseenter', () => {
-        cursors.forEach((cursor) => {
-            cursor.classList.add('review-img');
-            cursorDot.style.opacity = 0;
-            let url = link.getAttribute('data-review-img');
-            console.log(url);
-            cursor.style.backgroundImage = url;
+        cursorReviews.forEach((cursor_review) => {
+            let id = cursor_review.getAttribute('data-cursor-review-id');
+            if (id == review_id) {
+                cursorShadow.style.opacity = 0;
+                cursorDot.style.opacity = 0;
+
+                cursor_review.style.height = '160px';
+                cursor_review.style.width = '160px';
+            }
         });
-    })
+    });
+
     link.addEventListener('mouseleave', () => {
-        cursors.forEach((cursor) => {
-            cursor.classList.remove('review-img');
-            cursorDot.style.opacity = null;
-            cursor.style.backgroundImage = null;
+        cursorReviews.forEach((cursor_review) => {
+            let id = cursor_review.getAttribute('data-cursor-review-id');
+            if (id == review_id) {
+                cursor_review.style.height = '0px';
+                cursor_review.style.width = '0px';
+
+                cursorShadow.style.opacity = 1;
+                cursorDot.style.opacity = 1;
+            }
         });
     })
+
+
+    // link.addEventListener('mouseleave', () => {
+    //     cursors.forEach((cursor) => {
+    //         cursor.classList.remove('review-img');
+    //         cursorDot.style.opacity = null;
+    //         cursor.style.backgroundImage = null;
+    //     });
+    // })
 });
 
+
+// const reviewImgElements = document.querySelectorAll('[data-review-img]');
+// console.log(reviewImgElements);
+// reviewImgElements.forEach((link) => {
+
+
+//     link.addEventListener('mouseenter', () => {
+//         cursors.forEach((cursor) => {
+//             cursor.classList.add('review-img');
+//             cursorDot.style.opacity = 0;
+//             let url = link.getAttribute('data-review-img');
+//             console.log(url);
+//             cursor.style.backgroundImage = url;
+//         });
+//     })
+//     link.addEventListener('mouseleave', () => {
+//         cursors.forEach((cursor) => {
+//             cursor.classList.remove('review-img');
+//             cursorDot.style.opacity = null;
+//             cursor.style.backgroundImage = null;
+//         });
+//     })
+// });
 
 
 //arrow

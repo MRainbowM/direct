@@ -677,6 +677,20 @@ BUTTON {
   width: calc( 100% + 20px );
   height: calc( 100% + 20px );
 }
+.reviews_img {
+  top: -80px;
+  left: -80px;
+  height: 160px;
+  width: 160px;
+  border-color: rgba(255, 255, 255, 0);
+  border-width: 0;
+  background-color: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  z-index: 1;
+}
 
 @media screen and (max-width: 1560px) {
   .reviews .container .reviews_row {
@@ -2605,10 +2619,10 @@ BUTTON {
   background-color: black;
   opacity: 0.05;
 }
-.cursor.cursor-shadow.review-img {
+.cursor.cursor-review-img {
   top: -80px;
   left: -80px;
-  --size: 160px;
+  --size: 0px;
   border-color: rgba(255, 255, 255, 0);
   border-width: 0;
   background-color: transparent;
@@ -2617,6 +2631,7 @@ BUTTON {
   background-size: cover;
   border-radius: 50%;
   z-index: 1;
+  transition: width 0.5s, height 0.5s;
 }
 .cursor.cursor-dot {
   background: #f33333;

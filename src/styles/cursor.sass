@@ -11,7 +11,7 @@
     transform: translate(-50%, -50%)
     pointer-events: none
 
-    &.cursor-shadow 
+    &.cursor-shadow
         top: -20px
         left: -20px
         background-color: transparent
@@ -19,7 +19,7 @@
         --size: 40px
         transition: top .05s, left .05s, transform .05s, width .2s, height .2s, background-color .2s, border-color 0.2s
         transition-timing-function: ease-out
-        &.active 
+        &.active
             top: -40px
             left: -40px
             --size: 80px
@@ -41,7 +41,7 @@
             // z-index: 1
             --size: 0
             opacity: 0
-        &.active.on_black 
+        &.active.on_black
             border: none
         &.on_black
             border: 1px solid white
@@ -51,24 +51,28 @@
             --size: 80px
             background-color: black
             opacity: 0.05
-           
-        &.review-img
-            top: -80px
-            left: -80px
-            --size: 160px
-            border-color: rgba(255,255,255, 0)
-            border-width: 0
-            background-color: transparent
-            background-position: center center
-            background-repeat: no-repeat
-            background-size: cover
-            border-radius: 50%
-            z-index: 1
 
-    &.cursor-dot 
+    &.cursor-review-img
+        top: -80px
+        left: -80px
+        --size: 0px
+        border-color: rgba(255,255,255, 0)
+        border-width: 0
+        background-color: transparent
+        background-position: center center
+        background-repeat: no-repeat
+        background-size: cover
+        border-radius: 50%
+        z-index: 1
+        // transition: opacity 0.5s
+        transition: width 0.5s, height 0.5s
+
+
+
+    &.cursor-dot
         background: $direct-clr
         transition: width .2s, height .2s
-        &.active 
+        &.active
             --size: 0
         &.jump
             --size: 0
@@ -108,7 +112,4 @@
         stroke-linecap: round
         stroke-linejoin: round
         stroke-width: 1.5px
-
-
-
 
