@@ -2,7 +2,7 @@ const toProjectsBtn = document.querySelectorAll('.scroll_to_projects');
 toProjectsBtn.forEach((element) => {
     element.addEventListener('click', (e) => {
         const projectsSection = document.querySelector('#projects');
-        startScroll(projectsSection);
+        scrollToElement(projectsSection);
     });
 });
 
@@ -11,7 +11,7 @@ if(footerBtn) {
     footerBtn.addEventListener('click', (e) => {
         // const mainSection = document.querySelector('#main');
         const mainSection = document.querySelector('body');
-        startScroll(mainSection);
+        scrollToElement(mainSection);
     });
 }
 
@@ -29,7 +29,7 @@ menuLinks.forEach(link => {
         menu.classList.remove('menu_show');
         document.body.style.overflow = null;
         document.body.style.marginRight = null;
-        startScroll(section);
+        scrollToElement(section);
     });
 });
 // скролл по ссылкам в футере
@@ -38,7 +38,7 @@ footerLinks.forEach(link => {
     let linkTo = link.getAttribute('data-link');
     let section = document.querySelector('#' + linkTo);
     link.addEventListener('click', (e) => {
-        startScroll(section);
+        scrollToElement(section);
 
         // let scrollPoint = section.offsetTop;
         // window.scrollTo({
@@ -48,18 +48,16 @@ footerLinks.forEach(link => {
     });
 });
 
-const startScroll = (section) => {
+export const scrollToElement = (section, offset = 0) => {
     if(section){
-        let direction = 0;
-        scrollPoint = section.getBoundingClientRect().top
-        direction = (scrollPoint < 0) ? -1 : (scrollPoint > 0) ? 1 : 0;
+        const scrollPoint = section.getBoundingClientRect().top
+        const direction = (scrollPoint < 0) ? -1 : (scrollPoint > 0) ? 1 : 0;
         if (direction == 0) return;
-        scroll(section, direction);
+        scrollAnimation(section, direction, offset);
     }
 }
 
-const scroll = (el, direction) => {
-    console.log(el);
+const scrollAnimation = (el, direction, offset = 0) => {
     let pageHeight = Math.max(
         document.body.scrollHeight, document.documentElement.scrollHeight,
         document.body.offsetHeight, document.documentElement.offsetHeight,
@@ -68,7 +66,7 @@ const scroll = (el, direction) => {
     let duration = 2000;
     let start = new Date().getTime();
     const fn = () => {
-        let top = el.getBoundingClientRect().top
+        let top = el.getBoundingClientRect().top - offset;
         let now = new Date().getTime() - start;
         let result = Math.round(top * now / duration);
         result = (result > direction * top) ? top : (result == 0) ? direction : result;

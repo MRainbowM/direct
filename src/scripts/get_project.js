@@ -1,14 +1,12 @@
 import { config } from "../config";
 import { addEventForLinks, addEventForLinksDjump, addEventForLinksWhite } from "./cursor";
+import { scrollToElement } from "./scroll";
 
 let btnAllProjects = document.querySelector('.btn_all_projects');
 if (btnAllProjects) {
     btnAllProjects.addEventListener('click', async (e) => {
         let renderProjects = document.querySelectorAll('#projects .container .card');
-        // let num_new_el = renderProjects.length-3;
         let num_new_el = renderProjects.length;
-        console.log(renderProjects.length);
-        console.log({ num_new_el });
         btnAllProjects.classList.add('_loading');
         let response = await fetch(`${config.API_HOST}/get_project/${num_new_el}`);
         btnAllProjects.classList.remove('_loading');
@@ -65,11 +63,15 @@ const animeteNewProject = () => {
     setTimeout(() => {
         new_project.classList.remove('card_get_start');
         new_project.classList.add('card_get_play');
+
+        console.log({ scrollToElement });
+        scrollToElement(new_project, 50);
     }, 100);
     setTimeout(() => {
         new_project.classList.remove('card_get_play');
         new_project.classList.remove('card_active');
     }, 100);
+
 };
 
 const template = (data) => /*html*/`

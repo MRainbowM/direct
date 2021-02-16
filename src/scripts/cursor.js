@@ -133,11 +133,9 @@ whiteElements.forEach((link) => {
 
 const reviewImgElements = document.querySelectorAll('[data-review-img]');
 const cursorReviews = document.querySelectorAll('[data-cursor-review-id]');
-console.log(reviewImgElements);
 reviewImgElements.forEach((link) => {
 
     let review_id = link.getAttribute('data-review-img');
-
     link.addEventListener('mouseenter', () => {
         cursorReviews.forEach((cursor_review) => {
             let id = cursor_review.getAttribute('data-cursor-review-id');
@@ -158,46 +156,12 @@ reviewImgElements.forEach((link) => {
                 cursor_review.style.height = '0px';
                 cursor_review.style.width = '0px';
 
-                cursorShadow.style.opacity = 1;
-                cursorDot.style.opacity = 1;
+                cursorShadow.style.opacity = null;
+                cursorDot.style.opacity = null;
             }
         });
     })
-
-
-    // link.addEventListener('mouseleave', () => {
-    //     cursors.forEach((cursor) => {
-    //         cursor.classList.remove('review-img');
-    //         cursorDot.style.opacity = null;
-    //         cursor.style.backgroundImage = null;
-    //     });
-    // })
 });
-
-
-// const reviewImgElements = document.querySelectorAll('[data-review-img]');
-// console.log(reviewImgElements);
-// reviewImgElements.forEach((link) => {
-
-
-//     link.addEventListener('mouseenter', () => {
-//         cursors.forEach((cursor) => {
-//             cursor.classList.add('review-img');
-//             cursorDot.style.opacity = 0;
-//             let url = link.getAttribute('data-review-img');
-//             console.log(url);
-//             cursor.style.backgroundImage = url;
-//         });
-//     })
-//     link.addEventListener('mouseleave', () => {
-//         cursors.forEach((cursor) => {
-//             cursor.classList.remove('review-img');
-//             cursorDot.style.opacity = null;
-//             cursor.style.backgroundImage = null;
-//         });
-//     })
-// });
-
 
 //arrow
 
@@ -207,8 +171,3 @@ const initArrow = () => {
 }
 
 initArrow();
-
-
-
-
-

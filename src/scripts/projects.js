@@ -33,6 +33,8 @@ window.addEventListener('scroll', (e) => {
         }
     })
 });
+
+// паралакс
 window.addEventListener("mousemove", (e) => {
     const card = document.querySelector('.card_active');
     if(card){
