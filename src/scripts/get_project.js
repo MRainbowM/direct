@@ -16,17 +16,23 @@ if (btnAllProjects) {
             let card = document.createElement('div');
             card.innerHTML = template(json.project);
 
+            let firstCard = containerProject.querySelector('.card');
             let activeCard = containerProject.querySelector('.card_active');
             activeCard.classList.remove('card_active');
 
             card = card.firstElementChild;
 
+            const cardMargin = Number(getComputedStyle(firstCard).marginBottom.slice(0, -2));
+            containerProject.style.height = containerProject.clientHeight + 'px';
+            const cardHeight = cardMargin + firstCard.clientHeight;
+            containerProject.style.height = containerProject.clientHeight + cardHeight + 'px';
             containerProject.insertBefore(card, btnAllProjects);
 
             let imgCard = card.querySelector('.img img');
 
             imgCard.onload = () => {
                 animeteNewProject();
+                containerProject.style.height = null;
             }
 
             linksEvents(card);

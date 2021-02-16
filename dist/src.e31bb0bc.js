@@ -1009,7 +1009,6 @@ whiteElements.forEach(function (link) {
 
 var reviewImgElements = document.querySelectorAll('[data-review-img]');
 var cursorReviews = document.querySelectorAll('[data-cursor-review-id]');
-console.log(reviewImgElements);
 reviewImgElements.forEach(function (link) {
   var review_id = link.getAttribute('data-review-img');
   link.addEventListener('mouseenter', function () {
@@ -1031,38 +1030,12 @@ reviewImgElements.forEach(function (link) {
       if (id == review_id) {
         cursor_review.style.height = '0px';
         cursor_review.style.width = '0px';
-        cursorShadow.style.opacity = 1;
-        cursorDot.style.opacity = 1;
+        cursorShadow.style.opacity = null;
+        cursorDot.style.opacity = null;
       }
     });
-  }); // link.addEventListener('mouseleave', () => {
-  //     cursors.forEach((cursor) => {
-  //         cursor.classList.remove('review-img');
-  //         cursorDot.style.opacity = null;
-  //         cursor.style.backgroundImage = null;
-  //     });
-  // })
-}); // const reviewImgElements = document.querySelectorAll('[data-review-img]');
-// console.log(reviewImgElements);
-// reviewImgElements.forEach((link) => {
-//     link.addEventListener('mouseenter', () => {
-//         cursors.forEach((cursor) => {
-//             cursor.classList.add('review-img');
-//             cursorDot.style.opacity = 0;
-//             let url = link.getAttribute('data-review-img');
-//             console.log(url);
-//             cursor.style.backgroundImage = url;
-//         });
-//     })
-//     link.addEventListener('mouseleave', () => {
-//         cursors.forEach((cursor) => {
-//             cursor.classList.remove('review-img');
-//             cursorDot.style.opacity = null;
-//             cursor.style.backgroundImage = null;
-//         });
-//     })
-// });
-//arrow
+  });
+}); //arrow
 
 var initArrow = function initArrow() {
   cursorArrow.style.transform = 'rotate(-135deg) scale(0.5)';
@@ -1452,11 +1425,17 @@ function onMouseEnd(e) {
 
 initSwipe();
 },{}],"scripts/scroll.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.scrollToElement = void 0;
 var toProjectsBtn = document.querySelectorAll('.scroll_to_projects');
 toProjectsBtn.forEach(function (element) {
   element.addEventListener('click', function (e) {
     var projectsSection = document.querySelector('#projects');
-    startScroll(projectsSection);
+    scrollToElement(projectsSection);
   });
 });
 var footerBtn = document.querySelector('.f_top-arrow');
@@ -1465,7 +1444,7 @@ if (footerBtn) {
   footerBtn.addEventListener('click', function (e) {
     // const mainSection = document.querySelector('#main');
     var mainSection = document.querySelector('body');
-    startScroll(mainSection);
+    scrollToElement(mainSection);
   });
 } // скролл по ссылкам в меню
 
@@ -1483,7 +1462,7 @@ menuLinks.forEach(function (link) {
     menu.classList.remove('menu_show');
     document.body.style.overflow = null;
     document.body.style.marginRight = null;
-    startScroll(section);
+    scrollToElement(section);
   });
 }); // скролл по ссылкам в футере
 
@@ -1492,7 +1471,7 @@ footerLinks.forEach(function (link) {
   var linkTo = link.getAttribute('data-link');
   var section = document.querySelector('#' + linkTo);
   link.addEventListener('click', function (e) {
-    startScroll(section); // let scrollPoint = section.offsetTop;
+    scrollToElement(section); // let scrollPoint = section.offsetTop;
     // window.scrollTo({
     //     top: scrollPoint,
     //     behavior: 'smooth'
@@ -1500,24 +1479,27 @@ footerLinks.forEach(function (link) {
   });
 });
 
-var startScroll = function startScroll(section) {
+var scrollToElement = function scrollToElement(section) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
   if (section) {
-    var direction = 0;
-    scrollPoint = section.getBoundingClientRect().top;
-    direction = scrollPoint < 0 ? -1 : scrollPoint > 0 ? 1 : 0;
+    var scrollPoint = section.getBoundingClientRect().top;
+    var direction = scrollPoint < 0 ? -1 : scrollPoint > 0 ? 1 : 0;
     if (direction == 0) return;
-    scroll(section, direction);
+    scrollAnimation(section, direction, offset);
   }
 };
 
-var scroll = function scroll(el, direction) {
-  console.log(el);
+exports.scrollToElement = scrollToElement;
+
+var scrollAnimation = function scrollAnimation(el, direction) {
+  var offset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
   var pageHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
   var duration = 2000;
   var start = new Date().getTime();
 
   var fn = function fn() {
-    var top = el.getBoundingClientRect().top;
+    var top = el.getBoundingClientRect().top - offset;
     var now = new Date().getTime() - start;
     var result = Math.round(top * now / duration);
     result = result > direction * top ? top : result == 0 ? direction : result;
@@ -1595,7 +1577,8 @@ window.addEventListener('scroll', function (e) {
       card.classList.add('card_active');
     }
   });
-});
+}); // паралакс
+
 window.addEventListener("mousemove", function (e) {
   var card = document.querySelector('.card_active');
 
@@ -10495,6 +10478,8 @@ var _config = require("../config");
 
 var _cursor = require("./cursor");
 
+var _scroll = require("./scroll");
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -10504,59 +10489,60 @@ var btnAllProjects = document.querySelector('.btn_all_projects');
 if (btnAllProjects) {
   btnAllProjects.addEventListener('click', /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(e) {
-      var renderProjects, num_new_el, response, json, containerProject, card, activeCard, imgCard;
+      var renderProjects, num_new_el, response, json, containerProject, card, firstCard, activeCard, cardMargin, cardHeight, imgCard;
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              renderProjects = document.querySelectorAll('#projects .container .card'); // let num_new_el = renderProjects.length-3;
-
+              renderProjects = document.querySelectorAll('#projects .container .card');
               num_new_el = renderProjects.length;
-              console.log(renderProjects.length);
-              console.log({
-                num_new_el: num_new_el
-              });
               btnAllProjects.classList.add('_loading');
-              _context.next = 7;
+              _context.next = 5;
               return fetch("".concat(_config.config.API_HOST, "/get_project/").concat(num_new_el));
 
-            case 7:
+            case 5:
               response = _context.sent;
               btnAllProjects.classList.remove('_loading');
 
               if (!response.ok) {
-                _context.next = 26;
+                _context.next = 29;
                 break;
               }
 
-              _context.next = 12;
+              _context.next = 10;
               return response.json();
 
-            case 12:
+            case 10:
               json = _context.sent;
               containerProject = document.querySelector('#projects .container');
               card = document.createElement('div');
               card.innerHTML = template(json.project);
+              firstCard = containerProject.querySelector('.card');
               activeCard = containerProject.querySelector('.card_active');
               activeCard.classList.remove('card_active');
               card = card.firstElementChild;
+              cardMargin = Number(getComputedStyle(firstCard).marginBottom.slice(0, -2));
+              containerProject.style.height = containerProject.clientHeight + 'px';
+              cardHeight = cardMargin + firstCard.clientHeight;
+              containerProject.style.height = containerProject.clientHeight + cardHeight + 'px';
               containerProject.insertBefore(card, btnAllProjects);
               imgCard = card.querySelector('.img img');
 
               imgCard.onload = function () {
                 animeteNewProject();
+                containerProject.style.height = null;
               };
 
               linksEvents(card); //удаляем кнопку "Показать все", если загрузили последний проект
 
               if (json.project.last) btnAllProjects.remove();
-              _context.next = 27;
+              _context.next = 30;
               break;
 
-            case 26:
+            case 29:
               alert("Ошибка HTTP: " + response.status);
 
-            case 27:
+            case 30:
             case "end":
               return _context.stop();
           }
@@ -10591,6 +10577,10 @@ var animeteNewProject = function animeteNewProject() {
   setTimeout(function () {
     new_project.classList.remove('card_get_start');
     new_project.classList.add('card_get_play');
+    console.log({
+      scrollToElement: _scroll.scrollToElement
+    });
+    (0, _scroll.scrollToElement)(new_project, 50);
   }, 100);
   setTimeout(function () {
     new_project.classList.remove('card_get_play');
@@ -10604,7 +10594,7 @@ var template = function template(data) {
     "\n  <div class=\"card parallax_container card_show card_active card_get_start\">\n    <a href=\"".concat(_config.config.API_HOST, "/projects/").concat(data.id, "\" class=\"img parallax_img cursor_jump\" target=\"_blank\">\n      <img src=\"").concat(_config.config.API_HOST).concat(data.img_main, "\" alt=\"\">\n    </a>\n    <div class=\"text\">\n        <div class=\"text_container\">\n            <div class=\"card_title\">").concat(data.name, "</div>\n            <div class=\"category\">\u041A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044F: <span\n                    style=\"color:#").concat(data.color, "\">").concat(data.category, "</span></div>\n            <div class=\"category\">\u041F\u0440\u043E\u0435\u043A\u0442: <a href=\"").concat(data.project_link, "\" class=\"link cursor_on_white\"\n                    style=\"color:#").concat(data.color, "\">").concat(data.project_link_name, "</a></div>\n            <div class=\"description\">").concat(data.description_main, "\n            </div>\n            <a href=\"").concat(_config.config.API_HOST, "/projects/").concat(data.id, "\" class=\"card_btn btn_animate cursor_link\"\n                style=\"color:#").concat(data.color, "\" target=\"_blank\">\n                <span>\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u043A\u0435\u0439\u0441</span>\n            </a>\n        </div>\n    </div>\n</div>\n")
   );
 };
-},{"../config":"config.js","./cursor":"scripts/cursor.js"}],"index.js":[function(require,module,exports) {
+},{"../config":"config.js","./cursor":"scripts/cursor.js","./scroll":"scripts/scroll.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 require("regenerator-runtime/runtime");
@@ -10666,7 +10656,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "19787" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1860" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

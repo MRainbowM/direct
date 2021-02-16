@@ -121,6 +121,7 @@ BUTTON {
 }
 
 .projects .container {
+  transition: 0.3s height;
   padding-bottom: 160px;
 }
 
@@ -140,7 +141,7 @@ BUTTON {
 }
 
 .contacts.contacts_contacts .container {
-  padding-top: 28px;
+  padding-top: 140px;
   padding-bottom: 140px;
 }
 
@@ -976,6 +977,9 @@ BUTTON {
   margin-bottom: 78px;
   opacity: 0.2;
 }
+.card:last-of-type {
+  margin-bottom: 28px;
+}
 .card .img img {
   width: 100%;
 }
@@ -1029,7 +1033,7 @@ BUTTON {
   background-color: #fbfbfb;
   font-family: "Closer-Medium", sans-serif;
   font-size: 22px;
-  margin-top: -50px;
+  margin-top: auto;
   border: none;
 }
 .btn_all_projects.btn_animate:hover {
