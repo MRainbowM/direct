@@ -1,5 +1,5 @@
 import { config } from "../config";
-import { addEventForLinks, addEventForLinksDjump, addEventForLinksWhite } from "./cursor";
+import { addEventForLinks, addEventForLinksWhite } from "./cursor";
 import { scrollToElement } from "./scroll";
 
 let btnAllProjects = document.querySelector('.btn_all_projects');
@@ -47,12 +47,6 @@ if (btnAllProjects) {
 }
 
 const linksEvents = (card) => {
-    // добавляем hover новой карточке
-    let linksDjump = card.querySelectorAll('.cursor_jump');
-    linksDjump.forEach((link) => {
-        addEventForLinksDjump(link);
-    });
-
     let links = card.querySelectorAll('.cursor_link');
     links.forEach((link) => {
         addEventForLinks(link);

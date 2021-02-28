@@ -54,41 +54,41 @@ links.forEach((link) => {
 /// end hover ссылок
 
 /// start Стрелочки перехода
-export const addEventForLinksDjump = (link, color = null) => {
-    link.addEventListener('mouseenter', () => {
-        cursors.forEach((cursor) => {
-            cursor.classList.add('jump');
+const addJumpCursor = (color = null) => {
+    cursors.forEach((cursor) => {
+        cursor.classList.add('jump');
+        cursorArrow.style.transform = 'rotate(0deg) scale(1)';
+        cursorArrow.style.opacity = 1;
+        cursorArrow.style.color = color;
+    });
+}
 
-            cursorArrow.style.transform = 'rotate(0deg) scale(1)';
-            cursorArrow.style.opacity = 1;
-            cursorArrow.style.color = color;
+const removeJumpCursor = () => {
+    cursors.forEach((cursor) => {
+        cursor.classList.remove('jump');
+        cursorArrow.style.transform = 'rotate(-135deg) scale(0.5)';
+        cursorArrow.style.opacity = 0;
+        // cursorArrow.style.color = null;
+    });
+}
 
-        });
-    })
-    link.addEventListener('mouseleave', () => {
-        cursors.forEach((cursor) => {
-            cursor.classList.remove('jump');
-
-            cursorArrow.style.transform = 'rotate(-135deg) scale(0.5)';
-            cursorArrow.style.opacity = 0;
-            // cursorArrow.style.color = null;
-
-        });
-    })
-};
-
-const linksDjump = document.querySelectorAll('.cursor_jump');
-const linksDjumpWhite = document.querySelectorAll('.cursor_jump_white');
-const linksDjumpBlack = document.querySelectorAll('.cursor_jump_black');
-
-linksDjump.forEach((link) => {
-    addEventForLinksDjump(link);
+window.addEventListener('scroll', (e) => {
+    removeJumpCursor();
 });
-linksDjumpWhite.forEach((link) => {
-    addEventForLinksDjump(link, 'white');
-});
-linksDjumpBlack.forEach((link) => {
-    addEventForLinksDjump(link, 'black');
+
+window.addEventListener('mousemove', (e) => {
+    const elem = e.target;
+    if (elem) {
+        const cursorJump = elem.closest('.cursor_jump, .cursor_jump_black, .cursor_jump_white');
+        if (cursorJump) {
+            const isBlack = cursorJump.classList.contains('cursor_jump_black');
+            const isWhite = cursorJump.classList.contains('cursor_jump_white');
+            const color = isBlack ? 'black' : isWhite ? 'white' : null;
+            addJumpCursor(color);  
+        } else {
+            removeJumpCursor();
+        }
+    }
 });
 /// end Стрелочки перехода
 
