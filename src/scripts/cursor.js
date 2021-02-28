@@ -19,7 +19,6 @@ window.addEventListener("mousemove", (e) => {
     cursorDot.style.left = e.clientX + 'px';
     cursorDot.style.top = e.clientY + 'px';
     cursorShadow.style.transform = 'matrix(1, 0, 0, 1,' + e.clientX + ', ' + e.clientY + ')';
-    // cursorArrow.style.transform = 'matrix(1, 0, 0, 1,' + e.clientX + ', ' + e.clientY + ')';
 
     let x = e.clientX - 60;
     let y = e.clientY - 40;
@@ -55,13 +54,14 @@ links.forEach((link) => {
 /// end hover ссылок
 
 /// start Стрелочки перехода
-export const addEventForLinksDjump = (link) => {
+export const addEventForLinksDjump = (link, color = null) => {
     link.addEventListener('mouseenter', () => {
         cursors.forEach((cursor) => {
             cursor.classList.add('jump');
 
             cursorArrow.style.transform = 'rotate(0deg) scale(1)';
             cursorArrow.style.opacity = 1;
+            cursorArrow.style.color = color;
 
         });
     })
@@ -71,15 +71,24 @@ export const addEventForLinksDjump = (link) => {
 
             cursorArrow.style.transform = 'rotate(-135deg) scale(0.5)';
             cursorArrow.style.opacity = 0;
+            // cursorArrow.style.color = null;
 
         });
     })
 };
 
 const linksDjump = document.querySelectorAll('.cursor_jump');
+const linksDjumpWhite = document.querySelectorAll('.cursor_jump_white');
+const linksDjumpBlack = document.querySelectorAll('.cursor_jump_black');
 
 linksDjump.forEach((link) => {
     addEventForLinksDjump(link);
+});
+linksDjumpWhite.forEach((link) => {
+    addEventForLinksDjump(link, 'white');
+});
+linksDjumpBlack.forEach((link) => {
+    addEventForLinksDjump(link, 'black');
 });
 /// end Стрелочки перехода
 
