@@ -49,30 +49,49 @@ const elem = document.querySelector('.cases');
 
 imagesLoaded(elem, function () {
     if (elem) {
-        
+        const filter_val = filterByURL();
+
         const iso = new Isotope('.cases', {});
         const btnsGroupYears = document.querySelector('.projects-p_years');
         let btnsYears = '';
         if (btnsGroupYears) {
             btnsYears = btnsGroupYears.querySelectorAll('div');
         }
-    
+
         const btnsGroupProj = document.querySelector('.projects-p_filter');
         let btnsProj = '';
         if (btnsGroupProj) {
             btnsProj = btnsGroupProj.querySelectorAll('a');
         }
-    
+
         if (btnsYears != '' && btnsProj != '') {
             applyFilter(btnsYears, btnsProj, 'year-active', iso);
             applyFilter(btnsProj, btnsYears, 'filter-active', iso);
             // const event = new Event("click");
             // const f = btnsYears[0].getAttribute('data-filter') + btnsProj[0].getAttribute('data-filter');
-            const f = '.filter-site';
             iso.arrange({
-                filter: f
+                filter: '.' + filter_val
             });
         }
     }
 });
 
+const filterByURL = () => {
+    // смотрим значение параметра filter, если он передан
+    // и сортируем по сайтам/дизайнам
+    const url = new URL(window.location);
+    const filter_val = url.searchParams.get('filter');
+    const filter_active = document.querySelector('.filter-active');
+    const filter_swipe = document.querySelector('.projects-p_filter_swipe');
+    if (filter_val != null) {
+        const filter_btn = document.querySelector('#' + filter_val);
+        filter_btn.click();
+        if (filter_active != filter_btn) {
+            filter_active.classList.remove('filter-active');
+            filter_btn.classList.add('filter-active');
+        }
+        if (filter_val == 'filter-site') filter_swipe.style.left = 0;
+        else if (filter_val == 'filter-dsg') filter_swipe.style.left = '50%';
+    }
+    return filter_val;
+}
