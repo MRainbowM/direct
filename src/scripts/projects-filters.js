@@ -49,7 +49,8 @@ const elem = document.querySelector('.cases');
 
 imagesLoaded(elem, function () {
     if (elem) {
-        const filter_val = filterByURL();
+        let filter_val = filterByURL();
+        if (filter_val == null) filter_val = '.filter-site';
 
         const iso = new Isotope('.cases', {});
         const btnsGroupYears = document.querySelector('.projects-p_years');
