@@ -76,7 +76,7 @@ const animeteNewProject = () => {
 
 const template = (data) => /*html*/`
   <div class="card parallax_container card_show card_active card_get_start">
-    <a href="${config.API_HOST}/projects/${data.id}" class="img parallax_img cursor_jump" target="_blank">
+    <a href="${config.API_HOST}/projects/${data.id}" class="img parallax_img ${data.arrow_class}" target="_blank">
       <img src="${config.API_HOST}${data.img_main}" alt="">
     </a>
     <div class="text">
