@@ -1,0 +1,53 @@
+.project_loader
+    z-index: 4
+    // position: absolute
+    position: fixed
+    display: flex
+    align-items: center
+    justify-content: center
+    background: white
+    height: 100%
+    width: 100%
+    opacity: 1
+    transition-delay: 0.6s
+    transition: opacity 1s
+    opacity: 1
+    &_container
+        width: 100%
+        overflow: hidden
+        width: 80px
+    &_line
+        height: 15px
+        width: 60px
+        background-color: $direct-clr
+        -webkit-animation: 1.5s linear 0s infinite alternate move_line
+        -moz-animation: 1.5s linear 0s infinite alternate move_line
+        -o-animation: 1.5s linear 0s infinite alternate move_line
+        animation: 1.5s linear 0s infinite alternate move_line
+        transition: opacity 0.6s
+        transition-delay: 0s
+    &._hide
+        &.project_loader
+            opacity: 0
+            &_line
+                opacity: 0
+@-webkit-keyframes move_line
+    from
+    margin-left: -90%
+    to  
+    margin-left: 110%
+@-moz-keyframes move_line
+    from  
+    margin-left: -90%
+    to  
+    margin-left: 110%
+@-o-keyframes move_line
+    from  
+    margin-left: -90%
+    to  
+    margin-left: 110%
+@keyframes move_line
+    from
+        margin-left: -90%
+    to
+        margin-left: 110%

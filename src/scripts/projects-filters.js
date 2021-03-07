@@ -45,12 +45,64 @@ const applyFilter = (btns, btns2, activName, iso) => {
     });
 }
 
-const elem = document.querySelector('.cases');
+const filterByURL = () => {
+    // смотрим значение параметра filter, если он передан
+    // и сортируем по сайтам/дизайнам
+    const url = new URL(window.location);
+    const filter_val = url.searchParams.get('filter');
+    const filter_active = document.querySelector('.filter-active');
+    const filter_swipe = document.querySelector('.projects-p_filter_swipe');
+    if (filter_val != null) {
+        const filter_btn = document.querySelector('#' + filter_val);
+        filter_btn.click();
+        if (filter_active != filter_btn) {
+            filter_active.classList.remove('filter-active');
+            filter_btn.classList.add('filter-active');
+        }
+        if (filter_val == 'filter-site') filter_swipe.style.left = 0;
+        else if (filter_val == 'filter-dsg') filter_swipe.style.left = '50%';
+    }
+    return filter_val;
+}
 
-imagesLoaded(elem, function () {
-    if (elem) {
+const containerCases = document.querySelector('.cases');
+
+const preloader = () => {
+    const preloaderElem = document.querySelector('.project_loader')
+    let completed = 0;
+    const images = Array.from(containerCases.querySelectorAll('.cases_card'))
+        .filter(el => el.style.display !== 'none')
+        .map(el => el.querySelector('img'));
+    const onComplete = () => {
+        if (images.length === completed) {
+            setTimeout(()=> {
+                preloaderElem.classList.add('_hide');
+            }, 550);
+            setTimeout(()=> {
+                preloaderElem.style.display = 'none';
+            }, 1500);
+        }
+    };
+    const onLoadImage = () => {
+        completed++;
+        onComplete();
+    }
+    images.forEach(img => {
+        if (img.complete) {
+            completed++;
+        } else {
+            img.onload = onLoadImage;
+            img.onerror = onLoadImage;
+        }
+    })
+    onComplete();
+};
+
+imagesLoaded(containerCases, function () {
+    preloader();
+    if (containerCases) {
         let filter_val = filterByURL();
-        if (filter_val == null) filter_val = '.filter-site';
+        if (filter_val == null) filter_val = 'filter-site';
 
         const iso = new Isotope('.cases', {});
         const btnsGroupYears = document.querySelector('.projects-p_years');
@@ -76,23 +128,3 @@ imagesLoaded(elem, function () {
         }
     }
 });
-
-const filterByURL = () => {
-    // смотрим значение параметра filter, если он передан
-    // и сортируем по сайтам/дизайнам
-    const url = new URL(window.location);
-    const filter_val = url.searchParams.get('filter');
-    const filter_active = document.querySelector('.filter-active');
-    const filter_swipe = document.querySelector('.projects-p_filter_swipe');
-    if (filter_val != null) {
-        const filter_btn = document.querySelector('#' + filter_val);
-        filter_btn.click();
-        if (filter_active != filter_btn) {
-            filter_active.classList.remove('filter-active');
-            filter_btn.classList.add('filter-active');
-        }
-        if (filter_val == 'filter-site') filter_swipe.style.left = 0;
-        else if (filter_val == 'filter-dsg') filter_swipe.style.left = '50%';
-    }
-    return filter_val;
-}
