@@ -1,7 +1,7 @@
 .project_loader
-    z-index: 4
-    // position: absolute
+    z-index: 10
     position: fixed
+    top: 0
     display: flex
     align-items: center
     justify-content: center
@@ -15,15 +15,15 @@
     &_container
         width: 100%
         overflow: hidden
-        width: 80px
+        width: 65px
     &_line
         height: 15px
         width: 60px
         background-color: $direct-clr
-        -webkit-animation: 1.5s linear 0s infinite alternate move_line
-        -moz-animation: 1.5s linear 0s infinite alternate move_line
-        -o-animation: 1.5s linear 0s infinite alternate move_line
-        animation: 1.5s linear 0s infinite alternate move_line
+        -webkit-animation: 1s linear 0s infinite alternate move_line
+        -moz-animation: 1s linear 0s infinite alternate move_line
+        -o-animation: 1s linear 0s infinite alternate move_line
+        animation: 1s linear 0s infinite alternate move_line
         transition: opacity 0.6s
         transition-delay: 0s
     &._hide
@@ -33,21 +33,21 @@
                 opacity: 0
 @-webkit-keyframes move_line
     from
-    margin-left: -90%
+    margin-left: -100%
     to  
     margin-left: 110%
 @-moz-keyframes move_line
     from  
-    margin-left: -90%
+    margin-left: -100%
     to  
     margin-left: 110%
 @-o-keyframes move_line
     from  
-    margin-left: -90%
+    margin-left: -100%
     to  
     margin-left: 110%
 @keyframes move_line
     from
-        margin-left: -90%
+        margin-left: -100%
     to
         margin-left: 110%

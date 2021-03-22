@@ -85,7 +85,7 @@ const template = (data) => /*html*/`
             <div class="category">Категория: <span
                     style="color:#${data.color}">${data.category}</span></div>
             <div class="category">Проект: <a href="${data.project_link}" class="link cursor_on_white"
-                    style="color:#${data.color}">${data.project_link_name}</a></div>
+                    style="color:#${data.color}" target="_blank">${data.project_link_name}</a></div>
             <div class="description">${data.description_main}
             </div>
             <a href="${config.API_HOST}/projects/${data.id}" class="card_btn btn_animate cursor_link"
