@@ -19,12 +19,11 @@
             margin-top: 10px
             width: 49%
     &_row-2
-        // display: flex
         display: grid
         width: 75%
         margin-left: auto
-        grid-template-columns: 218px 218px 218px
-        grid-column-gap: calc((100% - 654px ) / 2)
+        grid-template-columns: 260px 260px 260px
+        grid-column-gap: calc((100% - 780px ) / 2)
         grid-row-gap: 72px
         .name
             font-size: 24px
@@ -59,7 +58,7 @@
         .btn_animate
             width: 190px
             height: 54px
-            margin-top: -170px
+            margin-top: -167px
             &:hover
                 border: none
                 color: white
@@ -69,6 +68,8 @@
 @media screen and (max-width: 1310px)
     .peoples
         &_row-2
+            grid-template-columns: 218px 218px 218px
+            grid-column-gap: calc((100% - 654px ) / 2)
             .name
                 font-size: 20px
             .img
@@ -98,7 +99,7 @@
                 margin-top: 63px
         .btn_peoples
             .btn_animate
-                margin-top: -156px
+                margin-top: -141px
                 margin-left: auto
                 font-size: 18px
 
@@ -112,25 +113,12 @@
             .btn_animate
                 margin-left: calc(100% - 150px - 190px)
 @media screen and (max-width: 777px)
-    .peoples
-        &_row-1
-            flex-wrap: wrap
-            .title
-                width: 100%
-            span
-                width: 100%
-        &_row-2
-            padding-right: 50px
-        .btn_peoples
-            .btn_animate
-                margin-left: calc(100% - 50px - 190px)
-@media screen and (max-width: 777px)
    .peoples
         &_row-2
             padding-right: 0
         .btn_peoples
             .btn_animate
-                margin-top: -156px
+                margin-top: -140px
                 margin-left: calc(100% - 190px)
 
 @media screen and (max-width: 620px)
